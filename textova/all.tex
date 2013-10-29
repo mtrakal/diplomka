@@ -1,0 +1,231 @@
+\section{Úvod}
+TODO
+
+\section{Seznámení s cloud computingem}
+Pojem cloud computing je relativnì novı pojem, pøesto sluby pod ním skrıvané jsou tu s námi témìø od poèátku poèítaèù. Pod pojmem cloud computing si dnes pøedstavujeme pronajímané sluby, kterıch vyuíváme vzdálenì. Sluby jsou poskytované pøevánì velkımi spoleènostmi, které mají dostateèné prostøedky pro zøízení datacenter s velkım vıpoèetním, nebo úlonım prostorem. Z jejich strojù si pak propùjèujeme vıkon a diskovou kapacitu, kde probíhají naše vıpoèty, za které platíme.
+
+\subsection{Historie}
+Pøed cloud computingem musela bıt inspirace. Tu shledávám v dávné historii ICT.
+
+\subsubsection{Sedmdesátá léta}
+Vrátíme se do doby, kdy v obøích místnostech tepala srdce prvních mainframù\footnote{V pùvodním slova smyslu se jednalo o sálové poèítaèe na dìrné štítky, následnì v prùbìhu let získaly interaktivní uivatelské rozhraní.}. Ji v této dobì by se dal datovat poèátek cloud computingu. Poèátek vidím právì v dobì, kdy obøí místnosti nestaèily na jedinı poèítaè s vıpoèetním vıkonem, kterému se dnes doslova vysmìjí i hodinky a kalkulaèka. Dovolím si tvrdit, e inspirace dnešních cloudovıch systémù je právì na poèátku sedmdesátıch let dvacátého století, kdy zaèínala doba sálovıch poèítaèù s pøipojenımi terminály a pronájem strojového èasu byl jedinı monı ukazatel pro úètování. Sálovı poèítaè lze pøirovnat k dnešním datacentrùm, oboje plní funkci centrálního úloištì a vıpoèetního støediska, ke kterému se staèí pøipojit pomocí tenkého klienta, døíve terminálu, dnes napøíklad webového prohlíeèe a data zpracovávat vzdálenì.
+
+Právì poèátkem sedmdesátıch let zaèali vznikat první poèítaèové sítì, kde tenkı klient obsahoval pouze klávesnici a vıstupní zaøízení. Veškeré úkony zpracovával právì sálovı poèítaè. Zpracování dat na dálku, ani bychom se museli starat o to, kde a na jakém stroji bude vıpoèet proveden, to je hlavní myšlenka dnešního cloud computingu. Tedy trend se opìt vrací k obøím sálùm datovıch center, kde jsou provádìny vıpoèetní úkony. Strojovı èas je poskytován jako sluba.
+
+\subsubsection{Pøítomnost}
+Od sedmdesátıch let ICT vıvoj smìøoval spíše k osobním poèítaèùm. Veškeré vıpoèty se s nástupem osobních poèítaèù zaèaly pøesouvat do prostor jednotlivıch firem a domácností. K tomu došlo pøevánì se sniující se cenou osobních poèítaèù a také nedostupnosti a cenì pøístupu k síti Internet. Následnì kolem roku 2002 zaèal vznikat první opravdovı cloud. V té dobì ji byla dostateèná infrastruktura a propustnost sítí na to, aby bylo moné realizovat velké datové pøenosy a tak zasílat objemná data do datovıch center na vıpoèet a opìtovnı jejich pøíjem s vısledky.
+
+V roce 2002 spouští jako první Amazon svoji sluby Amazon Web Services ke které se dá datovat první milník cloud computingu jako takového. O pár let pozdìji spouští i svoje další sluby S3 a EC2. A a následnì v roce 2008 se pøidávají další poskytovatelé slueb Google s jejich App Engine a o rok pozdìji Microsoft s Windows Azure.
+
+Dnes na trhu operuje spousta více, èi ménì kvalitních a úspìšnıch poskytovatelù cloudovıch slueb.
+
+Vıvoj postoupil, vıpoèetní vıkon a úlonı prostor jak ve firemní, tak domácí sféøe zaèíná bıt nedostaèující a proto se vıkon vyuívá právì z cloudù, kde vıpoèet mùe probìhnout mnohem rychleji a "`levnìji"'.
+
+\subsubsection{Pøedpokládanı smìr vıvoje}
+Vize, kterou mám je taková, e cloud a vzdálenı pøístup naprosto nahradí dnešní pojetí poèítaèù a veškerı obsah bude ukládán v datovıch centrech spoleèností. My se k nìmu budeme pouze pøipojovat pomocí tenkıch klientù. Ji dnes vidím právì tento vıvoj napøíklad v oblasti mobilních zaøízení, která nedisponují vıpoèetním vıkonem ani úloištìm a vìtšinu obsahu získávají pomocí bezdrátového pøipojení právì z cloudu, a u jako multimédia nebo osobní data, která si stahují pouze na dobu nezbytnì nutnou.
+
+Mojí vizí tedy je, e se svìt postupnì opìt navrátí ke klasickım terminálùm, pouze dnes asi spíše v pojetí tabletù a jinıch mobilních zaøízení.
+
+\subsection{Co je to cloud}
+Co je to tedy cloud computing a k èemu je nám dobrı? Jedná se o pronajímání vıpoèetního vıkonu jako sluby.
+
+Zatímco bychom ve firmì mìli velkı a drahı server, kterı bychom museli spravovat, zálohovat a starat se o nìj, tak tuto starost mùeme pøesunout na nìkoho jiného. Pøi poøízení vlastního serveru se poèítá s tím, e se po urèité dobì obmìní novım a vıkonnìjším øešením. Pøípadnì se pouze obmìní jeho komponenty (procesor, pamì, ...) co je doèasné øešení. V tomto pøípadì, kdy firma poøizuje náhradu v podobì vıkonnìjšího stroje se nazıvá vertikální škálování (scale up). Tato metoda je ovšem vhodná pro menší firmu s malım poètem pøipojenıch aktivních uivatelù. Cloudové øešení je èasto sloené ze slabších a ménì vıkonnıch strojù, které jsou spojeny pomocí síové infrastruktury a navenek se tváøí pro uivatele jako jeden supervıkonı stroj. Jedná se o takzvané horizontální škálování (scale out). Toto øešením má tu vıhodu, e dokáe uivatelùm pøizpùsobovat mnohem lépe své poadavky a v pøípadì potøeby vyššího vıkonu pøidat další slabší stroj do sítì, nebo naopak nìkteré pro úsporu doèasnì vypnout.\nocite{wiki:Skalovatelnost}
+
+\subsubsection{Uivatelskı pohled}
+Jak vnímá cloudové sluby uivatel? Vidí je tak, e se jedná o aplikace, ke kterım mùe pøistupovat odkudkoliv, nemusí si nic instalovat do poèítaèe a data, která v cloudu vyuívá nemá uloené u sebe na disku v poèítaèi, ale nìkde na vzdáleném serveru. Hlavní vıhodu vidí v tom, e o data nepøichází s odcizenım fyzickım zaøízením, kdy mu notebook nìkdo ukradne na letišti.
+
+Jako další nespornou vıhodu vidí v tom, e data jsou, na rozdíl od jeho notebooku, zálohována.
+
+\subsubsection{Jak vidí cloud vıvojáø}
+Z pohledu vıvojáøe se tedy jedná o poskytovanı server na kterém bìí operaèní systém a vıvojové bìhové prostøedí. Typicky se jedná o server s nasazenım operaèním systémem GNU Linux a nebo serverové verze Microsoft Windows. Servery jsou rozmístìny na nìkolika geografickıch místech po celém svìtì a tak nehrozí vıpadek a ztráta dat, i pøi pøírodní katastrofì, kterou si bìnı uivatel vùbec nepøipouští. Na tìchto serverech je v rámci cloudu poskytován úlonı prostor pro data, databáze a webovı server, kterı zprostøedkovává slubu uivatelùm. Nìkteøí poskytovatelé nabízejí i další sluby jako pøidanou hodnotu.
+
+Aplikace jsou doruèovány jako HTTP sluby, tvoøené pøevánì HTML, CSS a asynchronním JavaScriptem, díky tomu pro zobrazení takové aplikace staèí moderní webovı prohlíeè. Díky HTML5 jsou tyto aplikace dostupné i v offline verzi, kdy se novì vzniklá data synchronizují do cloudu po pøipojení k Internetu.
+
+Další moností, jako doruèovat sluby cloudu uivatelùm je vyuití vzdálené plochy, kdy se uivateli zobrazuje vzdálené prostøedí pøímo na jeho monitoru a jeho zobrazovací zaøízení (poèítaè, tablet, mobilní telefon, a další) se chová pouze jako tenkı klient, kterı má na starost pouze pøijímat obraz. Této metody se vyuívá napøíklad u sluby \nameref{sec:onlive}
+
+K zajištìní stability sluby a rozloení náporu se vyuívá sluby CDN. To je sluba, která pøesmìruje uivatele na sever, kterı je k nìmu nejblíe na cestì v síti. Má tedy nejlepší odezvu a dostupnost slueb. Pøípadnì je tato sluba vyuita pro rozloení zátìe v pøípadì, e nìkterı server je více zatíen a nápor by nemusel ustát.
+
+Cloud mùe bìet a fungovat díky virtualizaci slueb a hardware. Virtualizace umoòuje oddìlení slueb jednotlivıch klientù od sebe a takté dynamickou zmìnu vıkonu dle poadavkù. Virtualizace s dostateènım vıpoèetním vıkonem je umonìna díky škálovatelnosti zaøízení. Zaøízení jsou tedy všeobecnì ménì vıkonné servery, dalo by se øíci i obyèejné osobní poèítaèe, propojeny do jednoho velkého celku pomocí poèítaèové sítì. Jejich vıkon je díky pouití horizontálního škálování zvyšován podle poètu pøipojenıch malıch serverù a mùe rùst donekoneèna. 
+
+TODO: virtualizace
+
+
+Slubu cloud computing mùeme rozdìlit dle následujících kategorií:
+\subsubsection{Dle poskytovanıch slueb}
+
+\paragraph{SaaS -- Software as a Service:}
+V tomto pøípadì klient poaduje od cloudu pouze zprostøedkování vyuívání cizího nebo vlastního softwaru, kterı pobìí na strojích tøetí strany. Aplikace je tedy pronajímána jako sluba. Klient tedy platí za pøístup a zprostøedkování aplikace. Jako pøíklad mùeme uvést napøíklad \href{apps.google.com}{Google Apps}, nebo \href{http://domains.live.com}{Microsoft Outlook}.
+
+\paragraph{PaaS -- Platform as a Service:}
+Platforma jako sluba znamená, e nám poskytovatel slueb nabízí celé prostøedí pro vıvoj aplikací, které následnì bìí v cloudu. Poskytován je jak IDE pro vıvoj, tak i API, pøes které se vyvíjí, pøípadnì programovací jazyk, ve kterém následnì aplikace na serveru bìí. Nevıhodou je, e se jedná o proprietární øešení a je vìtšinou nepøenosné. Jako pøíklad mùeme uvést \href{appengine.google.com}{Google App Engine}.
+
+\paragraph{IaaS -- Infrastructure as a Service:}
+Posledním zástupcem je infrastruktura jako sluba, kdy je poskytován samotnı hardware. O nìj se stará poskytovatel a nám tak odpadá starost s nefunkèností fyzickıch zaøízení. Jedná se vlastnì o virtualizaci, a my se staráme pouze o vlastní aplikace. Zástupcem této sluby mùe bıt napøíklad \href{http://aws.amazon.com/}{Amazon Web Services}.
+
+
+\subsubsection{Dle publikace slueb}
+\paragraph{Veøejnı cloud:} pod tímto pojmem rozumíme slubu, která je poskytována plošnì, pro všechny uivatelé se zobrazuje a poskytuje stejnı obsah, nebo velice podobnı. Jako cloudovou veøejnou slubu je moné si pøedstavit tøeba stream servery, které poskytují multimediální obsah široké veøejnosti. Jako pøíklad mùeme uvést všem dobøe známı video server  \href{http://youtube.com}{youtube.com}, dále \href{http://vimeo.com}{vimeo.com} a z hudebních serverù pro pøíklad \href{http://grooveshark.com}{grooveshark.com} a nebo \href{http://soundcloud.com}{soundcloud.com}.
+
+\paragraph{Privátní cloud:} je, pokud k nìmu má pøístup pouze urèitá skupina uivatelù, kteøí ji vyuívají. Typickım pøíkladem budi cloud, kterı vyuívá spoleènost pro ukládání firemních dat. Cílem takového cloudu bude, aby k nìmu nemìla pøístup neoprávnìná osoba, proto cloud privátní. Jako privátní cloud bychom mohli povaovat \href{https://drive.google.com}{Google Drive} nebo slubu \href{https://dropbox.com/}{Dropbox}, které se ovšem díky monosti vytváøet veøejné odkazy a sdílet vnitøní data, øadí ji spíše do cloudovıch slueb hybridních.
+
+\paragraph{Hybridní cloud:} tento model vyuívá pøedchozích obou variant, které jsou spolu spojeny pomocí komunikaèního protokolu. Pro veøejnost se tedy cloud jeví jako veøejnı, pøesto mùe obsahovat mnohem více informací, ne ke kterım se bìnı uivatel dostane a s kterımi tak mùe pracovat.
+Vıhodou hybridního cloudu je monost vyuívat slueb tøetích stran, ani bychom jakkoliv ovlivnili privátní data a museli je poskytovat veøejnì.
+
+\subsubsection{Vıhody}
+
+\begin{description}
+  \item [Údrba] z pohledu zákazníka je nulová. Není tøeba instalovat aktualizace, nebo instalaci SW na jednotlivé stroje. Díky tomu, e vše probíhá z jediného místa, staèí vymìnit software na jednom místì a okamitì ho získají všichni.
+	\item [Vıkon] je vdy dostateènı. Zatímco v pøípadì lokálního serveru je jeho vıkon vìtšinu èasu pøedimenzovanı a v okamiku, kdy je ho potøeba opravdu hodnì najednou je nedostateènı, v pøípadì cloudu toto neplatí. Pokud potøebujeme vìtší vıkon, necháme si ho pøidìlit, nebo je doèasnì pøidìlen automaticky. V dobì, kdy náš vıpoèetní vıkon není potøeba, vyuívá ho nìkdo jinı.
+  \item [Hardware] není potøeba poøizovat, tedy nám nezastarává a není potøeba poøizovat novìjší stroje, co by bylo spojeno s vysokımi náklady. Dále díky tomu nemusíme øešit jejich napájení a nutnost mít místnost s klimatizací.
+  \item [Mobilita] je zajištìna díky vzdálenému pøístupu k aplikaci, tedy není nutné, aby se uivatelé pøipojovali z jediného místa a mohou slubu vyuít odkudkoliv.
+\end{description}
+
+\subsubsection{Nevıhody}
+Hlavním odmítnutím pøechodu, nebo èásteèné migraci na cloudové øešení jsou vypíchnuté nevıhody a strach, pojïme si je tedy pøedstavit.
+
+\begin{description}
+  \item [Závislost] na tøetí stranì vidím jako nejvìtší nevıhodu. Pokud si vybereme slubu u spoleènosti, která se za rok rozhodne svoje sluby ukonèit, nemáme s tím monost nic udìlat. Nemáme monost ovlivnit, kdy se tøetí strana rozhodne svùj software zmìnit na jinou verzi apod.
+  \item [Vıpadek] Internetu je kritickı pro vzdálenı pøístup ke slubì vyuívající cloud.
+  \item [Dohled] nad slubou má tøetí strana a ne my. Nemáme tedy monost monitorovat, jakı je stav serverù, kde jsou naše data a podobnì.
+  \item [Pøenositelnost] je další problém. Aplikace bıvá napsána pøímo pro prostøedí cloudu kterı vyuíváme, pokud se rozhodneme zmìnit spoleènost, musíme pøepsat i aplikace a migrovat veškerá data, pokud nám na nich záleí.
+  \item [Export dat] není té samozøejmostí, migrovat proto jinam je celkem obtínı úkol.
+\end{description}
+
+\section{Bezpeènost a cloud}
+Asi první otázkou, kterou si kadı poloí po zmínìní slova cloud a odevzdání citlivıch dat do rukou jiné spoleènosti, je otázka bezpeènosti. Jeliko data pøesouváme k cizímu subjektu, je tato otázka zajisté na místì a mìla by bıt zodpovìzena pøed jakımkoliv prvním nasazením cloud computingu.
+
+\subsection{Obecné obavy}
+TODO
+
+\subsubsection{Data u tøetí spoleènosti}
+Hlavní obavou, která se objeví jako první je, e ukládáme data mimo firmu a její servery, tedy do rukou nìkoho tøetího. Nikdy tedy nemùeme mít jistotu, jak s daty zachází a hlavnì, jak dobøe je jeho øešení zabezpeèení dobré. Mìli bychom proto cloud vyuívat obezøetnì a rozhodovat, která data jsou ji tak citlivá, aby v cloudu bıt nemohla. 
+
+\subsubsection{Cracking}
+
+\subsubsection{DDoS útok}
+Pokládanou otázkou mùe bıt také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáe odolávat takovému útoku lépe, ne virtualizovanı server, kterı mùe zvıšit vıkon a spíše útoku odolat. Druhá otázka která se naskıtá ovšem je, zda-li firemní server v dobì, kdy na nìj je veden útok není moné odpojit od vnìjší sítì a dále ho lokálnì vyuívat. Tím by se omezil pøístup pouze vzdálenì pøipojenım uivatelùm a to pouze v pøípadì, e do firemní sítì neexistuje druhá cesta skrz VPN, pøes kterou by se mohli uivatelé pøipojit a pracovat se serverem z lokální strany sítì.
+V kadém pøípadì, pokud bude systém èelit DDoS útoku, bude s ním s nejvìtší pravdìpodobností tak jako tak dost tìké pracovat.
+
+\subsection{Ztráta dat}
+TODO
+
+\subsection{Odcizení a zneuití dat}
+TODO
+
+\subsection{Zálohování}
+TODO
+
+
+\subsection{Sedm rizik dle Gartner}
+\subsubsection{Privilegovanı uivatelskı pøístup}
+\subsubsection{Dodrování právních pøedpisù}
+\subsubsection{Geografické umístìní dat}
+\subsubsection{Segregace dat}
+Segregace\footnote{Segregace, dle slovníku cizích slov, znamená: oddìlování, rozdìlování, vyluèování.}
+\subsubsection{Obnovení/Zotavení}
+\subsubsection{Podpora prùzkumu}
+\subsubsection{Dlouhodobá ivotaschopnost}
+
+
+\subsection{Vıhody zabezpeèení}
+Kromì nevıhod, má zabezpeèení v cloudu i své vıhody, pojïme si je tedy shrnout.
+\subsubsection{Centralizace}
+Díky centrálnímu øízení zabezpeèení pøístupu do sluby cloud je jeho správa jednodušší, ne pøi správì nìkolika strojù. Veškeré nastavení se okamitì aplikuje pro všechny sluby a odpadá práce s vícenásobnou konfigurací.
+
+Veškerá data jsou navíc na jednom místì a uivatelé mají pøístup pouze k datùm, která potøebují. V pøípadì ztráty koncového zaøízení spoleènost nepøichází o nikterak závanou èást know-how.
+\subsubsection{Monitorování}
+Sluby cloudu umoòují podrobnì monitorovat chování a provádìt audit pøi pøístupu. Tedy je vše logováno a lze dohledat. Navíc díky monitoringu dochází v pøípadì vıpadku sluby k okamitému spuštìní "`záloního"' øešení tak, aby nedocházelo k vıpadkùm sluby jako takové. Pøesun na jinı stroj je moné provést i v pøípadì, kdy dojde k napadení jednoho stroje, kterı pøípadnì doèasnì odstavíte a mùete jej analyzovat pro odhalení bezpeènostní slabiny.
+\subsubsection{Protokolování}
+Pod pojmem protokolování si lze pøedstavit obecnì pouívanìjší vıraz a to logování. Protokolování v cloudu se provádí v podstatì u všech operací a po celou dobu bìhu cloudu. Je více ne vhodné zaznamenávat celkové dìní a chod cloudu pro zpìtnou kontrolu a pøípadné zjištìní spotøebovaného vıkonu apod. V cloudu vìtšinou není nìjaká speciální potøeba protokolování omezovat. Resp. o jeho záznamy se mùeme zajímat a v dobì, kdy by nám zaèal docházet úlonı prostor a náklady na navıšení úloného prostoru by byli neadekvátní k pozitivùm protokolování. V takovém pøípadì by mìlo smysl omezit protokolování na kratší dobu, ne od poèátku vìkù.
+\subsubsection{Bezpeènostní testování}
+O zabezpeèení cloudu se z velké èásti stará její poskytovatel. Ve svıch slubách vìtšinou zahrnuje antivirovı a další software a stará se o zabezpeèení celého cloudu jako celku. Díky tomu, e cloud vyuívá mnoho klientù a zabezpeèení se vyvíjí pro všechny najednou, cena nákladù na vıvoj a testování nového systému zabezpeèení rapidnì klesá s poètem klientù, kteøí cloud vyuívají. Díky tomu nám klesnou vıdaje za zabezpeèení na nutné minimum, ke kterému bychom se s vlastním øešením jen tìko pøibliovali.
+
+\subsection{Legislativa}
+Pùvodnì aplikace bìeli na firemním serveru, tedy v místì kde typicky firma sídlila a zároveò podnikala. Tohle cloud mìní, data a aplikace jsou z pravidla umístìny v jiném státì. Tím vyvstává otázka legislativy. Jeliko aplikace bìí na serveru v jedné mezi a je vyuívána v jiné, které zákony se tedy na ni mají vztahovat? Zákony zemì, kde jsou servery fyzicky umístìny, nebo místa, kde je vykonávána èinnost firmy?
+
+I na tyto otázky se musí dokázat odpovìdìt. Zpravidla se musí brát ohled na legislativy ve všech zemích, co v pøípadì právì cloudu je velice obtíné. Mnoho aplikací mùe bìet paralelnì na mnoha místech na svìtì.
+
+Na tuto otázku bohuel v rámci práce nedokái odpovìdìt a bylo by zapotøebí hlubší zamyšlení se specialistou na legislativu.
+
+\section{Proè zaèít vyuívat cloud}
+TODO
+
+\section{Cloud od velkıch spoleèností}
+Za cloudové øešení lze, z toho co zatím víme, povaovat v podstatì jakékoliv virtualizované øešení, které má vyøešeno rozloení zátìe na nìkolik fyzickıch zaøízení, je zálohované a umoòuje nám vzdálenı bìh aplikací. Takovı cloud je moné spustit i v rámci podniku i kdy bychom to asi pøesto cloudem nenazıvali. Zde se podíváme na nìkolik zástupcù, kteøí poskytují cloud s velkım cé, tedy zabìhlé a renomované øešení velkıch korporací.
+
+\subsection{Salesforce}
+
+
+\subsection{Amazon}
+Druhı zástupce cloudovıch slueb, patøící k tìm nejvìtším dodnes. Historie slueb Amazonu sahají k témìø samotnému poèátku oznaèení cloud, do let po roce 2002. Amazon v té dobì spustil jejich první slubu Amazon web services (AWS), co je dnes asi nejkomplexnìjší cloudová sluba vùbec. Poskytuje nepøeberné mnoství slueb, od vıpoèetního vıkonu, pøes úloištì, databáze, platební systémy, pøes monitorování sítì, a po "`pracovní sílu"' (inteligenci) lidí.
+
+Pro komplexnost bych zde pøedstavil alespoò pár základních, pro tuto práci zajímavıch, slueb.
+
+\subsubsection{Elastic Compute Cloud}
+EC2, jak se zkrácenì oznaèuje je pronájen vıpoèetního vıkonu cloudu. Jedná se o pronajímané virtuální servery od èistıch systémù a ke komplexním øešením s pøedinstalovanımi aplikacemi.
+\subsubsection{Simple storage service --- S3}
+Nejspíše nejvyuívanìjší sluba Amazonu. Jedná se o úloištì, tedy slubu, kam mùeme nahrávat data a uskladnit je v prostoru cloudu. Jedná se o neomezené (omezením jsou finanèní monosti hostované firmy) úloištì pro libovolnı obsah. Sluba se dá vyuívat buï samostatnì, jako jednoduché úloištì s poskytováním dat pøed HTTP, nebo jako úloištì pro ostatní sluby AWS.
+
+Další zajímavou pøidanou hodnotou sluby je poskytování obsahu pøes distribuovanou sí BitTorrent. Pokud je tedy potøeba distribuovat obsah více pøíjemcùm, je tato volba velice zajímavou moností. Bohuel má omezení, kdy je takto moné distribuovat soubory pouze menší 5 GB. Pøesnı popis je dostupnı na \href{http://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html}{docs.aws.amazon.com}
+
+\subsubsection{Amazon CloudFront}
+CloudFront je sluba pro decentralizované distribuované dodání obsahu. Sluba funguje jako CDN, kdy obsah je zrcadlen na nìkolika serverech po celém svìtì a zaruèuje co nejrychlejší doruèení dat k uivatelùm. Díky CDN se pouije nejbliší geograficky, nebo nejménì vytíenı server. Vıhodou je i to, e je velice malá šance, e by vypadli všechny servery a obsah se tak stal úplnì nedostupnı, spíše naopak je zaruèeno, e obsah bude velice dobøe dostupnı.
+
+Jedná se tak o vyspìlejší úloištì S3 se kterım tato sluba spolupracuje. V S3 vyberete obsah, kterı se má rozdistribuovat mezi ostatní datová centra aby byl dostupnìjší.
+
+\subsection{Google}
+TODO
+
+\subsection{IBM}
+TODO
+
+\subsection{Microsoft}
+TODO
+
+\subsection{VMware}
+TODO
+
+\subsection{Další jiná vyuití cloudu}
+TODO
+
+\subsubsection{Dropbox}
+Dropbox je synchronizaèní cloudová sluba a úloištì. Sluba funguje na principu synchronizace všech klientskıch stanic a mobilních telefonù a jejich obsahu. Data jsou primárnì ukládána v koncovıch stanicích a obsah se klonuje do úloištì dropboxu. Odtud se v pøípadì zjištìní, e na nìkterém zaøízení obsah chybí kopíruje i do nìho. 
+
+V pøípadì mobilních zaøízení se nesynchronizuje pøímo, ale jako jednotlivé soubory, aby v zaøízení nezabíral tolik místa a zbyteènì nevytìoval omezenı a pomalı datovı tarif. Sluba umoòuje automaticky z mobilních zaøízení synchronizovat poøízenı multimédiální obsah.
+
+Další moností sluby je sdílení sloek mezi více uivateli sluby, kdy se ostatním zobrazí obsah sdíleného adresáøe se kterım následnì mohou pracovat.
+
+Sluba poskytuje i pøístup k historii upravenıch souborù -- provádí verzování známé ze systémù jako SVN nebo Git.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/dropbox_versioning.png}
+	\caption{Verzování ve slubì dropbox}
+	\label{fig:dropbox_versioning}
+\end{figure}
+
+\subsubsection{OnLive}
+\label{sec:onlive}
+Nabízí koncepènì naprosto jiné sluby, ne zde všechny zmínìné. Jedná se o slubu doruèování obrazu vzdáleného serveru, kterı funguje jako vıpoèetní datové centrum. V tomto centru se na farmì grafickıch karet a procesorù provádí vysoce nároèné vıpoèetní operace a jejich vısledek v podobì obrazu je doruèován po kvalitní datové lince k uivatelùm. Sluba by se dala pøirovnat k funkci vzdálené plochy.
+
+Sluba aktuálnì nabízí dvì varianty poskytovaného obsahu.
+
+\paragraph{OnLive Games}
+V prvním pøípadì je doruèovanı obsah zamìøen na herní prùmysl, kdy se v datovém centru vypoèítávají operace hry a klientovy je doruèen pouze obraz v podobì snímkù.
+Od uivatele jde interakce na server, kde se zakomponuje pohyb jeho polohovacím zaøízením do hry a obraz se zmìnou je opìt odeslán k uivateli. V tomto pøípadì je kladen vysokı nárok na kvalitní internetové pøipojení a nízkou latenci, jeliko je tøeba, aby byl obraz i reakce plynulé.
+\paragraph{OnLive Desktop}
+Druhou variantou je sluba Desktop. V tomto pøípadì je poskytován vzdálenì operaèní systém spoleènosti Microsoft s pøedinstalovanım kanceláøskım balíkem Office. Systém bìí na vysoce vıkonnıch serverech, tedy práce s ním je plynulá a reakce okamité. Opìt zde platí podmínka na kvalitní datovou linku, ovšem ji ne s tak vysokımi nároky jako u vıše zmiòované herní sluby. Sluba je zamìøena na uivatele na cestách, kdy potøebují z rùznıch zaøízení pøistupovat ke svému poèítaèi a nechtìjí nebo nemohou sebou neustále brát notebook. Systém je moné spouštìt i na tabletech se systémem Mac a Android.
+
+\subsubsection{OwnCloud}
+TODO
+
+\subsubsection{Cloud9}
+TODO
+
+\section{Nasazení a programování pro cloud}
+TODO
+
+\section{Popis praktické èásti}
+TODO
+
+\section{Závìr}
