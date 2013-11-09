@@ -120,7 +120,9 @@ Pokud vezmeme data ze zaměstnaneckých zařízení a všechna je přesuneme do 
 S výše popsaným problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problém odcizení a zneužití dat. V případě odcizení plných dat je firma postižena v celém rozsahu, kdy přichází o kompletní know-how a cenné informace. V případě využití cloudu funguje notebook pouze jako tenký klient a na jeho disku je jen nutné postačující minimum důležitých dat. V tomto případě firma nepřichází o celé své duševní bohatství a bez větších problémů může nadále bez potíží fungovat.
 
 \subsection{Zálohování}
-TODO
+Při selhání lokálního serveru přicházíme téměř vždy o data. Prvním krokem, jak o svá data nepřijít je zrcadlení disků. Tato metoda umožňuje zabezpečit data proti poruše pevného disku, kdy jsou data zrcadlena na druhém (a dalších) disku a je tím zvýšena bezpečnost fyzických dat. Ovšem ani tento případ nechrání data proti výpadku napájení (možnost poškození konzistence dat nebo databáze), proti přírodním katastrofám (požáru, úderu blesku, zemětřesení) v místě kde se nachází server. Tomuto případu zabrání již pouze zrcadlení dat do jiné destinace, kdy máme druhý server na jiném místě. Toto řešení již ovšem začíná být nákladné, nejen na údržbu, ale i správu a kvalitní konektivitu pro synchronizaci obou serverů.
+
+V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\nocite{podnikatel:zalohovani}
 
 
 \subsection{Sedm rizik dle Gartner}
@@ -155,12 +157,30 @@ I na tyto otázky se musí dokázat odpovědět. Zpravidla se musí brát ohled 
 Na tuto otázku bohužel v rámci práce nedokáži odpovědět a bylo by zapotřebí hlubší zamyšlení se specialistou na legislativu.
 
 \section{Proč začít využívat cloud}
-TODO
+Cloud nám může nabízet spoustu výhod, jak je popsáno výše. Mezi hlavní lákadla, proč cloud opravdu nasadit uvádí \href{http://www.cloud-lounge.org/why-use-clouds.html}{cloud-lounge.org}\cite{cloudlounge:ProcCloud} tyto:
+\begin{description}
+	\item [Snížení nákladů] díky sdílení hardware a jeho efektivnímu sdílení mezi více klienty.
+	\item [Univerzální přístup] umožní přístup odkudkoliv a práci přes Internet i z domova, pokud by bylo potřeba.
+	\item [Aktuální software] díky neustálému vývoji a dobré zpětné vazbě od více klientů.
+	\item [Volba aplikací] umožní výběr z několika aplikací pro cloud a zvolení té vhodné pro klienta a jeho potřeby.
+	\item [Potenciál být úspornější a ekologičtější] opět díky sdílenému výpočetnímu výkonu, kdy se nespotřebovává tolik energie, pokud výkon nevyužíváme naplno.
+	\item [Flexibilita] díku možnosti změny aplikací dle potřeb klienta.
+\end{description}
 
 \section{Cloud od velkých společností}
 Za cloudové řešení lze, z toho co zatím víme, považovat v podstatě jakékoliv virtualizované řešení, které má vyřešeno rozložení zátěže na několik fyzických zařízení, je zálohované a umožňuje nám vzdálený běh aplikací. Takový cloud je možné spustit i v rámci podniku i když bychom to asi přesto cloudem nenazývali. Zde se podíváme na několik zástupců, kteří poskytují cloud s velkým cé, tedy zaběhlé a renomované řešení velkých korporací.
 
 \subsection{Salesforce}
+Salesforce je jedna z prvních společností, která začala cloudové služby nabízet. Jejich prvním produktem byl oblíbený cloudový CRM\footnote{Customer relationship management --- řízení vztahů se zákazníky} software.
+
+Aktuálně Salesforce nabízí několik hlavních produktů.
+
+\subsubsection{Sales Cloud}
+\subsubsection{Service Cloud}
+\subsubsection{ExactTarget Marketing Cloud}
+\subsubsection{Salesforce Platform}
+\subsubsection{Salesforce Chatter}
+\subsubsection{Salesforce Work.com}
 
 
 \subsection{Amazon}
@@ -181,16 +201,37 @@ CloudFront je služba pro decentralizované distribuované dodání obsahu. Slu�
 Jedná se tak o vyspělejší úložiště S3 se kterým tato služba spolupracuje. V S3 vyberete obsah, který se má rozdistribuovat mezi ostatní datová centra aby byl dostupnější.
 
 \subsection{Google}
-TODO
+\subsubsection{Drive}
+\subsubsection{Keep}
+\subsubsection{Enterprise}
+\begin{itemize}
+	\item Disk, Apps, Gmail, Hangouts
+\end{itemize}
+\subsubsection{Cloud Platform}
+\subsubsection{Cloud Print}
+\subsubsection{App Engine}
+\subsubsection{Compute Engine}
+\subsubsection{Cloud Storage}
+\subsubsection{BigQuery}
+
 
 \subsection{IBM}
-TODO
+\subsubsection{IBM SmartCloud Enterprise} IaaS a PaaS
+\subsubsection{IBM SmartCloud Application Services}
 
 \subsection{Microsoft}
-TODO
+\subsubsection{Azure}
+\subsubsection{Intune}
+\subsubsection{Office 365}
+\subsubsection{Hyper-V}
+\subsubsection{Dynamics CRM Online}
 
 \subsection{VMware}
-TODO
+\href{http://www.vmware.com/cz/products.html}{vmware produkty}
+\subsubsection{vCloud Hybrid Service}
+\subsubsection{vCloud}
+\subsubsection{vSphere}
+\subsubsection{vCenter}
 
 \subsection{Další jiná využití cloudu}
 TODO
