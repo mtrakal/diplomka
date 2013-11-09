@@ -3,15 +3,15 @@
 % http://vavricek.cs.vsb.cz/index.php/LaTeX
 % http://phoenix.inf.upol.cz/propedeutika/2/practice1.html
 
-% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=newlang nìjaká hláška z babelu, jak se zbavit warningu -nefunguje mi :(
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=newlang nÄ›jakÃ¡ hlÃ¡Å¡ka z babelu, jak se zbavit warningu -nefunguje mi :(
 
 \documentclass[
-	12pt, 												% velikost písma
-	%fleqn, 											% zarovnání rovnic do leva
-	leqno, 												% èíslování rovnic vlevo
-	oneside, 											% jednostrannı tisk
-	%twoside,											% oboustrannı tisk
-]{article}											% articke neumí kapitoly, pokud budou potøeba, pouít: report / article
+	12pt, 												% velikost pÃ­sma
+	%fleqn, 											% zarovnÃ¡nÃ­ rovnic do leva
+	leqno, 												% ÄÃ­slovÃ¡nÃ­ rovnic vlevo
+	oneside, 											% jednostrannÃ½ tisk
+	%twoside,											% oboustrannÃ½ tisk
+]{article}											% articke neumÃ­ kapitoly, pokud budou potÅ™eba, pouÅ¾Ã­t: report / article
 %Options -- Point size:  10pt (default), 11pt, 12pt
 %        -- Paper size:  letterpaper (default), a4paper, a5paper, b5paper
 %                        legalpaper, executivepaper
@@ -37,119 +37,119 @@
 \usepackage{amssymb}%
 %\usepackage{graphicx}
 
-%\usepackage{czech}				 			% nastavuje zásady typografie pro èeskou sazbu pomocí csLaTeXu
-\usepackage[czech]{babel} 			% nastavuje zásady typografie pro èeskou sazbu pomocí BABELu
+%\usepackage{czech}				 			% nastavuje zÃ¡sady typografie pro Äeskou sazbu pomocÃ­ csLaTeXu
+\usepackage[czech]{babel} 			% nastavuje zÃ¡sady typografie pro Äeskou sazbu pomocÃ­ BABELu
 
 \usepackage{cmap}
 %\usepackage{mmap}
-%\usepackage{a4wide} 						% nastaví velikost A4 dle evropskıch (tedy i našich) rozmìrù - nefunguje mi :/
-\usepackage[cp1250]{inputenc} 	% jak kódovat èeské znaky
-%\usepackage[utf8x]{inputenc}
-% Pro nastavení písma se musí anstavit fontenc na uvedenı u písma a následnì písmo, nejlépe písma zaèínající il2xxxx.fd
-% Umístìní písem: d:\Software\LaTeX_MikTeX_portable\tex\latex\cslatex\
-\usepackage[IL2]{fontenc} 			% fonty vyladìné pro èeštinu (obávám se, e je to nepouívá :()
-%\usepackage[T1]{fontenc} 			% bìné fonty
+%\usepackage{a4wide} 						% nastavÃ­ velikost A4 dle evropskÃ½ch (tedy i naÅ¡ich) rozmÄ›rÅ¯ - nefunguje mi :/
+%\usepackage[cp1250]{inputenc} 	% jak kÃ³dovat ÄeskÃ© znaky
+\usepackage[utf8]{inputenc}
+% Pro nastavenÃ­ pÃ­sma se musÃ­ anstavit fontenc na uvedenÃ½ u pÃ­sma a nÃ¡slednÄ› pÃ­smo, nejlÃ©pe pÃ­sma zaÄÃ­najÃ­cÃ­ il2xxxx.fd
+% UmÃ­stÄ›nÃ­ pÃ­sem: d:\Software\LaTeX_MikTeX_portable\tex\latex\cslatex\
+\usepackage[IL2]{fontenc} 			% fonty vyladÄ›nÃ© pro ÄeÅ¡tinu (obÃ¡vÃ¡m se, Å¾e je to nepouÅ¾Ã­vÃ¡ :()
+%\usepackage[T1]{fontenc} 			% bÄ›Å¾nÃ© fonty
 
-\renewcommand{\familydefault}{pbk} % serifové zakulacené
-%\renewcommand{\familydefault}{pcr} % pouívá T1
-%\renewcommand{\familydefault}{phv} % bezserifové
-%\renewcommand{\familydefault}{ppl} % serifové, hranatìjší serify
+\renewcommand{\familydefault}{pbk} % serifovÃ© zakulacenÃ©
+%\renewcommand{\familydefault}{pcr} % pouÅ¾Ã­vÃ¡ T1
+%\renewcommand{\familydefault}{phv} % bezserifovÃ©
+%\renewcommand{\familydefault}{ppl} % serifovÃ©, hranatÄ›jÅ¡Ã­ serify
 
-\usepackage[a4paper,inner=4cm,outer=2.5cm]{geometry} % velikost vnìjšího okraje stránek
-\usepackage[a4paper]{geometry}  % velikost vnìjšího okraje stránek
+\usepackage[a4paper,inner=4cm,outer=2.5cm]{geometry} % velikost vnÄ›jÅ¡Ã­ho okraje strÃ¡nek
+\usepackage[a4paper]{geometry}  % velikost vnÄ›jÅ¡Ã­ho okraje strÃ¡nek
 
-\usepackage{graphicx} 					% pro vkládání obrázkù
-\usepackage{verbatim} 					% pro pouití víceøádkovıch komentáøù
+\usepackage{graphicx} 					% pro vklÃ¡dÃ¡nÃ­ obrÃ¡zkÅ¯
+\usepackage{verbatim} 					% pro pouÅ¾itÃ­ vÃ­ceÅ™Ã¡dkovÃ½ch komentÃ¡Å™Å¯
 \usepackage{url} 								% tends to give much more nicely formatted web addresses
-\usepackage[pdftex,colorlinks=true, unicode=true,breaklinks]{hyperref} % obarvování a aktivování odkazù, pro tisk vypnout
+\usepackage[pdftex,colorlinks=true, unicode=true,breaklinks]{hyperref} % obarvovÃ¡nÃ­ a aktivovÃ¡nÃ­ odkazÅ¯, pro tisk vypnout
 
 \usepackage{dcolumn}						% zarovnanie cisiel v tabulke podla des. ciarky
-\usepackage[noprefix]{nomencl}	% prı pouiváno pro generování zkratek pouitıch v dokumentu
-%\usepackage[nottoc]{tocbibind}	% pøidá do obsahu Bibliografii - nevím, jak se pouívá...
+\usepackage[noprefix]{nomencl}	% prÃ½ pouÅ¾ivÃ¡no pro generovÃ¡nÃ­ zkratek pouÅ¾itÃ½ch v dokumentu
+%\usepackage[nottoc]{tocbibind}	% pÅ™idÃ¡ do obsahu Bibliografii - nevÃ­m, jak se pouÅ¾Ã­vÃ¡...
 
-\usepackage{listings}						% zobrazení zdrojovıch kódù pomocí lstlisting (verbatim asi ne)
+\usepackage{listings}						% zobrazenÃ­ zdrojovÃ½ch kÃ³dÅ¯ pomocÃ­ lstlisting (verbatim asi ne)
 
 \usepackage{ae}									% balik pro konverzi sedmibitovych fontu na osmibitove
 																% (aby slo pouzit deleni slov http://www.abclinuxu.cz/poradna/linux/show/103978
 																% http://www.root.cz/clanky/jak-na-latex-literatura/nazory/
 %\usepackage{indentfirst} 				% odsadi i prvni odstavec v textu
 
-\usepackage{enumerate}          % monost pouít \begin{enumerate}[a)] pro písmennı seznam a další (http://www.ctan.org/tex-archive/macros/latex/required/tools/enumerate.pdf)
+\usepackage{enumerate}          % moÅ¾nost pouÅ¾Ã­t \begin{enumerate}[a)] pro pÃ­smennÃ½ seznam a dalÅ¡Ã­ (http://www.ctan.org/tex-archive/macros/latex/required/tools/enumerate.pdf)
 
-%\usepackage{xfrac}              % pro sazbu matematickıch zlomkù pomocí \sfrac{}{}
-\usepackage{datetime}           % umoní vloení èasu do hlavièky: http://theoval.cmp.uea.ac.uk/~nlct/latex/packages/datetime/datetime-manual.html
+%\usepackage{xfrac}              % pro sazbu matematickÃ½ch zlomkÅ¯ pomocÃ­ \sfrac{}{}
+\usepackage{datetime}           % umoÅ¾nÃ­ vloÅ¾enÃ­ Äasu do hlaviÄky: http://theoval.cmp.uea.ac.uk/~nlct/latex/packages/datetime/datetime-manual.html
 
 \hypersetup{										% obsah popisu PDF souboru
 	baseurl={http://mtrakal.cz},
 	pdfkeywords={},
-	pdftitle={Analıza moností nasazení Cloud computing},
-	pdfauthor={Matìj Trakal},
-	pdfsubject={Diplomová práce}
+	pdftitle={AnalÃ½za moÅ¾nostÃ­ nasazenÃ­ Cloud computing},
+	pdfauthor={MatÄ›j Trakal},
+	pdfsubject={DiplomovÃ¡ prÃ¡ce}
 }
 
-% Zobrazení PDF jako single page
+% ZobrazenÃ­ PDF jako single page
 \pdfcatalog{/PageLayout /SinglePage}
 %\pdfcatalog{/PageLayout /TwoPageRight}
 
 %\usepackage{cmap} 
 %http://usenet.jyxo.cz/cz.comp.cstex/0409/pdflatex-pismenka-bez-diakritiky-po-copy-and-paste-z-acrobat.html
-% nejde s tím pak vygenerovat obsah a další vìci
+% nejde s tÃ­m pak vygenerovat obsah a dalÅ¡Ã­ vÄ›ci
 
-%\usepackage{fancyhdr} 										% hlavièky dokumentù - http://andy-roberts.net/misc/latex/latextutorial8.html
+%\usepackage{fancyhdr} 										% hlaviÄky dokumentÅ¯ - http://andy-roberts.net/misc/latex/latextutorial8.html
 
 
-\frenchspacing 														% aktivuje pouití nìkterıch èeskıch typografickıch pravidel
-\pagenumbering{arabic} 										% arabské èísla stránek
+\frenchspacing 														% aktivuje pouÅ¾itÃ­ nÄ›kterÃ½ch ÄeskÃ½ch typografickÃ½ch pravidel
+\pagenumbering{arabic} 										% arabskÃ© ÄÃ­sla strÃ¡nek
 
 %\makeglossary															% vygeneruje cosi se zkratkama
 %\nomenclature
 \makenomenclature													% vygeneruje soubor se zkratkama
 
-\title{Analıza moností nasazení Cloud computing}
-\author{Matìj Trakal
+\title{AnalÃ½za moÅ¾nostÃ­ nasazenÃ­ Cloud computing}
+\author{MatÄ›j Trakal
 \\Univerzita Pardubice}
-\date{Poslední úprava: \today}
+\date{PoslednÃ­ Ãºprava: \today}
 
 
-%%%%%%%%%%%%%%%%%% Zmìna stylu hlavièky %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% ZmÄ›na stylu hlaviÄky %%%%%%%%%%%%%%%%%%
 %\lhead{\fancyplain{}INEPD 2010 (Hudec)}
-%\lfoot{\fancyplain{}{Matìj Trakal -- \href{http://fei.trtkal.net}{fei.trtkal.net}}}
+%\lfoot{\fancyplain{}{MatÄ›j Trakal -- \href{http://fei.trtkal.net}{fei.trtkal.net}}}
 %\cfoot{\fancyplain{}}
 %\rfoot{\fancyplain{}{\thepage}}
 %\renewcommand{\footrulewidth}{0.5pt}
-%%%%%%%%%%%%%%%%%% Zmìna stylu hlavièky %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% ZmÄ›na stylu hlaviÄky %%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------
 
 
 \begin{document}
-\renewcommand{\baselinestretch}{1.1} 			% velikost øádkování
+\renewcommand{\baselinestretch}{1.1} 			% velikost Å™Ã¡dkovÃ¡nÃ­
 
-\lstset{language=PHP,basicstyle=\footnotesize,frame=leftline,showspaces=false,showstringspaces=false,showtabs=false}	% nastavení defaultního jazyka a velikosti písma ve zdrojácích
+\lstset{language=PHP,basicstyle=\footnotesize,frame=leftline,showspaces=false,showstringspaces=false,showtabs=false}	% nastavenÃ­ defaultnÃ­ho jazyka a velikosti pÃ­sma ve zdrojÃ¡cÃ­ch
 
-\pagestyle{empty} 												% zmìní styl od nynìjší stránky dál do konce dokumentu
+\pagestyle{empty} 												% zmÄ›nÃ­ styl od nynÄ›jÅ¡Ã­ strÃ¡nky dÃ¡l do konce dokumentu
 	\begin{comment}
-		plain - bez èíslování stránek 
-		empty - potlaèí sazbu hlavièky i patièky stránky 
-		headings - umístí promìnnou hlavièku na kadou stránku. Obsah hlavièky je udán v~dokument style. 
-		myheadings - mùete si nadefinovat vlastní hlavièku, a to za pomocí pøíkazù \markboth nebo \markright
+		plain - bez ÄÃ­slovÃ¡nÃ­ strÃ¡nek 
+		empty - potlaÄÃ­ sazbu hlaviÄky i patiÄky strÃ¡nky 
+		headings - umÃ­stÃ­ promÄ›nnou hlaviÄku na kaÅ¾dou strÃ¡nku. Obsah hlaviÄky je udÃ¡n v~dokument style. 
+		myheadings - mÅ¯Å¾ete si nadefinovat vlastnÃ­ hlaviÄku, a to za pomocÃ­ pÅ™Ã­kazÅ¯ \markboth nebo \markright
 	\end{comment}
 
-% Desky pro tištìnou verzi
+% Desky pro tiÅ¡tÄ›nou verzi
 \include{struct/01Desky}
 
-% Úvodní strana
-\setcounter{page}{1} 											% nastaví èíslování od této pozice na èíslo
+% ÃšvodnÃ­ strana
+\setcounter{page}{1} 											% nastavÃ­ ÄÃ­slovÃ¡nÃ­ od tÃ©to pozice na ÄÃ­slo
 \include{struct/02UvodniStrana}
 
-% Zadání Bc. práce (oskenované)
+% ZadÃ¡nÃ­ Bc. prÃ¡ce (oskenovanÃ©)
 \include{struct/03ZadaniBcPrace}
 
-\renewcommand{\baselinestretch}{1.1} 			% velikost øádkování
-% Prohlášení autora
+\renewcommand{\baselinestretch}{1.1} 			% velikost Å™Ã¡dkovÃ¡nÃ­
+% ProhlÃ¡Å¡enÃ­ autora
 \include{struct/04Prohlaseni}
 
-% Podìkování
+% PodÄ›kovÃ¡nÃ­
 \include{struct/05Podekovani}
 
 % Abstrakt / Souhrn
@@ -159,23 +159,23 @@
 \include{struct/07Zkratky}
 %
 %% Seznam tabulek
-%%\thispagestyle{empty} % tato stránka nebude mít v zápatí èíslo
+%%\thispagestyle{empty} % tato strÃ¡nka nebude mÃ­t v zÃ¡patÃ­ ÄÃ­slo
 %\listoftables
 %\newpage
 
-% Seznam obrázkù
-%%\thispagestyle{empty} % tato stránka nebude mít v zápatí èíslo
+% Seznam obrÃ¡zkÅ¯
+%%\thispagestyle{empty} % tato strÃ¡nka nebude mÃ­t v zÃ¡patÃ­ ÄÃ­slo
 \listoffigures
 \newpage
 
 % Obsah
-%\thispagestyle{empty} % tato stránka nebude mít v zápatí èíslo
+%\thispagestyle{empty} % tato strÃ¡nka nebude mÃ­t v zÃ¡patÃ­ ÄÃ­slo
 \tableofcontents
 \newpage
 
 %\include{chap/pokusPisma}
 \pagestyle{plain}
-% Úvod
+% Ãšvod
 % \include{text/Uvod}
 \include{textova/all}
 \include{poznamky}
@@ -185,58 +185,58 @@
 
 
 
-%!!!!!!!! ZAÈÁTEK PRAKTICKÉ ÈÁSTI !!!!!!!!!!
+%!!!!!!!! ZAÄŒÃTEK PRAKTICKÃ‰ ÄŒÃSTI !!!!!!!!!!
 % \include{prakticka/PraktickaUvod}
 
 
 
-% Záver
+% ZÃ¡ver
 % \include{chap/Zaver}
 
-% Seznam pouité literatury (citace)
-%\nocite{*} 															% vytvoøí seznam literatury ze všech citací obsaenıch v souboru BibTeXu
-%\nocite{Nobody06} 												% funguje jako \cite (pøidá do soub.aux na místo, které je urèeno umístìním
-																					% tohoto pøíkazu v textu, poloku), ale nevytiskne odkaz v textu
-%\cite{Ceska1994} 												% vytvoøí „odkaz“ do textu
-%\ref{kriz} 															% køíovı odkaz s odkazem na %rel
-%\href{http://blog.trtkal.net}{odkaz} 		% externí odkaz
+% Seznam pouÅ¾itÃ© literatury (citace)
+%\nocite{*} 															% vytvoÅ™Ã­ seznam literatury ze vÅ¡ech citacÃ­ obsaÅ¾enÃ½ch v souboru BibTeXu
+%\nocite{Nobody06} 												% funguje jako \cite (pÅ™idÃ¡ do soub.aux na mÃ­sto, kterÃ© je urÄeno umÃ­stÄ›nÃ­m
+																					% tohoto pÅ™Ã­kazu v textu, poloÅ¾ku), ale nevytiskne odkaz v textu
+%\cite{Ceska1994} 												% vytvoÅ™Ã­ â€odkazâ€œ do textu
+%\ref{kriz} 															% kÅ™Ã­Å¾ovÃ½ odkaz s odkazem na %rel
+%\href{http://blog.trtkal.net}{odkaz} 		% externÃ­ odkaz
 %\label{kriz} 														% popisek
 
-%\bibliographystyle{alpha} % povolí citace pomoci BibTeXu
+%\bibliographystyle{alpha} % povolÃ­ citace pomoci BibTeXu
 %\renewcommand{\emph}[1]{\textsl{#1}}    	% melo by byt kurziva nebo sklonene,
 %\bibliographystyle{csplainnat/csplainnat}
 
-\bibliographystyle{bib/czechiso/czechiso} 		% zapne podporu pro citace pomocí normy ÈSN ISO 690 a ÈSN ISO 690-2
+\bibliographystyle{bib/czechiso/czechiso} 		% zapne podporu pro citace pomocÃ­ normy ÄŒSN ISO 690 a ÄŒSN ISO 690-2
 \DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  %rm/sf/tt
 \bibliography{bib/Citace} 								% odkaz na soubor s citacema (*.bib)
 
-% Pøílohy
+% PÅ™Ã­lohy
 %\include{chap/Prilohy}
 
 
 % KONEC DOKUMENTU
 \end{document}
 
-% vyplnìní øádku / zarovnání více textù na øádek
-% První \hfill druhı \\První \hrulefill druhı \\Tøetí \dotfill a \dotfill ètvrtı
+% vyplnÄ›nÃ­ Å™Ã¡dku / zarovnÃ¡nÃ­ vÃ­ce textÅ¯ na Å™Ã¡dek
+% PrvnÃ­ \hfill druhÃ½ \\PrvnÃ­ \hrulefill druhÃ½ \\TÅ™etÃ­ \dotfill a \dotfill ÄtvrtÃ½
 
 \begin{comment}
-	Pøíkaz Anglická verze Èeská verze  
+	PÅ™Ã­kaz AnglickÃ¡ verze ÄŒeskÃ¡ verze  
 	\abstractname  Abstract  Abstrakt  
-	\alsoseename  see also  viz také  
-	\appendixname  Appendix  Pøíloha  
+	\alsoseename  see also  viz takÃ©  
+	\appendixname  Appendix  PÅ™Ã­loha  
 	\bibname  Bibliography  Literatura  
-	\ccname  cc  Na vìdomí  (u~dopisù) 
+	\ccname  cc  Na vÄ›domÃ­  (u~dopisÅ¯) 
 	\chaptername  Chapter  Kapitola  
 	\contentsname  Contents  Obsah  
-	\enclname  encl  Pøíloha  (u~dopisù) 
-	\figurename  Figure  Obrázek  
-	\headtoname  To  Komu  (u~dopisù) 
-	\indexname  Index  Rejstøík  
-	\listfigurename  List of Figures  Seznam obrázkù  
+	\enclname  encl  PÅ™Ã­loha  (u~dopisÅ¯) 
+	\figurename  Figure  ObrÃ¡zek  
+	\headtoname  To  Komu  (u~dopisÅ¯) 
+	\indexname  Index  RejstÅ™Ã­k  
+	\listfigurename  List of Figures  Seznam obrÃ¡zkÅ¯  
 	\listtablename  List of Tables  Seznam tabulek  
-	\partname  Part  Èást  
-	\prefacename  Preface  Pøedmluva  
+	\partname  Part  ÄŒÃ¡st  
+	\prefacename  Preface  PÅ™edmluva  
 	\refname  References  Reference  
 	\seename  see  viz  
 	\tablename  Table  Tabulka 
