@@ -62,8 +62,8 @@ Platforma jako sluba znamená, e nám poskytovatel slueb nabízí celé prostøedí 
 \paragraph{IaaS -- Infrastructure as a Service:}
 Posledním zástupcem je infrastruktura jako sluba, kdy je poskytován samotnı hardware. O nìj se stará poskytovatel a nám tak odpadá starost s nefunkèností fyzickıch zaøízení. Jedná se vlastnì o virtualizaci, a my se staráme pouze o vlastní aplikace. Zástupcem této sluby mùe bıt napøíklad \href{http://aws.amazon.com/}{Amazon Web Services}.
 
-
 \subsubsection{Dle publikace slueb}
+
 \paragraph{Veøejnı cloud:} pod tímto pojmem rozumíme slubu, která je poskytována plošnì, pro všechny uivatelé se zobrazuje a poskytuje stejnı obsah, nebo velice podobnı. Jako cloudovou veøejnou slubu je moné si pøedstavit tøeba stream servery, které poskytují multimediální obsah široké veøejnosti. Jako pøíklad mùeme uvést všem dobøe známı video server  \href{http://youtube.com}{youtube.com}, dále \href{http://vimeo.com}{vimeo.com} a z hudebních serverù pro pøíklad \href{http://grooveshark.com}{grooveshark.com} a nebo \href{http://soundcloud.com}{soundcloud.com}.
 
 \paragraph{Privátní cloud:} je, pokud k nìmu má pøístup pouze urèitá skupina uivatelù, kteøí ji vyuívají. Typickım pøíkladem budi cloud, kterı vyuívá spoleènost pro ukládání firemních dat. Cílem takového cloudu bude, aby k nìmu nemìla pøístup neoprávnìná osoba, proto cloud privátní. Jako privátní cloud bychom mohli povaovat \href{https://drive.google.com}{Google Drive} nebo slubu \href{https://dropbox.com/}{Dropbox}, které se ovšem díky monosti vytváøet veøejné odkazy a sdílet vnitøní data, øadí ji spíše do cloudovıch slueb hybridních.
@@ -81,7 +81,7 @@ Vıhodou hybridního cloudu je monost vyuívat slueb tøetích stran, ani bychom 
 \end{description}
 
 \subsubsection{Nevıhody}
-Hlavním odmítnutím pøechodu, nebo èásteèné migraci na cloudové øešení jsou vypíchnuté nevıhody a strach, pojïme si je tedy pøedstavit.
+Hlavním odmítnutím pøechodu, nebo èásteèné migraci na cloudové øešení jsou níe vypíchnuté nevıhody a strach, pojïme si je tedy pøedstavit.
 
 \begin{description}
   \item [Závislost] na tøetí stranì vidím jako nejvìtší nevıhodu. Pokud si vybereme slubu u spoleènosti, která se za rok rozhodne svoje sluby ukonèit, nemáme s tím monost nic udìlat. Nemáme monost ovlivnit, kdy se tøetí strana rozhodne svùj software zmìnit na jinou verzi apod.
@@ -107,10 +107,17 @@ Pokládanou otázkou mùe bıt také obrana proti DDoS útoku. Zde vyvstává otázka, z
 V kadém pøípadì, pokud bude systém èelit DDoS útoku, bude s ním s nejvìtší pravdìpodobností tak jako tak dost tìké pracovat.
 
 \subsection{Ztráta dat}
-TODO
+\label{sec:ZtrataDat}
+Pokud má zamìstnanec všechna data u sebe v poèítaèi (dnes spíše v notebooku) a o nìj pøijde, a u ztrátou, krádeí nebo poruchou, je firma vystavena problému, kdy o data nenávratnì pøijde. V USA se jenom na letištích ztratí pøes šest set tisíc notebookù roènì, co je alarmující èíslo. \cite{notebook:ztraceneNBnaLetistich}
+
+Pokud vezmeme data ze zamìstnaneckıch zaøízení a všechna je pøesuneme do cloudu a nastavíme dobøe pøístupová práva, omezíme tak monost ztráty cennıch dat. 
+\begin{itemize}
+	\item Data budou neustále zálohována v cloudu,
+	\item v pøípadì ztráty notebooku nepøichází firma o kolik dat a mùe rychle reagovat omezením pøístupu do cloudu apod., co v pøípadì uloení všech dat na disku není dost dobøe moné.
+\end{itemize}
 
 \subsection{Odcizení a zneuití dat}
-TODO
+S vıše popsanım problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problém odcizení a zneuití dat. V pøípadì odcizení plnıch dat je firma postiena v celém rozsahu, kdy pøichází o kompletní know-how a cenné informace. V pøípadì vyuití cloudu funguje notebook pouze jako tenkı klient a na jeho disku je jen nutné postaèující minimum dùleitıch dat. V tomto pøípadì firma nepøichází o celé své duševní bohatství a bez vìtších problémù mùe nadále bez potíí fungovat.
 
 \subsection{Zálohování}
 TODO
