@@ -1,4 +1,4 @@
-Diplomov· pr·ce na tÈma Cloud computing
+Diplomov√° pr√°ce na t√©ma Cloud computing
 ========
 
 uff
