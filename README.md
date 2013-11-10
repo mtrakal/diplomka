@@ -1,4 +1,4 @@
-Diplomová práce na téma Cloud computing
+Diplomka na téma Cloud computing
 ========
 
-uff
+uff :)
