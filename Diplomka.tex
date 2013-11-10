@@ -32,95 +32,87 @@
 % ensures that the paper size is a4, the fonts are typeset at the size 12p
 % and the equation numbers are on the left side
 %
-\usepackage{amsmath}%
-\usepackage{amsfonts}%
-\usepackage{amssymb}%
-%\usepackage{graphicx}
 
-%\usepackage{czech}				 			% nastavuje zásady typografie pro českou sazbu pomocí csLaTeXu
-\usepackage[czech]{babel} 			% nastavuje zásady typografie pro českou sazbu pomocí BABELu
-
-\usepackage{cmap}
-%\usepackage{mmap}
+\usepackage[a4paper,inner=4cm,outer=2.5cm]{geometry} % velikost vnějšího okraje stránek
+\usepackage[a4paper]{geometry}  % velikost vnějšího okraje stránek
 %\usepackage{a4wide} 						% nastaví velikost A4 dle evropských (tedy i našich) rozměrů - nefunguje mi :/
+
 %\usepackage[cp1250]{inputenc} 	% jak kódovat české znaky
 \usepackage[utf8]{inputenc}
-% Pro nastavení písma se musí anstavit fontenc na uvedený u písma a následně písmo, nejlépe písma začínající il2xxxx.fd
-% Umístění písem: d:\Software\LaTeX_MikTeX_portable\tex\latex\cslatex\
-\usepackage[IL2]{fontenc} 			% fonty vyladěné pro češtinu (obávám se, že je to nepoužívá :()
-%\usepackage[T1]{fontenc} 			% běžné fonty
 
-\renewcommand{\familydefault}{pbk} % serifové zakulacené
+\usepackage[czech]{babel} 			% nastavuje zásady typografie pro českou sazbu pomocí BABELu
+\languageattribute{czech}{split}% české dělení textu, http://home.ef.jcu.cz/~houda/miktex/install/babel-cslatex.html
+
+%\ifpdf % Pokud se překládá do PDF... vlastně vždy tisknu do pdf...
+\usepackage{cmap}								% % Zajistí správné zakódování národních znaků při výstupu do PDF. Make PDF files search­able and copy­able
+%\usepackage{mmap}							% ex­ten­sion of cmap with im­proved flex­i­bil­ity and cov­er­age, in­clud­ing the abil­ity to re-en­code Knuth’s ba­sic math­e­mat­ics fonts.
+%\fi % Konec výhradní sekce pro překlad do PDF.
+
+% Pro nastavení písma se musí nastavit fontenc na uvedený u písma a následně písmo, nejlépe písma začínající il2xxxx.fd
+%\usepackage[IL2]{fontenc} 			% fonty vyladěné pro češtinu (obávám se, že je to nepoužívá :()
+\usepackage{lmodern}						% nejlepší fonty pro čsštinu pro PDF i PS http://home.ef.jcu.cz/~houda/miktex/install/babel-cslatex.html
+%\usepackage[T1]{fontenc} 			% rozšíření originálních Knuthových Computer Modern (CM) fontů pro potřeby evropských jazyků psaných latinkou. pro české texty není doporučeno
+
+%\renewcommand{\familydefault}{pbk} % serifové zakulacené
 %\renewcommand{\familydefault}{pcr} % používá T1
 %\renewcommand{\familydefault}{phv} % bezserifové
 %\renewcommand{\familydefault}{ppl} % serifové, hranatější serify
 
-\usepackage[a4paper,inner=4cm,outer=2.5cm]{geometry} % velikost vnějšího okraje stránek
-\usepackage[a4paper]{geometry}  % velikost vnějšího okraje stránek
-
-\usepackage{graphicx} 					% pro vkládání obrázků
-\usepackage{verbatim} 					% pro použití víceřádkových komentářů
-\usepackage{url} 								% tends to give much more nicely formatted web addresses
+\usepackage[nottoc,notindex,notlof]{tocbibind}					% přidá do obsahu Bibliografii a další http://www.ctan.org/tex-archive/macros/latex/contrib/tocbibind
 \usepackage[pdftex,colorlinks=true, unicode=true,breaklinks]{hyperref} % obarvování a aktivování odkazů, pro tisk vypnout
-
+\usepackage{datetime}           % umožní vložení času do hlavičky: http://theoval.cmp.uea.ac.uk/~nlct/latex/packages/datetime/datetime-manual.html
 \usepackage{dcolumn}						% zarovnanie cisiel v tabulke podla des. ciarky
-\usepackage[noprefix]{nomencl}	% prý použiváno pro generování zkratek použitých v dokumentu
-%\usepackage[nottoc]{tocbibind}	% přidá do obsahu Bibliografii - nevím, jak se používá...
-
+\usepackage{enumerate}          % možnost použít \begin{enumerate}[a)] pro písmenný seznam a další (http://www.ctan.org/tex-archive/macros/latex/required/tools/enumerate.pdf)
+\usepackage{graphicx} 					% pro vkládání obrázků (optional arguments to the \in­clude­graph­ics command http://www.ctan.org/pkg/graphicx)
 \usepackage{listings}						% zobrazení zdrojových kódů pomocí lstlisting (verbatim asi ne)
+\usepackage{url} 								% tends to give much more nicely formatted web addresses
+\usepackage{verbatim} 					% pro použití víceřádkových komentářů
+\usepackage{nomencl}						% [intoc] použiváno pro generování zkratek použitých v dokumentu http://www.ctan.org/pkg/nomencl ("%tm".nlo -s nomencl.ist -o "%tm".nls stáhnout makeindex/nomencl/nomencl.ist)
+%\makeglossary									% vygeneruje cosi se zkratkama
+\makenomenclature								% vygeneruje soubor se zkratkama
+\makeindex											% vygeneruje seznam zkratek
 
-\usepackage{ae}									% balik pro konverzi sedmibitovych fontu na osmibitove
+%\usepackage{ae}								% balik pro konverzi sedmibitovych fontu na osmibitove
 																% (aby slo pouzit deleni slov http://www.abclinuxu.cz/poradna/linux/show/103978
 																% http://www.root.cz/clanky/jak-na-latex-literatura/nazory/
-%\usepackage{indentfirst} 				% odsadi i prvni odstavec v textu
+%\usepackage{indentfirst} 			% odsadi i prvni odstavec v textu
+%\usepackage{xfrac}             % pro sazbu matematických zlomků pomocí \sfrac{}{}
+%\usepackage{natbib}            % sazba pouzite literatury
+%\usepackage{amsmath}						% Matematický doplněk http://www.ctan.org/pkg/amsmath
+%\usepackage{amsfonts}					% fonts for use in math­e­mat­ics http://www.ctan.org/pkg/amsfonts
+%\usepackage{amssymb}						%
 
-\usepackage{enumerate}          % možnost použít \begin{enumerate}[a)] pro písmenný seznam a další (http://www.ctan.org/tex-archive/macros/latex/required/tools/enumerate.pdf)
-
-%\usepackage{xfrac}              % pro sazbu matematických zlomků pomocí \sfrac{}{}
-\usepackage{datetime}           % umožní vložení času do hlavičky: http://theoval.cmp.uea.ac.uk/~nlct/latex/packages/datetime/datetime-manual.html
-
-\hypersetup{										% obsah popisu PDF souboru
-	baseurl={http://mtrakal.cz},
-	pdfkeywords={},
-	pdftitle={Analýza možností nasazení Cloud computing},
-	pdfauthor={Matěj Trakal},
-	pdfsubject={Diplomová práce}
-}
+\frenchspacing 									% aktivuje použití některých českých typografických pravidel
+\pagenumbering{arabic} 					% arabské čísla stránek
 
 % Zobrazení PDF jako single page
 \pdfcatalog{/PageLayout /SinglePage}
 %\pdfcatalog{/PageLayout /TwoPageRight}
 
-%\usepackage{cmap} 
-%http://usenet.jyxo.cz/cz.comp.cstex/0409/pdflatex-pismenka-bez-diakritiky-po-copy-and-paste-z-acrobat.html
-% nejde s tím pak vygenerovat obsah a další věci
-
-%\usepackage{fancyhdr} 										% hlavičky dokumentů - http://andy-roberts.net/misc/latex/latextutorial8.html
-
-
-\frenchspacing 														% aktivuje použití některých českých typografických pravidel
-\pagenumbering{arabic} 										% arabské čísla stránek
-
-%\makeglossary															% vygeneruje cosi se zkratkama
-%\nomenclature
-\makenomenclature													% vygeneruje soubor se zkratkama
+\hypersetup{										% obsah popisu PDF souboru
+	baseurl={http://mtrakal.cz},
+	pdfkeywords={diplomová práce, mtrakal, Matěj Trakal, cloud},
+	pdftitle={Analýza možností nasazení Cloud computing},
+	pdfauthor={Matěj Trakal},
+	pdfsubject={Diplomová práce}
+}
 
 \title{Analýza možností nasazení Cloud computing}
-\author{Matěj Trakal
-\\Univerzita Pardubice}
+\author{Matěj Trakal}
 \date{Poslední úprava: \today}
 
-
+%\usepackage{fancyhdr} 					% hlavičky dokumentů - http://andy-roberts.net/misc/latex/latextutorial8.html
 %%%%%%%%%%%%%%%%%% Změna stylu hlavičky %%%%%%%%%%%%%%%%%%
-%\lhead{\fancyplain{}INEPD 2010 (Hudec)}
-%\lfoot{\fancyplain{}{Matěj Trakal -- \href{http://fei.trtkal.net}{fei.trtkal.net}}}
-%\cfoot{\fancyplain{}}
-%\rfoot{\fancyplain{}{\thepage}}
-%\renewcommand{\footrulewidth}{0.5pt}
+\begin{comment}
+	\lhead{\fancyplain{}INEPD 2010 (Hudec)}
+	\lfoot{\fancyplain{}{Matěj Trakal -- \href{http://fei.trtkal.net}{fei.trtkal.net}}}
+	\cfoot{\fancyplain{}}
+	\rfoot{\fancyplain{}{\thepage}}
+	\renewcommand{\footrulewidth}{0.5pt}
+\end{comment}
 %%%%%%%%%%%%%%%%%% Změna stylu hlavičky %%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------
-
 
 \begin{document}
 \renewcommand{\baselinestretch}{1.1} 			% velikost řádkování
@@ -203,11 +195,11 @@
 %\label{kriz} 														% popisek
 
 %\bibliographystyle{alpha} % povolí citace pomoci BibTeXu
+%\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  %rm/sf/tt
 %\renewcommand{\emph}[1]{\textsl{#1}}    	% melo by byt kurziva nebo sklonene,
-%\bibliographystyle{csplainnat/csplainnat}
-
+%\bibliographystyle{bib/csplainnat/csplainnat}
 \bibliographystyle{bib/czechiso/czechiso} 		% zapne podporu pro citace pomocí normy ČSN ISO 690 a ČSN ISO 690-2
-\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  %rm/sf/tt
+\def\refname{Použitá literatura}
 \bibliography{bib/Citace} 								% odkaz na soubor s citacema (*.bib)
 
 % Přílohy
