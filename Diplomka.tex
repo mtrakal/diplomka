@@ -50,8 +50,8 @@
 
 % Pro nastavení písma se musí nastavit fontenc na uvedený u písma a následně písmo, nejlépe písma začínající il2xxxx.fd
 %\usepackage[IL2]{fontenc} 			% fonty vyladěné pro češtinu (obávám se, že je to nepoužívá :()
-\usepackage{lmodern}						% nejlepší fonty pro čsštinu pro PDF i PS http://home.ef.jcu.cz/~houda/miktex/install/babel-cslatex.html
-%\usepackage[T1]{fontenc} 			% rozšíření originálních Knuthových Computer Modern (CM) fontů pro potřeby evropských jazyků psaných latinkou. pro české texty není doporučeno
+\usepackage{lmodern}						% nejlepší fonty pro češtinu pro PDF i PS http://home.ef.jcu.cz/~houda/miktex/install/babel-cslatex.html (aby šel kopírovat text, musí být zapnuto i cmap a T1fontenc)
+\usepackage[T1]{fontenc} 				% rozšíření originálních Knuthových Computer Modern (CM) fontů pro potřeby evropských jazyků psaných latinkou. pro české texty není doporučeno https://groups.google.com/forum/#!msg/cz.comp.cstex/rMyXInfaoVM/gJqoGpdmvOcJ
 
 %\renewcommand{\familydefault}{pbk} % serifové zakulacené
 %\renewcommand{\familydefault}{pcr} % používá T1
