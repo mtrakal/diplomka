@@ -202,9 +202,37 @@ CloudFront je služba pro decentralizované distribuované dodání obsahu. Slu�
 Jedná se tak o vyspělejší úložiště S3 se kterým tato služba spolupracuje. V S3 vyberete obsah, který se má rozdistribuovat mezi ostatní datová centra aby byl dostupnější.
 
 \subsection{Google}
+Společnost Google se zaměřuje na cloudové služby velice úzce a poskytuje široké spektrum služeb. Mezi produkty se nachází jak aplikace pro běžného uživatele až po firemní klientelu a vysoce specifické a náročné aplikace.
+
+\subsubsection{Gmail}
+Asi nejznámější cloudovou službou Google je emailová schránka. V základní verzi poskytuje 15 GB místa a přístup přes IMAP i POP3. Se schránkou automaticky uživatel získává i OpenID\footnote{OpenID je otevřený standard popisující decentralizovaný způsob autentizace uživatelů, který odstraňuje potřebu na straně provozovatele služby poskytovat a vyvíjet vlastní systémy pro autentizaci a který rovněž samotným uživatelům služby umožňuje konsolidaci jejich digitálních identit.\cite{wiki:openID}} díky kterému se může přihlašovat do dalších služeb nejen společnosti Google.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/googleGmail.png}
+	\caption{Emailová schránka Gmail}
+	\label{fig:googleGmail}
+\end{figure}
+
 \subsubsection{Drive}
+Aplikace Drive je cloudové úložiště pro osobní potřebu uživatele s účtem Google. V základním balíčku je diskový prostor 15 GB, který jde následně za poplatek rozšířit. Nahrané dokumenty a soubory je možné upravovat, ukládat, nebo sdílet. Je samozřejmě možné vytvářet i nové dokumenty. Dále Drive umožňuje spolupráci několika lidí na jednom dokumentu a to i zároveň.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/googleDrive.png}
+	\caption{Diskové úložiště Drive}
+	\label{fig:googleDrive}
+\end{figure}
+
 \subsubsection{Keep}
+Aplikace Keep slouží pro uchovávání krátkých poznámek a zápisků. Služba je synchronizována mezi zařízeními K poznámkám je možné si přidat oznámení, tedy si můžete poznamenat třeba nezapomenout nakoupit pečivo a když víte, že kolem osmé budete v obchodě, aplikace na mobilním zařízení vás v tu dobu upozorní. Dále je možné vkládat k poznámkám fotky, nebo hlasový komentář.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/googleKeep.png}
+	\caption{Poznámky Keep}
+	\label{fig:googleKeep}
+\end{figure}
+
 \subsubsection{Enterprise}
+
 \begin{itemize}
 	\item Disk, Apps, Gmail, Hangouts
 \end{itemize}
@@ -221,9 +249,16 @@ Jedná se tak o vyspělejší úložiště S3 se kterým tato služba spolupracu
 \subsubsection{IBM SmartCloud Application Services}
 
 \subsection{Microsoft}
+\subsubsection{Office Web Apps}
+Stejně jako jiné korporace i Microsoft má svůj vlastní kancelářský balík online. Přišel s ním sice později než konkurence, ovšem díky velice propracovanému desktopovému balíku Microsoft Office (nyní pokročilé online službě \href{https://office.microsoft.com}{Office 365}) a dlouhodobému vývoji se rozhodně \href{https://skydrive.live.com}{Office Web Apps} povedl. Webové office jsou zjednodušenou verzí plnohodnotného balíku, který je možné zakoupit.
+
+\subsubsection{Office 365}
+Office 365 je plnohodnotný cloudový kancelářský balík pro domácnosti i firmy. V tomto balíku je možné využívat všech výhod webového balíku Office Web Apps, jako sdílení dokumentů, přístup odkudkoliv, spolupráci více uživatelů a další. 
+
+Jako nevýhodu Office 365 vidím, pokud chceme používat klasický desktopový kancelářský balík a nikoliv pouze aplikaci Office 365 ve webovém prohlížeči. V tomto případě si stále musíme zakoupit plnohodnotný kancelářský balík a do něho až následně Office 365 integrovat, což zvyšuje náklady. Otázkou však je, zda-li je klasický program stále potřeba, když je možné soubory v cloudových office editovat i bez připojení lokálně a po připojení se k Internetu soubory nahrát do úložiště.
+
 \subsubsection{Azure}
 \subsubsection{Intune}
-\subsubsection{Office 365}
 \subsubsection{Hyper-V}
 \subsubsection{Dynamics CRM Online}
 
@@ -269,6 +304,12 @@ Druhou variantou je služba Desktop. V tomto případě je poskytován vzdálen�
 \begin{quote}ownCloud je řešení pro ukládání souborů, které můžeme nasadit ve firmě a inteligentně používat pro sdílení souborů přes internet. Nabízí ale i řadu dalších služeb (aplikací, které fungují jako zásuvné moduly), například kalendář, kontakty, úkoly a poznámky, hudební přehrávač, editor/prohlížeč obrázků, přehrávač videí, apod. K tomu se přidávají další vlastnosti jako šifrování a jednoduché verzování souborů.\cite{samuraj:ownCLoud5}
 \end{quote}
 TODO: přidat vlastní omáčku, spousta prostoru pro rozvedení...
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/ownCloud.png}
+	\caption{ownCloud}
+	\label{fig:ownCloud}
+\end{figure}
 
 \subsubsection{Cloud9}
 \href{https://github.com/ajaxorg/cloud9}{Cloud 9 IDE} je vývojové prostředí, které je poháněno javascriptovým frameworkem \href{http://nodejs.org/}{Node.js} běžícím na serveru. Jedná se tak o cloudové open source řešení vývojového prostředí. Jako základ IDE je využíváno editoru kódu \href{http://ace.c9.io/}{Ace}. Prostředí umí všechny základní věci jako zvýrazňování syntaxe, napovídání a doplňování kódu, zobrazování náhledu v případě kódu v HTML5+CSS a JavaScriptu.

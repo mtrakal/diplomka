@@ -1,0 +1,14 @@
+*.aux
+*.pdf
+*.nls
+*.out
+*.nlo
+*.log
+*.lof
+*.ilg
+*.idx
+*.blg
+*.bbl
+*.tcp
+*.toc
+
