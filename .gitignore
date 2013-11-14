@@ -9,6 +9,7 @@
 *.idx
 *.blg
 *.bbl
+*.tps
 *.tcp
 *.toc
 
