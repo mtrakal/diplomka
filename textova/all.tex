@@ -136,17 +136,20 @@ Segregace\footnote{Segregace, dle slovníku cizích slov, znamená: oddělován�
 \subsubsection{Podpora průzkumu}
 \subsubsection{Dlouhodobá životaschopnost}
 
-
 \subsection{Výhody zabezpečení}
 Kromě nevýhod, má zabezpečení v cloudu i své výhody, pojďme si je tedy shrnout.
+
 \subsubsection{Centralizace}
 Díky centrálnímu řízení zabezpečení přístupu do služby cloud je jeho správa jednodušší, než při správě několika strojů. Veškeré nastavení se okamžitě aplikuje pro všechny služby a odpadá práce s vícenásobnou konfigurací.
 
 Veškerá data jsou navíc na jednom místě a uživatelé mají přístup pouze k datům, která potřebují. V případě ztráty koncového zařízení společnost nepřichází o nikterak závažnou část know-how.
+
 \subsubsection{Monitorování}
 Služby cloudu umožňují podrobně monitorovat chování a provádět audit při přístupu. Tedy je vše logováno a lze dohledat. Navíc díky monitoringu dochází v případě výpadku služby k okamžitému spuštění "`záložního"' řešení tak, aby nedocházelo k výpadkům služby jako takové. Přesun na jiný stroj je možné provést i v případě, kdy dojde k napadení jednoho stroje, který případně dočasně odstavíte a můžete jej analyzovat pro odhalení bezpečnostní slabiny.
+
 \subsubsection{Protokolování}
 Pod pojmem protokolování si lze představit obecně používanější výraz a to logování. Protokolování v cloudu se provádí v podstatě u všech operací a po celou dobu běhu cloudu. Je více než vhodné zaznamenávat celkové dění a chod cloudu pro zpětnou kontrolu a případné zjištění spotřebovaného výkonu apod. V cloudu většinou není nějaká speciální potřeba protokolování omezovat. Resp. o jeho záznamy se můžeme zajímat až v době, když by nám začal docházet úložný prostor a náklady na navýšení úložného prostoru by byli neadekvátní k pozitivům protokolování. V takovém případě by mělo smysl omezit protokolování na kratší dobu, než od počátku věků.
+
 \subsubsection{Bezpečnostní testování}
 O zabezpečení cloudu se z velké části stará její poskytovatel. Ve svých službách většinou zahrnuje antivirový a další software a stará se o zabezpečení celého cloudu jako celku. Díky tomu, že cloud využívá mnoho klientů a zabezpečení se vyvíjí pro všechny najednou, cena nákladů na vývoj a testování nového systému zabezpečení rapidně klesá s počtem klientů, kteří cloud využívají. Díky tomu nám klesnou výdaje za zabezpečení na nutné minimum, ke kterému bychom se s vlastním řešením jen těžko přibližovali.
 
@@ -177,10 +180,36 @@ Salesforce je jedna z prvních společností, která začala cloudové služby n
 Aktuálně Salesforce nabízí několik hlavních produktů.
 
 \subsubsection{Sales Cloud}
+Jedná se o platformu pro efektivní prodej služeb a produktů odkudkoliv a z jakéhokoliv zařízení. Jde o CRM systém běžící jak na počítačích, tak i všech chytrých mobilních zařízeních. Platforma je založena na Salesforce1 Platform. Sales Cloud spojuje aplikace, zařízení a s nimi i zákazníky. Jedná se o přímé spojení kontaktů, uživatelských účtů, a kritických obchodních informací v jeden celek, odkud jsou tyto informace pak distribuovány do jednotlivých zařízení dle požadavků.
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/sf_salesCloud.jpg}
+	\caption{Sales Cloud\cite{salesforce:salesCloud}}
+	\label{fig:sf_salesCloud}
+\end{figure}
+
 \subsubsection{Service Cloud}
+Service cloud je též založen na Salesforce1 Platform. Jedná se o doručování obsahu klientům odkudkoliv a jakéhokoliv zařízení. Service Cloud je v podstatě kontejner pro rozesílání informací na sociální sítě, emailem a dalšími prostředky. Dokáže i umožnit reagovat na podněty zaslané zákazníky v jednotlivých komunikačních nástrojích. 
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/sf_serviceCloud.jpg}
+	\caption{Service Cloud\cite{salesforce:serviceCloud}}
+	\label{fig:sf_serviceCloud}
+\end{figure}
+
 \subsubsection{ExactTarget Marketing Cloud}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=1.00\textwidth]{ext/sf_marketingCloud.png}
+	\caption{Marketing Cloud\cite{salesforce:marketingCloud}}
+	\label{fig:sf_marketingCloud}
+\end{figure}
+
 \subsubsection{Salesforce Platform}
+
 \subsubsection{Salesforce Chatter}
+
 \subsubsection{Salesforce Work.com}
 
 
