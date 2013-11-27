@@ -1,0 +1,6 @@
+ln -s CURRENT_DIR\bib D:\texoviny\__bib\
+
+V texu:
+\bibliographystyle{bib/czechiso/czechiso} 		% zapne podporu pro citace pomocí normy ÈSN ISO 690 a ÈSN ISO 690-2
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  %rm/sf/tt
+\bibliography{bib/Citace} 								% odkaz na soubor s citacema (*.bib)
