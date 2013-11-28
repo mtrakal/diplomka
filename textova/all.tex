@@ -329,11 +329,29 @@ Hyper-V je možné získat jako aplikaci instalovatelnou jako součást systému
 Jako i ostatní společnosti i Microsoft poskytuje hotové řešení pro podniky a komunikaci se zákazníky. V tomto případě se opět jedná o CRM systém s možností analyzovat trh, trendy a vývoj prodeje. Umožňuje sledovat produktivitu prodeje a díky tomu zlepšit prodej produktů.
 
 \subsection{VMware}
+Společnost VMware se původně zabývala vývojem předního virtualizačního nástroje. Tato společnost postupně nabrala do svého portfolia i další služby a rozšířila působnost obecně na virtualizaci a služby s ní úzce spojené. Mezi ně si dovolím zařadit právě i cloud.
+
 \href{http://www.vmware.com/cz/products.html}{vmware produkty}
-\subsubsection{vCloud Hybrid Service}
-\subsubsection{vCloud}
+
 \subsubsection{vSphere}
+\label{sec:vSphere}
+
+\subsubsection{vCloud Hybrid Service}
+Jedná se o cloudové řešení na platformě VMware vSphere provozovaný přímo společností VMware. Hybrid Service je kompletní infrastruktura, která umožňuje spouštění libovolné kompatibilní aplikace (tisíce aplikací) na více, než 90 podporovaných operačních systémech.\cite{vmware:hybridService}
+
+\subsubsection{vCloud Suite}
+Služba umožňuje vytvářet a spouštět vSphere řešení privátního cloudu, který doručuje cloudové služby ekonomicky a umožňuje dobrou škálovatelnost.\nocite{vmware:vCloudDatasheet}
+
+vCloud obsahuje všechny komponenty pro vybudování a provoz privátní cloudové infrastruktury. Tato infrastruktura je složena z mnoha jiných produktů společnosti VMware:
+\begin{description}
+	\item[VMware vSphere] popsaný výše [\ref{sec:vSphere}],
+	\item[VMware vCloud Networking and Security™] sloužící pro řízení datového provozu a zabezpečení,
+	\item[VMware vCenter™ Site Recovery Manager™] pro testování, plánování a spouštění scénářů pro katastrofické případy,
+	\item[a dalších.]
+\end{description}
+
 \subsubsection{vCenter}
+http://www.mustbegeek.com/difference-between-vsphere-esxi-and-vcenter/
 
 \subsection{Další jiná využití cloudu}
 Kromě velkých hráčů na trhu zde jsou i menší společnosti, které neposkytují komplexní služby, ale zaměřují se spíše na specifické odvětví. I mezi těmito produkty jsou ovšem velice zdařilé projekty, ač většinou k jiným účelům, než se dají použít výše zmíněné cloudové služby.
@@ -361,7 +379,7 @@ Nabízí koncepčně naprosto jiné služby, než zde všechny zmíněné. Jedn�
 Služba aktuálně nabízí dvě varianty poskytovaného obsahu.
 
 \paragraph{OnLive Games}
-V prvním případě je doručovaný obsah zaměřen na herní průmysl, kdy se v datovém centru vypočítávají operace hry a klientovy je doručen pouze obraz v podobě snímků.
+V prvním případě je doručovaný obsah zaměřen na herní průmysl, kdy se v datovém centru vypočítávají operace hry a klientovi je doručen pouze obraz v podobě snímků.
 Od uživatele jde interakce na server, kde se zakomponuje pohyb jeho polohovacím zařízením do hry a obraz se změnou je opět odeslán k uživateli. V tomto případě je kladen vysoký nárok na kvalitní internetové připojení a nízkou latenci, jelikož je třeba, aby byl obraz i reakce plynulé.
 \paragraph{OnLive Desktop}
 Druhou variantou je služba Desktop. V tomto případě je poskytován vzdáleně operační systém společnosti Microsoft s předinstalovaným kancelářským balíkem Office. Systém běží na vysoce výkonných serverech, tedy práce s ním je plynulá a reakce okamžité. Opět zde platí podmínka na kvalitní datovou linku, ovšem již ne s tak vysokými nároky jako u výše zmiňované herní služby. Služba je zaměřena na uživatele na cestách, kdy potřebují z různých zařízení přistupovat ke svému počítači a nechtějí nebo nemohou sebou neustále brát notebook. Systém je možné spouštět i na tabletech se systémem Mac a Android.
@@ -398,7 +416,6 @@ Dále tato služba umožňuje spolupráci více lidí nad projektem a možnost e
 	\label{fig:c9ioEditor}
 \end{figure}
 
-
 Cloud9 využívá například i embedded zařízení \href{http://beagleboard.org/}{BeagleBoard}, ve kterém běží Linux, nebo Android OS. Díky tomuto editoru můžete programovat přímo na zařízení a okamžitě spouštět a zobrazovat výsledek. Zařízení má mnoho vstupů i výstupů a dá se na něm s přídavnými moduly sestavit v podstatě libovolná aplikace, od multimediálního centra, až po inteligentního robota na úklid domácnosti.
 \begin{figure}[htbp]
 	\centering
@@ -412,5 +429,6 @@ TODO
 
 \section{Popis praktické části}
 TODO
+\href{http://connect.zive.cz/bleskovky/cloud-amazonu-je-vetsi-nez-cloudy-microsoftu-ibm-a-googlu-dohromady/sc-321-a-171477/default.aspx}{Cloud Amazonu je větší, než cloudy Microsoftu, IBM a Googlu dohromady}
 
 \section{Závěr}
