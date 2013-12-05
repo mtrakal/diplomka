@@ -1,5 +1,4 @@
 *.aux
-*.pdf
 *.nls
 *.out
 *.nlo
@@ -12,4 +11,4 @@
 *.tps
 *.tcp
 *.toc
-
+*.ind

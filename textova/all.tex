@@ -102,6 +102,7 @@ Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spoust
 Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně, jak dobře je jeho řešení zabezpečení dobré. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla. 
 
 \subsubsection{Cracking}
+TODO
 
 \subsubsection{DDoS útok}
 Pokládanou otázkou může být také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáže odolávat takovému útoku lépe, než virtualizovaný server, který může zvýšit výkon a spíše útoku odolat. Druhá otázka která se naskýtá ovšem je, zda-li firemní server v době, kdy na něj je veden útok není možné odpojit od vnější sítě a dále ho lokálně využívat. Tím by se omezil přístup pouze vzdáleně připojeným uživatelům a to pouze v případě, že do firemní sítě neexistuje druhá cesta skrz VPN, přes kterou by se mohli uživatelé připojit a pracovat se serverem z lokální strany sítě.
@@ -288,20 +289,36 @@ Aplikace Keep slouží pro uchovávání krátkých poznámek a zápisků. Služ
 \end{figure}
 
 \subsubsection{Enterprise}
-
+TODO
 \begin{itemize}
 	\item Disk, Apps, Gmail, Hangouts
 \end{itemize}
+
 \subsubsection{Cloud Platform}
+TODO
+
 \subsubsection{Cloud Print}
+TODO
+
 \subsubsection{App Engine}
+TODO
+
 \subsubsection{Compute Engine}
+TODO
+
 \subsubsection{Cloud Storage}
+TODO
+
 \subsubsection{BigQuery}
 
 \subsection{IBM}
-\subsubsection{IBM SmartCloud Enterprise} IaaS a PaaS
+TODO
+
+\subsubsection{IBM SmartCloud Enterprise}
+TODO: IaaS a PaaS
+
 \subsubsection{IBM SmartCloud Application Services}
+TODO
 
 \subsection{Microsoft}
 \subsubsection{Office Web Apps}
@@ -335,6 +352,37 @@ Společnost VMware se původně zabývala vývojem předního virtualizačního 
 
 \subsubsection{vSphere}
 \label{sec:vSphere}
+\nocite{vmware:vSphere}
+VMware vSphere je základní stavební kámen pro cloudové i virtualizační řešení. Jedná se o kompletní platformu. Veškeré produkty postavené na VMware řešení pohání v základu právě vSphere což je hlavní vrstva starající se o běh virtuálních zařízení. Nabídka jednotlivých komponent služby vSphere je odvozena od potřeb zákazníka od flexibility, rychlosti, odolnosti až po výkon a úsporu.
+
+Samostatné komponenty se pak zaměřují na jednotlivé odvětví, která zvládají nejlépe. Díky jednotlivým službám je možné systém vyladit k velice dobré škálovatelnosti, dostupnosti a bezpečnosti.
+
+VMware vSphere se dodává v několika \href{http://www.vmware.com/products/vsphere/compare.html}{základních balíčcích}:
+\begin{description}
+	\item[Standard] poskytuje základní řešení pro konsolidaci aplikací. Toto řešení pomáhá snížit náklady na hardware a urychlovat zavádění aplikací.\cite{vmware:vSphereOldanyGroup}
+	\item[Enterprise] je robustní řešení, které můžete použít k optimalizaci IT aktiv, k zajištění nákladově efektivní business continuity a zefektivnění IT operací pomocí automatizace.\cite{vmware:vSphereOldanyGroup}
+	\item[Enterpsise Plus] přináší kompletní škálu funkcí VMware vSphere pro transformaci datových center v jednoduché cloudové infrastruktury, pro fungování dnešních zařízení bok po boku s flexibilními spolehlivými IT službami.\cite{vmware:vSphereOldanyGroup}
+	\item[Essentials] je určen pro malé kanceláře a poskytuje jednoduchý kompletní balíček služeb za rozumnou cenu. Pomůže Vám zvirtualizovat až tři fyzické servery, konsolidovat a řídit pracovní zátěž mnoha aplikací a sníží Vaše provozní a hardwarové náklady.\cite{vmware:vSphereOldanyGroup}
+	\item[Essentials Plus] rozšiřuje edici VMware vSphere Essentials o vysokou dostupnost aplikací a ochranu dat. Pomáhá menším kancelářským IT prostředím konsolidovat kompletně IT infrastrukturu a najít řešení business continuity.\cite{vmware:vSphereOldanyGroup}
+\end{description}
+
+	\begin{figure}[htbp]
+		\centering
+			\includegraphics[width=1.00\textwidth]{ext/vm_vSphere.png}
+		\caption{VMware vSphere\cite{vmware:vSphereOldanyGroupImg}}
+		\label{fig:vm_vSphere}
+	\end{figure}
+
+Mezi \href{http://www.vmware.com/products/vsphere/features.html}{jednotlivé komponenty vSphere} patří:
+\begin{description}
+	\item[Compute] s automatickým deployem k aktualizaci za běhu, funkcemi měření výkonu, lepší akceleraci a dalšími funkcemi.
+	\item[Network] s monitoringem mezi jednotlivými virtuálními stroji, řízením provozu a vyšší optimalizací běhu datově náročných aplikací.
+	\item[Availability] umožňující lepší škálovatelnost, migrování strojů i dat a pokročilou zálohou.
+	\item[Automation] pro vyšší automatizaci prováděných rutinních úkolů.
+	\item[Management] speciálně navržené workflow pro řízení běhu platformy. Management umožňuje přesněji sledovat využití výkonu, optimalizovat diskové kapacity a celkový stav infrastruktury.
+	\item[Security] integruje ESXi firewall pro omezení přístupu a vShield Endpoint pro přesunutí provozu na stroje určené pouze pro kontrolu datového provozu a nevytěžování aplikačních strojů.
+	\item[Storage] s lepší správou úložiště, vhodný výběr úložiště, lepší škálovatelnost a výkonnost díky využití clustrového souborového systému.
+\end{description}
 
 \subsubsection{vCloud Hybrid Service}
 Jedná se o cloudové řešení na platformě VMware vSphere provozovaný přímo společností VMware. Hybrid Service je kompletní infrastruktura, která umožňuje spouštění libovolné kompatibilní aplikace (tisíce aplikací) na více, než 90 podporovaných operačních systémech.\cite{vmware:hybridService}
@@ -351,6 +399,7 @@ vCloud obsahuje všechny komponenty pro vybudování a provoz privátní cloudov
 \end{description}
 
 \subsubsection{vCenter}
+TODO
 http://www.mustbegeek.com/difference-between-vsphere-esxi-and-vcenter/
 
 \subsection{Další jiná využití cloudu}
@@ -430,5 +479,5 @@ TODO
 \section{Popis praktické části}
 TODO
 \href{http://connect.zive.cz/bleskovky/cloud-amazonu-je-vetsi-nez-cloudy-microsoftu-ibm-a-googlu-dohromady/sc-321-a-171477/default.aspx}{Cloud Amazonu je větší, než cloudy Microsoftu, IBM a Googlu dohromady}
-
+\href{http://connect.zive.cz/clanky/cloudovy-fenomen-salesforcecom-chysta-expanzi-v-cesku/sc-320-a-171592/default.aspx}{Cloudový fenomén Salesforce.com chystá expanzi v Česku}
 \section{Závěr}
