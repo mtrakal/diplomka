@@ -95,8 +95,10 @@ Hlavním odmítnutím přechodu, nebo částečné migraci na cloudové řešen�
 \section{Bezpečnost a cloud}
 Asi první otázkou, kterou si každý položí po zmínění slova cloud a odevzdání citlivých dat do rukou jiné společnosti, je otázka bezpečnosti. Jelikož data přesouváme k cizímu subjektu, je tato otázka zajisté na místě a měla by být zodpovězena před jakýmkoliv prvním nasazením cloud computingu.
 
-\subsection{Obecné obavy}
+\subsection{Obecné otázky}
 Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\nocite{businessworld:prvniKroky}
+
+TODO: více informací a zdrojů ohledně obecných otázek cloudu
 
 \subsubsection{Data u třetí společnosti}
 Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně, jak dobře je jeho řešení zabezpečení dobré. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla. 
@@ -161,6 +163,8 @@ I na tyto otázky se musí dokázat odpovědět. Zpravidla se musí brát ohled 
 
 Na tuto otázku bohužel v rámci práce nedokáži odpovědět a bylo by zapotřebí hlubší zamyšlení se specialistou na legislativu.
 
+TODO: pozjistit, jak to s ní je přesně.
+
 \section{Proč začít využívat cloud}
 Cloud nám může nabízet spoustu výhod, jak je popsáno výše. Mezi hlavní lákadla, proč cloud opravdu nasadit uvádí \href{http://www.cloud-lounge.org/why-use-clouds.html}{cloud-lounge.org}\cite{cloudlounge:ProcCloud} tyto:
 \begin{description}
@@ -182,30 +186,12 @@ Aktuálně Salesforce nabízí několik hlavních produktů.
 
 \subsubsection{Sales Cloud}
 Jedná se o platformu pro efektivní prodej služeb a produktů odkudkoliv a z jakéhokoliv zařízení. Jde o CRM systém běžící jak na počítačích, tak i všech chytrých mobilních zařízeních. Platforma je založena na Salesforce1 Platform. Sales Cloud spojuje aplikace, zařízení a s nimi i zákazníky. Jedná se o přímé spojení kontaktů, uživatelských účtů, a kritických obchodních informací v jeden celek, odkud jsou tyto informace pak distribuovány do jednotlivých zařízení dle požadavků.\nocite{salesforce:salesCloud}
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=0.65\textwidth]{ext/sf_salesCloud.jpg}
-		\caption{Sales Cloud\cite{salesforce:salesCloudImg}}
-		\label{fig:sf_salesCloud}
-	\end{figure}
 
 \subsubsection{Service Cloud}
 Service cloud je též založen na Salesforce1 Platform. Jedná se o doručování obsahu klientům odkudkoliv a jakéhokoliv zařízení. Service Cloud je v podstatě kontejner pro rozesílání informací na sociální sítě, emailem a dalšími prostředky. Dokáže i umožnit reagovat na podněty zaslané zákazníky v jednotlivých komunikačních nástrojích.\nocite{salesforce:serviceCloud}
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=0.5\textwidth]{ext/sf_serviceCloud.jpg}
-		\caption{Service Cloud\cite{salesforce:serviceCloudImg}}
-		\label{fig:sf_serviceCloud}
-	\end{figure}
 
 \subsubsection{ExactTarget Marketing Cloud}
 I Marketing Cloud je založen na Salesforce1 Platform. Tato služba umožňuje obchodníkům vytvářet kampaně 1:1, tedy přímo zaměřené na každého uživatele zvlášť. Umožňuje kombinovat tradiční komunikační kanály jako email, mobilní telefon a nové sociální sítě a jakékoliv myslitelné produkty na webu.\nocite{salesforce:marketingCloud}
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=0.5\textwidth]{ext/sf_marketingCloud.png}
-		\caption{Marketing Cloud\cite{salesforce:marketingCloudImg}}
-		\label{fig:sf_marketingCloud}
-	\end{figure}
 
 \subsubsection{Salesforce1 Platform}
 Salesforce1 Platform umožňuje rychlý vývoj a nasazení aplikací. Jedná se o kompletně cloudové řešení.\nocite{salesforce:platform} Platforma umožňuje
@@ -215,30 +201,12 @@ Salesforce1 Platform umožňuje rychlý vývoj a nasazení aplikací. Jedná se 
 		\item nasadit a zpřístupnit jakoukoliv aplikaci na Salesforce,
 		\item získat a využívat předem připravené aplikace z AppExchange.
 	\end{itemize}
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=0.5\textwidth]{ext/sf_platform.png}
-		\caption{Salesforce Platform\cite{salesforce:platformImg}}
-		\label{fig:sf_platform}
-	\end{figure}
 
 \subsubsection{Salesforce Chatter}
 Chatter je pokročilá podniková sociální síť pro domluvu a synchronizaci vnitropodnikových záležitostí. Aplikace je opět postavena na Salesforce1 Platformě. Po nasazení je možné vytvářet jednotlivé akce pro každé zařízení zvlášť. Chatter je také vhodný pro sdílení a ukládání vnitropodnikových informací a vědomostí.\nocite{salesforce:chatter}
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=0.5\textwidth]{ext/sf_chatter.jpg}
-		\caption{Salesforce Chatter\cite{salesforce:chatterImg}}
-		\label{fig:sf_chatter}
-	\end{figure}
 
 \subsubsection{Salesforce Work.com}
 Work.com slouží pro vnitropodnikové přímé učení a školení. Jedná se tak o vhodné řešení pro víceuživatelské motivování v rámci Salesforce CRM systému se zobrazením dosažených milníků jednotlivých týmů a zaměstnanců.\nocite{salesforce:work}
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=0.5\textwidth]{ext/sf_work.png}
-		\caption{Salesforce Work.com\cite{salesforce:workImg}}
-		\label{fig:sf_work}
-	\end{figure}
 
 \subsection{Amazon}
 Druhý zástupce cloudových služeb, patřící k těm největším dodnes. Historie služeb Amazonu sahají k téměř samotnému počátku označení cloud, do let po roce 2002. Amazon v té době spustil jejich první službu Amazon web services (AWS), což je dnes asi nejkomplexnější cloudová služba vůbec. Poskytuje nepřeberné množství služeb, od výpočetního výkonu, přes úložiště, databáze, platební systémy, přes monitorování sítě, až po "`pracovní sílu"' (inteligenci) lidí.
