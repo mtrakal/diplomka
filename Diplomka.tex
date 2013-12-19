@@ -127,9 +127,11 @@
 		myheadings - můžete si nadefinovat vlastní hlavičku, a to za pomocí příkazů \markboth nebo \markright
 	\end{comment}
 
+\pagenumbering{Alph}											% změní číslování stránek, je tu kvůli jednomu warningu
 % Desky pro tištěnou verzi
 \include{struct/01Desky}
 
+\pagenumbering{arabic}										% vrátí číslování stránek, je tu kvůli jednomu warningu
 % Úvodní strana
 \setcounter{page}{1} 											% nastaví číslování od této pozice na číslo
 \include{struct/02UvodniStrana}
