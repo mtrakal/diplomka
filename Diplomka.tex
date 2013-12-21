@@ -59,13 +59,13 @@
 %\renewcommand{\familydefault}{ppl} % serifové, hranatější serify
 
 \usepackage[nottoc,notindex,notlof]{tocbibind}					% přidá do obsahu Bibliografii a další http://www.ctan.org/tex-archive/macros/latex/contrib/tocbibind
-\usepackage[pdftex,colorlinks=true, unicode=true,breaklinks]{hyperref} % obarvování a aktivování odkazů, pro tisk vypnout
 \usepackage{datetime}           % umožní vložení času do hlavičky: http://theoval.cmp.uea.ac.uk/~nlct/latex/packages/datetime/datetime-manual.html
 \usepackage{dcolumn}						% zarovnanie cisiel v tabulke podla des. ciarky
 \usepackage{enumerate}          % možnost použít \begin{enumerate}[a)] pro písmenný seznam a další (http://www.ctan.org/tex-archive/macros/latex/required/tools/enumerate.pdf)
 \usepackage{graphicx} 					% pro vkládání obrázků (optional arguments to the \in­clude­graph­ics command http://www.ctan.org/pkg/graphicx)
 \usepackage{listings}						% zobrazení zdrojových kódů pomocí lstlisting (verbatim asi ne)
-\usepackage{url} 								% tends to give much more nicely formatted web addresses
+\usepackage[hyphens]{url} 			% tends to give much more nicely formatted web addresses
+\usepackage[pdftex,colorlinks=true, unicode=true,breaklinks]{hyperref} % obarvování a aktivování odkazů, pro tisk vypnout
 \usepackage{verbatim} 					% pro použití víceřádkových komentářů
 \usepackage{nomencl}						% [intoc] použiváno pro generování zkratek použitých v dokumentu http://www.ctan.org/pkg/nomencl ("%tm".nlo -s nomencl.ist -o "%tm".nls stáhnout makeindex/nomencl/nomencl.ist)
 %\makeglossary									% vygeneruje cosi se zkratkama
