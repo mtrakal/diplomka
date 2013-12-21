@@ -48,22 +48,34 @@ Další možností, jako doručovat služby cloudu uživatelům je využití vzd
 
 K zajištění stability služby a rozložení náporu se využívá služby CDN. To je služba, která přesměruje uživatele na sever, který je k němu nejblíže na cestě v síti. Má tedy nejlepší odezvu a dostupnost služeb. Případně je tato služba využita pro rozložení zátěže v případě, že některý server je více zatížen a nápor by nemusel ustát.
 
-Cloud může běžet a fungovat díky virtualizaci služeb a hardware. Virtualizace umožňuje oddělení služeb jednotlivých klientů od sebe a taktéž dynamickou změnu výkonu dle požadavků. Virtualizace s dostatečným výpočetním výkonem je umožněna díky škálovatelnosti zařízení. Zařízení jsou tedy všeobecně méně výkonné servery, dalo by se říci i obyčejné osobní počítače, propojeny do jednoho velkého celku pomocí počítačové sítě. Jejich výkon je díky použití horizontálního škálování zvyšován podle počtu připojených malých serverů a může růst donekonečna. 
+\subsubsection{Virtualizace}
+\label{sec:virtualizace}
+Cloud může běžet a fungovat díky virtualizaci služeb a hardware. Virtualizace umožňuje oddělení služeb jednotlivých klientů od sebe a taktéž dynamickou změnu výkonu dle požadavků. Virtualizace s dostatečným výpočetním výkonem je umožněna díky škálovatelnosti zařízení. Zařízení jsou tedy všeobecně méně výkonné servery, dalo by se říci i obyčejné osobní počítače, propojeny do jednoho velkého celku pomocí počítačové sítě. Jejich výkon je díky použití horizontálního škálování zvyšován podle počtu připojených malých serverů a může růst téměř donekonečna.
 
-TODO: virtualizace
+Virtualizace fyzického stroje známe několik variant\nocite{zive.cz:virtualizace}:
+\begin{description}
+	\item[Emulace:] při emulaci dochází ke kompletní emulaci jádra procesoru, registrů, paměti a dalších klíčových součástí systému. Hostitelský systém tedy vytváří kompletní běhové prostředí pro spuštění hostovaného systému. Jedná se o nejnáročnější a nejméně efektivní verzi virtualizace.
+	\item[Virtualizace na úrovni systému:] využívá jednoho společného jádra hostitelského operačního systému. Z toho vychází hlavní nevýhoda a to, že je možné virtualizovat pouze stejný systém ve shodné verzi. Hostitelský systém může oproti hostovaným pouze přidělovat systémové zdroje, jinak se jedná o rovnocenné systémy. Tento způsob virtualizace poskytuje nejvyšší výkon.
+	\item[Plná virtualizace:] Hostovaný stroj je emulovanán pomocí virtualizačního hardware. U plné virtualizace nedochází k emulaci procesoru a systémy tak běží v nativním režimu a tím pádem využívají plný výkon. K virtualizaci dochází pouze v případě práce se vstupně výstupním zařízením (čtení/zápis na disk apod.), kdy musí dojít k překladu adres a vzniká tím režie.
+	\item[Paravirtualizace:] pro běh musí existovat upravené jádro systému (\href{http://cs.wikipedia.org/wiki/Hypervizor}{hypervizor}), které umožňuje hostovaným systémům přístup k hardware. Vstupně výstupní volání jsou převedeny již v hostovaných systémech na volání hypervizoru a odpadá tak značná část režie oproti plné virtualizaci.
+\end{description}
+Pro cloud se využívá plné virtualizace a paravirtualizace, které jsou do jisté míry podobné. Těchto typů se využívá kvůli vysokému poskytovanému výkonu a vhodnému přizpůsobení pro nový hardware.
 
+Kromě virtualizace fyzického stroje existuje ještě pár jiných typů virtualizace. Mezi nimi můžeme najít virtualizaci fyzické sítě, diskových polí a aplikační virtualizaci (databáze).
 
-Službu cloud computing můžeme rozdělit dle následujících kategorií:
 \subsubsection{Dle poskytovaných služeb}
 
 \paragraph{SaaS -- Software as a Service:}
+\label{sec:saas}
 V tomto případě klient požaduje od cloudu pouze zprostředkování využívání cizího nebo vlastního softwaru, který poběží na strojích třetí strany. Aplikace je tedy pronajímána jako služba. Klient tedy platí za přístup a zprostředkování aplikace. Jako příklad můžeme uvést například \href{apps.google.com}{Google Apps}, nebo \href{http://domains.live.com}{Microsoft Outlook}.
 
 \paragraph{PaaS -- Platform as a Service:}
+\label{sec:paas}
 Platforma jako služba znamená, že nám poskytovatel služeb nabízí celé prostředí pro vývoj aplikací, které následně běží v cloudu. Poskytován je jak IDE pro vývoj, tak i API, přes které se vyvíjí, případně programovací jazyk, ve kterém následně aplikace na serveru běží. Nevýhodou je, že se jedná o proprietární řešení a je většinou nepřenosné. Jako příklad můžeme uvést \href{appengine.google.com}{Google App Engine}.
 
 \paragraph{IaaS -- Infrastructure as a Service:}
-Posledním zástupcem je infrastruktura jako služba, kdy je poskytován samotný hardware. O něj se stará poskytovatel a nám tak odpadá starost s nefunkčností fyzických zařízení. Jedná se vlastně o virtualizaci, a my se staráme pouze o vlastní aplikace. Zástupcem této služby může být například \href{http://aws.amazon.com/}{Amazon Web Services}.
+\label{sec:iaas}
+Posledním zástupcem je infrastruktura jako služba, kdy je poskytován samotný hardware. O něj se stará poskytovatel a nám tak odpadá starost s nefunkčností fyzických zařízení. Jedná se vlastně o virtualizaci [\ref{sec:virtualizace}], a my se staráme pouze o vlastní aplikace. Zástupcem této služby může být například \href{http://aws.amazon.com/}{Amazon Web Services}.
 
 \subsubsection{Dle publikace služeb}
 
