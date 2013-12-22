@@ -33,7 +33,7 @@
 % and the equation numbers are on the left side
 %
 
-\usepackage[a4paper,inner=4cm,outer=2.5cm]{geometry} % velikost vnějšího okraje stránek
+\usepackage[a4paper,inner=3.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry} % velikost vnějšího okraje stránek
 \usepackage[a4paper]{geometry}  % velikost vnějšího okraje stránek
 %\usepackage{a4wide} 						% nastaví velikost A4 dle evropských (tedy i našich) rozměrů - nefunguje mi :/
 
@@ -115,7 +115,7 @@
 %-------------------------------------------
 
 \begin{document}
-\renewcommand{\baselinestretch}{1.1} 			% velikost řádkování
+%\renewcommand{\baselinestretch}{1.1} 			% velikost řádkování
 
 \lstset{language=PHP,basicstyle=\footnotesize,frame=leftline,showspaces=false,showstringspaces=false,showtabs=false}	% nastavení defaultního jazyka a velikosti písma ve zdrojácích
 
@@ -139,7 +139,7 @@
 % Zadání Bc. práce (oskenované)
 \include{struct/03ZadaniBcPrace}
 
-\renewcommand{\baselinestretch}{1.1} 			% velikost řádkování
+\renewcommand{\baselinestretch}{1.5} 			% velikost řádkování
 % Prohlášení autora
 \include{struct/04Prohlaseni}
 
@@ -149,9 +149,11 @@
 % Abstrakt / Souhrn
 \include{struct/06Abstrakt}
 
-%% Seznam zkratek
-\include{struct/07Zkratky}
-%
+% Obsah
+%\thispagestyle{empty} % tato stránka nebude mít v zápatí číslo
+\tableofcontents
+\newpage
+
 %% Seznam tabulek
 %%\thispagestyle{empty} % tato stránka nebude mít v zápatí číslo
 %\listoftables
@@ -161,11 +163,9 @@
 %%\thispagestyle{empty} % tato stránka nebude mít v zápatí číslo
 \listoffigures
 \newpage
-
-% Obsah
-%\thispagestyle{empty} % tato stránka nebude mít v zápatí číslo
-\tableofcontents
-\newpage
+%% Seznam zkratek
+\include{struct/07Zkratky}
+%
 
 %\include{chap/pokusPisma}
 \pagestyle{plain}
