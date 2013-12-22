@@ -45,7 +45,7 @@ Z pohledu vývojáře se tedy jedná o poskytovaný server na kterém běží op
 
 Aplikace jsou doručovány jako HTTP služby, tvořené převážně HTML, CSS a asynchronním JavaScriptem, díky tomu pro zobrazení takové aplikace stačí moderní webový prohlížeč. Díky HTML5 jsou tyto aplikace dostupné i v offline verzi, kdy se nově vzniklá data synchronizují do cloudu po připojení k Internetu.
 
-Další možností, jako doručovat služby cloudu uživatelům je využití vzdálené plochy, kdy se uživateli zobrazuje vzdálené prostředí přímo na jeho monitoru a jeho zobrazovací zařízení (počítač, tablet, mobilní telefon, a další) se chová pouze jako tenký klient, který má na starost pouze přijímat obraz. Této metody se využívá například u služby \nameref{sec:onlive}
+Další možností, jako doručovat služby cloudu uživatelům je využití vzdálené plochy, kdy se uživateli zobrazuje vzdálené prostředí přímo na jeho monitoru a jeho zobrazovací zařízení (počítač, tablet, mobilní telefon, a další) se chová pouze jako tenký klient, který má na starost pouze přijímat obraz. Této metody se využívá například u služby \nameref{sec:onlive}.
 
 K zajištění stability služby a rozložení náporu se využívá služby CDN. To je služba, která přesměruje uživatele na sever, který je k němu nejblíže na cestě v síti. Má tedy nejlepší odezvu a dostupnost služeb. Případně je tato služba využita pro rozložení zátěže v případě, že některý server je více zatížen a nápor by nemusel ustát.
 
@@ -115,10 +115,21 @@ Asi první otázkou, kterou si každý položí po zmínění slova cloud a odev
 \subsection{Obecné otázky}
 Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\nocite{businessworld:prvniKroky}
 
-TODO: více informací a zdrojů ohledně obecných otázek cloudu
+Dle serveru \href{http://www.us-cert.gov/security-publications/Common-Risks-Using-Business-Apps-Cloud}{us-cert.gov} existuje několik základních rizik použití firemních dat v cloudu. Tyto rizika jsou popsány v dokumentu \href{http://www.us-cert.gov/sites/default/files/publications/using-cloud-apps-for-business.pdf}{Common Risks of Using Business Apps in the Cloud} \cite{uscert:risks}.
+\begin{description}
+	\item[Nemáme plnou kontrolu:] Pokud zakoupíme IT služby od cloudového poskytovatele, nemáme kompletní kontrolu nad výpočetními zdroji. Co se stane, pokud poskytovatel změní podmínky, nebo cenu? Co když nastane výpadek, ukončí provoz služby nebo zkrachuje?
+	\item[Závislost na jednom dodavateli:] Každý poskytovatel služeb je jiný. Mají různé platformy na rozdílných zařízeních, softwaru a s jiným nastavením. Změnit dodavatele v takovémto případě není vůbec snadné. Můžeme se stát závislými na jednom jediném dodavateli služeb. Jako zdárný příklad můžeme uvést migraci emailových účtů. Nastává problém s konverzí, formáty uložených zpráv, přizpůsobením a další problémy.
+	Problém s aplikace mi v cloudu je, že po migraci nemusí fungovat dle očekávání, nebo je není možné migrovat vůbec.
+	\item[Naše data jsou chráněny někým jiným:] Pokud využíváme cloudových služeb, je typické, že naše data jsou umístěna a ochraňována provozovatelem cloudu. Poskytovatel ovšem nemusí mít tak velký zájem ochránit naše data tak, jako my sami.
+	Mohou být odcizena firemní tajemství, nebo mohou být zničena data v důsledku zásahu vládních subjektů, jako živý příklad můžeme uvést \href{http://www.zive.cz/bleskovky/megaupload-zastaven-sefove-zatceni/sc-4-a-162004/default.aspx}{kauzu Megaupload.com}.
+	\item[Naše bezpečnost je spravována někým jiným:] Provozovatelé cloudu jsou velkými sjednocovately a agregáory oproti klasickým firemním data centrům. Obecně jsou schopni zajistit mnohem větší bezpečnost jejich platformy, jelikož mají mnohem větší prostředky pro její zabezpečení, než malá firma s omezenými zdroji.
+	Nicméně, data více zákazníků jsou seskupována na jeden server a tam jsou mnohem větším potenciálním cílem pro kybernetický útok. Společnost, která si zajišťuje vlastní bezpečnost ovšem zná přesně místa, která nutně potřebuje ochránit a vynaloží pro to maximum, kdežto v cloudu je vynakládána síla na všechny součásti firemního ekosystému shodná.
+\end{description}
+
+Dále zde jsou popsané obecně zažité obavy.
 
 \subsubsection{Data u třetí společnosti}
-Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně, jak dobře je jeho řešení zabezpečení dobré. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla. 
+Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně, jak dobře je jeho řešení bezpečné. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla.
 
 \subsubsection{Cracking}
 TODO
@@ -127,7 +138,7 @@ TODO
 Pokládanou otázkou může být také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáže odolávat takovému útoku lépe, než virtualizovaný server, který může zvýšit výkon a spíše útoku odolat. Druhá otázka která se naskýtá ovšem je, zda-li firemní server v době, kdy na něj je veden útok není možné odpojit od vnější sítě a dále ho lokálně využívat. Tím by se omezil přístup pouze vzdáleně připojeným uživatelům a to pouze v případě, že do firemní sítě neexistuje druhá cesta skrz VPN, přes kterou by se mohli uživatelé připojit a pracovat se serverem z lokální strany sítě.
 V každém případě, pokud bude systém čelit DDoS útoku, bude s ním s největší pravděpodobností tak jako tak dost těžké pracovat.
 
-\subsection{Ztráta dat}
+\subsubsection{Ztráta dat}
 \label{sec:ZtrataDat}
 \begin{quote}
 Pokud má zaměstnanec všechna data u sebe v počítači (dnes spíše v notebooku) a o něj přijde, ať už ztrátou, krádeží nebo poruchou, je firma vystavena problému, kdy o data nenávratně přijde. V USA se jenom na letištích ztratí přes šest set tisíc notebooků ročně, což je alarmující číslo. \cite{notebook:ztraceneNBnaLetistich}
@@ -140,10 +151,10 @@ Pokud vezmeme data ze zaměstnaneckých zařízení a všechna je přesuneme do 
 	\item v případě ztráty notebooku nepřichází firma o kolik dat a může rychle reagovat omezením přístupu do cloudu apod., což v případě uložení všech dat na disku není dost dobře možné.
 \end{itemize}
 
-\subsection{Odcizení a zneužití dat}
+\subsubsection{Odcizení a zneužití dat}
 S výše popsaným problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problém odcizení a zneužití dat. V případě odcizení plných dat je firma postižena v celém rozsahu, kdy přichází o kompletní know-how a cenné informace. V případě využití cloudu funguje notebook pouze jako tenký klient a na jeho disku je jen nutné postačující minimum důležitých dat. V tomto případě firma nepřichází o celé své duševní bohatství a bez větších problémů může nadále bez potíží fungovat.
 
-\subsection{Zálohování}
+\subsubsection{Zálohování}
 Při selhání lokálního serveru přicházíme téměř vždy o data. Prvním krokem, jak o svá data nepřijít je zrcadlení disků. Tato metoda umožňuje zabezpečit data proti poruše pevného disku, kdy jsou data zrcadlena na druhém (a dalších) disku a je tím zvýšena bezpečnost fyzických dat. Ovšem ani tento případ nechrání data proti výpadku napájení (možnost poškození konzistence dat nebo databáze), proti přírodním katastrofám (požáru, úderu blesku, zemětřesení) v místě kde se nachází server. Tomuto případu zabrání již pouze zrcadlení dat do jiné destinace, kdy máme druhý server na jiném místě. Toto řešení již ovšem začíná být nákladné, nejen na údržbu, ale i správu a kvalitní konektivitu pro synchronizaci obou serverů.
 
 V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\nocite{podnikatel:zalohovani}
