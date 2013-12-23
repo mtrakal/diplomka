@@ -112,54 +112,6 @@ Hlavním odmítnutím přechodu, nebo částečné migraci na cloudové řešen�
 \section{Bezpečnost a cloud}
 Asi první otázkou, kterou si každý položí po zmínění slova cloud a odevzdání citlivých dat do rukou jiné společnosti, je otázka bezpečnosti. Jelikož data přesouváme k cizímu subjektu, je tato otázka zajisté na místě a měla by být zodpovězena před jakýmkoliv prvním nasazením cloud computingu.
 
-\subsection{Obecné otázky}
-Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\nocite{businessworld:prvniKroky}
-
-Dle serveru \href{http://www.us-cert.gov/security-publications/Common-Risks-Using-Business-Apps-Cloud}{us-cert.gov} existuje několik základních rizik použití firemních dat v cloudu. Tyto rizika jsou popsány v dokumentu \href{http://www.us-cert.gov/sites/default/files/publications/using-cloud-apps-for-business.pdf}{Common Risks of Using Business Apps in the Cloud} \cite{uscert:risks}.
-\begin{description}
-	\item[Nemáme plnou kontrolu:] Pokud zakoupíme IT služby od cloudového poskytovatele, nemáme kompletní kontrolu nad výpočetními zdroji. Co se stane, pokud poskytovatel změní podmínky, nebo cenu? Co když nastane výpadek, ukončí provoz služby nebo zkrachuje?
-	\item[Závislost na jednom dodavateli:] Každý poskytovatel služeb je jiný. Mají různé platformy na rozdílných zařízeních, softwaru a s jiným nastavením. Změnit dodavatele v takovémto případě není vůbec snadné. Můžeme se stát závislými na jednom jediném dodavateli služeb. Jako zdárný příklad můžeme uvést migraci emailových účtů. Nastává problém s konverzí, formáty uložených zpráv, přizpůsobením a další problémy.
-	Problém s aplikace mi v cloudu je, že po migraci nemusí fungovat dle očekávání, nebo je není možné migrovat vůbec.
-	\item[Naše data jsou chráněny někým jiným:] Pokud využíváme cloudových služeb, je typické, že naše data jsou umístěna a ochraňována provozovatelem cloudu. Poskytovatel ovšem nemusí mít tak velký zájem ochránit naše data tak, jako my sami.
-	Mohou být odcizena firemní tajemství, nebo mohou být zničena data v důsledku zásahu vládních subjektů, jako živý příklad můžeme uvést \href{http://www.zive.cz/bleskovky/megaupload-zastaven-sefove-zatceni/sc-4-a-162004/default.aspx}{kauzu Megaupload.com}.
-	\item[Naše bezpečnost je spravována někým jiným:] Provozovatelé cloudu jsou velkými sjednocovately a agregáory oproti klasickým firemním data centrům. Obecně jsou schopni zajistit mnohem větší bezpečnost jejich platformy, jelikož mají mnohem větší prostředky pro její zabezpečení, než malá firma s omezenými zdroji.
-	Nicméně, data více zákazníků jsou seskupována na jeden server a tam jsou mnohem větším potenciálním cílem pro kybernetický útok. Společnost, která si zajišťuje vlastní bezpečnost ovšem zná přesně místa, která nutně potřebuje ochránit a vynaloží pro to maximum, kdežto v cloudu je vynakládána síla na všechny součásti firemního ekosystému shodná.
-\end{description}
-
-Dále zde jsou popsané obecně zažité obavy.
-
-\subsubsection{Data u třetí společnosti}
-Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně, jak dobře je jeho řešení bezpečné. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla.
-
-\subsubsection{Cracking}
-TODO
-
-\subsubsection{DDoS útok}
-Pokládanou otázkou může být také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáže odolávat takovému útoku lépe, než virtualizovaný server, který může zvýšit výkon a spíše útoku odolat. Druhá otázka která se naskýtá ovšem je, zda-li firemní server v době, kdy na něj je veden útok není možné odpojit od vnější sítě a dále ho lokálně využívat. Tím by se omezil přístup pouze vzdáleně připojeným uživatelům a to pouze v případě, že do firemní sítě neexistuje druhá cesta skrz VPN, přes kterou by se mohli uživatelé připojit a pracovat se serverem z lokální strany sítě.
-V každém případě, pokud bude systém čelit DDoS útoku, bude s ním s největší pravděpodobností tak jako tak dost těžké pracovat.
-
-\subsubsection{Ztráta dat}
-\label{sec:ZtrataDat}
-\begin{quote}
-Pokud má zaměstnanec všechna data u sebe v počítači (dnes spíše v notebooku) a o něj přijde, ať už ztrátou, krádeží nebo poruchou, je firma vystavena problému, kdy o data nenávratně přijde. V USA se jenom na letištích ztratí přes šest set tisíc notebooků ročně, což je alarmující číslo. \cite{notebook:ztraceneNBnaLetistich}
-\end{quote}
-
-
-Pokud vezmeme data ze zaměstnaneckých zařízení a všechna je přesuneme do cloudu a nastavíme dobře přístupová práva, omezíme tak možnost ztráty cenných dat. 
-\begin{itemize}
-	\item Data budou neustále zálohována v cloudu,
-	\item v případě ztráty notebooku nepřichází firma o kolik dat a může rychle reagovat omezením přístupu do cloudu apod., což v případě uložení všech dat na disku není dost dobře možné.
-\end{itemize}
-
-\subsubsection{Odcizení a zneužití dat}
-S výše popsaným problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problém odcizení a zneužití dat. V případě odcizení plných dat je firma postižena v celém rozsahu, kdy přichází o kompletní know-how a cenné informace. V případě využití cloudu funguje notebook pouze jako tenký klient a na jeho disku je jen nutné postačující minimum důležitých dat. V tomto případě firma nepřichází o celé své duševní bohatství a bez větších problémů může nadále bez potíží fungovat.
-
-\subsubsection{Zálohování}
-Při selhání lokálního serveru přicházíme téměř vždy o data. Prvním krokem, jak o svá data nepřijít je zrcadlení disků. Tato metoda umožňuje zabezpečit data proti poruše pevného disku, kdy jsou data zrcadlena na druhém (a dalších) disku a je tím zvýšena bezpečnost fyzických dat. Ovšem ani tento případ nechrání data proti výpadku napájení (možnost poškození konzistence dat nebo databáze), proti přírodním katastrofám (požáru, úderu blesku, zemětřesení) v místě kde se nachází server. Tomuto případu zabrání již pouze zrcadlení dat do jiné destinace, kdy máme druhý server na jiném místě. Toto řešení již ovšem začíná být nákladné, nejen na údržbu, ale i správu a kvalitní konektivitu pro synchronizaci obou serverů.
-
-V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\nocite{podnikatel:zalohovani}
-
-
 \subsection{Sedm rizik dle Gartner}
 Server InfoWorld upozornil na sedm rizik zveřejněných společností Gartner. \cite{infoworld:7rizik}
 
@@ -199,6 +151,49 @@ Pátrat po nežádoucích či ilegálních aktivitách může být v cloud compu
 Ujistěte se, že váš cloud poskytovatel není v ohrožení bankrotu ani převzetí od jiné firmy. I když se takový scénář může zdát nepravděpodobný, je dobré vědět, že i v takovém případě budou vaše data dostupná. Gartner radí ověřit si u potenciálních dodavatelů, zda by byli v tomto případě schopni získat data zpět a zda by byla dostupná ve formátu, který lze importovat do replikované aplikace.\cite{cloud.cz:7rizik}
 \end{quote}
 
+\subsection{Obecné otázky}
+Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\nocite{businessworld:prvniKroky}
+
+Dle serveru \href{http://www.us-cert.gov/security-publications/Common-Risks-Using-Business-Apps-Cloud}{us-cert.gov} existuje několik základních rizik použití firemních dat v cloudu. Tyto rizika jsou popsány v dokumentu \href{http://www.us-cert.gov/sites/default/files/publications/using-cloud-apps-for-business.pdf}{Common Risks of Using Business Apps in the Cloud} \cite{uscert:risks}.
+\begin{description}
+	\item[Nemáme plnou kontrolu:] Pokud zakoupíme IT služby od cloudového poskytovatele, nemáme kompletní kontrolu nad výpočetními zdroji. Co se stane, pokud poskytovatel změní podmínky, nebo cenu? Co když nastane výpadek, ukončí provoz služby nebo zkrachuje?
+	\item[Závislost na jednom dodavateli:] Každý poskytovatel služeb je jiný. Mají různé platformy na rozdílných zařízeních, softwaru a s jiným nastavením. Změnit dodavatele v takovémto případě není vůbec snadné. Můžeme se stát závislými na jednom jediném dodavateli služeb. Jako zdárný příklad můžeme uvést migraci emailových účtů. Nastává problém s konverzí, formáty uložených zpráv, přizpůsobením a další problémy.
+	Problém s aplikace mi v cloudu je, že po migraci nemusí fungovat dle očekávání, nebo je není možné migrovat vůbec.
+	\item[Naše data jsou chráněny někým jiným:] Pokud využíváme cloudových služeb, je typické, že naše data jsou umístěna a ochraňována provozovatelem cloudu. Poskytovatel ovšem nemusí mít tak velký zájem ochránit naše data tak, jako my sami.
+	Mohou být odcizena firemní tajemství, nebo mohou být zničena data v důsledku zásahu vládních subjektů, jako živý příklad můžeme uvést \href{http://www.zive.cz/bleskovky/megaupload-zastaven-sefove-zatceni/sc-4-a-162004/default.aspx}{kauzu Megaupload.com}.
+	\item[Naše bezpečnost je spravována někým jiným:] Provozovatelé cloudu jsou velkými sjednocovately a agregáory oproti klasickým firemním data centrům. Obecně jsou schopni zajistit mnohem větší bezpečnost jejich platformy, jelikož mají mnohem větší prostředky pro její zabezpečení, než malá firma s omezenými zdroji.
+	Nicméně, data více zákazníků jsou seskupována na jeden server a tam jsou mnohem větším potenciálním cílem pro kybernetický útok. Společnost, která si zajišťuje vlastní bezpečnost ovšem zná přesně místa, která nutně potřebuje ochránit a vynaloží pro to maximum, kdežto v cloudu je vynakládána síla na všechny součásti firemního ekosystému shodná.
+\end{description}
+
+Dále uvádím další popisované problémy se kterými se jakožto uživatelé cloudu budou klienti potýkat.
+
+\subsubsection{Data u třetí společnosti}
+Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně, jak dobře je jeho řešení bezpečné. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla.
+
+\subsubsection{Ztráta dat}
+\label{sec:ZtrataDat}
+\begin{quote}
+Pokud má zaměstnanec všechna data u sebe v počítači (dnes spíše v notebooku) a o něj přijde, ať už ztrátou, krádeží nebo poruchou, je firma vystavena problému, kdy o data nenávratně přijde. V USA se jenom na letištích ztratí přes šest set tisíc notebooků ročně, což je alarmující číslo. \cite{notebook:ztraceneNBnaLetistich}
+\end{quote}
+
+Pokud vezmeme data ze zaměstnaneckých zařízení a všechna je přesuneme do cloudu a nastavíme dobře přístupová práva, omezíme tak možnost ztráty cenných dat.
+\begin{itemize}
+	\item Data budou neustále zálohována v cloudu,
+	\item v případě ztráty notebooku nepřichází firma o tolik dat a může rychle reagovat omezením přístupu do cloudu apod., což v případě uložení všech dat na disku není dost dobře možné.
+\end{itemize}
+
+\subsubsection{Odcizení a zneužití dat}
+S výše popsaným problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problém odcizení a zneužití dat. V případě odcizení plných dat je firma postižena v celém rozsahu, kdy přichází o kompletní know-how a cenné informace. V případě využití cloudu funguje notebook pouze jako tenký klient a na jeho disku je jen nutné postačující minimum důležitých dat. V tomto případě firma nepřichází o celé své duševní bohatství a bez větších problémů může nadále bez potíží fungovat.
+
+\subsubsection{Zálohování}
+Při selhání lokálního serveru přicházíme téměř vždy o data. Prvním krokem, jak o svá data nepřijít je zrcadlení disků. Tato metoda umožňuje zabezpečit data proti poruše pevného disku, kdy jsou data zrcadlena na druhém (a dalších) disku a je tím zvýšena bezpečnost fyzických dat. Ovšem ani tento případ nechrání data proti výpadku napájení (možnost poškození konzistence dat nebo databáze), proti přírodním katastrofám (požáru, úderu blesku, zemětřesení) v místě kde se nachází server. Tomuto případu zabrání již pouze zrcadlení dat do jiné destinace, kdy máme druhý server na jiném místě. Toto řešení již ovšem začíná být nákladné, nejen na údržbu, ale i správu a kvalitní konektivitu pro synchronizaci obou serverů.
+
+V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\nocite{podnikatel:zalohovani}
+
+\subsubsection{DDoS útok}
+Pokládanou otázkou může být také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáže odolávat takovému útoku lépe, než virtualizovaný server, který může zvýšit výkon a spíše útoku odolat. Druhá otázka která se naskýtá ovšem je, zda-li firemní server v době, kdy na něj je veden útok není možné odpojit od vnější sítě a dále ho lokálně využívat. Tím by se omezil přístup pouze vzdáleně připojeným uživatelům a to pouze v případě, že do firemní sítě neexistuje druhá cesta skrz VPN, přes kterou by se mohli uživatelé připojit a pracovat se serverem z lokální strany sítě.
+V každém případě, pokud bude systém čelit DDoS útoku, bude s ním s největší pravděpodobností tak jako tak dost těžké pracovat.
+
 \subsection{Výhody zabezpečení}
 Kromě nevýhod, má zabezpečení v cloudu i své výhody, pojďme si je tedy shrnout.
 
@@ -217,7 +212,7 @@ Pod pojmem protokolování si lze představit obecně používanější výraz a
 O zabezpečení cloudu se z velké části stará její poskytovatel. Ve svých službách většinou zahrnuje antivirový a další software a stará se o zabezpečení celého cloudu jako celku. Díky tomu, že cloud využívá mnoho klientů a zabezpečení se vyvíjí pro všechny najednou, cena nákladů na vývoj a testování nového systému zabezpečení rapidně klesá s počtem klientů, kteří cloud využívají. Díky tomu nám klesnou výdaje za zabezpečení na nutné minimum, ke kterému bychom se s vlastním řešením jen těžko přibližovali.
 
 \subsection{Legislativa}
-Původně aplikace běželi na firemním serveru, tedy v místě kde typicky firma sídlila a zároveň podnikala. Tohle cloud mění, data a aplikace jsou z pravidla umístěny v jiném státě. Tím vyvstává otázka legislativy. Jelikož aplikace běží na serveru v jedné mezi a je využívána v jiné, které zákony se tedy na ni mají vztahovat? Zákony země, kde jsou servery fyzicky umístěny, nebo místa, kde je vykonávána činnost firmy?
+Původně aplikace běželi na firemním serveru, tedy v místě kde typicky firma sídlila a zároveň podnikala. Tohle cloud mění, data a aplikace jsou zpravidla umístěny v jiném místě nebo i státě. Tím vyvstává otázka legislativy. Jelikož aplikace běží na serveru v jedné mezi a je využívána v jiné, které zákony se tedy na ni mají vztahovat? Zákony země, kde jsou servery fyzicky umístěny, nebo místa, kde je vykonávána činnost firmy?
 
 I na tyto otázky se musí dokázat odpovědět. Zpravidla se musí brát ohled na legislativy ve všech zemích, což v případě právě cloudu je velice obtížné. Mnoho aplikací může běžet paralelně na mnoha místech na světě.
 
@@ -321,27 +316,32 @@ Aplikace Keep slouží pro uchovávání krátkých poznámek a zápisků. Služ
 \end{figure}
 
 \subsubsection{Enterprise}
-TODO
-\begin{itemize}
-	\item Disk, Apps, Gmail, Hangouts
-\end{itemize}
-
-\subsubsection{Cloud Platform}
-TODO
+Google Enterprise se skládá z několika, jinak zdarma dostupných, služeb společnosti, které jsou obohaceny o další funkce a možnosti, které přispívají k lepší produktivitě.
+\begin{description}
+	\item[Spolupráce:] aplikace pro sdílené úložiště dat Disk, Kalendář pro lepší organizaci času, cloudové služby pro editaci dokumentů Apps, emailová schránka Gmail a aplikace pro videohovory a IM komunikaci Hangouts.
+	\item[Vizualizace obchodních dat:] pro vizualizaci je možné využít desktopové aplikace Earth Pro, programovat a zobrazovat data nad mapami pomocí Maps Engine a nebo využívat Koordinátor pro vizualizaci aktuálních poloh osob nebo vozů a jejich navádění.
+	\item[Vyhledávání] jak obyčejných dat na Internetu, specifických analýz nad nalezenými daty, tak i prohledávání firemních webů.
+	\item[Infrastruktura] sloužící pro spouštění vlastních aplikací v cloudu, výpočetně náročné operace, ukládání aplikačních dat a využívání BigQuery pro analyzování velkého množství dat.
+	\item[Web pro firmy] za pomocí Google Sites, moderního multiplatformního prohlížeče Chrome a počítačů založených na operačním systému ChromeOS.
+\end{description}
 
 \subsubsection{Cloud Print}
-TODO
+Cloudová služba Print umožňuje, pomocí spojení tiskáren a webu, tisknout z libovolného místa komukoliv z vybraných uživatelů na tiskárně připojené k zařízení, které je připojeno do této služby.
 
 \subsubsection{App Engine}
-TODO
+Google App Engine je platforma jako služba, která poskytuje možnosti programování v několika jazycích s využitím MySQL databáze. Programovat lze v Pythonu, Javě, PHP a jazyce Go. Programy následně běží jako webové aplikace. Každá aplikace běží v sandboxu, tedy v chráněném prostředí s omezeným přístupem k operačnímu systému a dalším aplikacím běžícím pod stejným systémem.
 
 \subsubsection{Compute Engine}
-TODO
+Služba Compute Engine umožňuje spouštět vysoce náročné výpočty v cloudu Google na virtuálních serverech, ve kterých běží operační systém Debian a nebo CentOS.
 
 \subsubsection{Cloud Storage}
-TODO
+Poskytuje vysoce dostupné a lokálně přístupné úložiště dat pro libovolně náročné služby. Díky lokální mezipaměti je přístup z lokalit velice rychlý. K datům se díky službě CDN dostanete odkudkoliv. Díky redundantním úložištím v mnoha lokalitách jsou data dobře chráněny.
 
 \subsubsection{BigQuery}
+BigQuery je webová služba pro interaktivní analýzu nad obřími datasety (nad miliardami řádků).
+
+\subsubsection{Cloud Platform}
+Cloud Platform je zapouzdření služeb popsaných výše. Díky této službě je možné získat všechny výše nabízené v jednom balíku jako celek.
 
 \subsection{IBM}
 IBM je přední světová společnost v oboru IT. Společnost na trhu s informačními technologiemi působí již od roku 1981, kdy vydala svůj první IBM PC (a od něj nadále označované IBM Compatible). Společnost se postupně odpoutala od výroby stolních počítačů a zaměřila se spíše na vývoj nových technologií, kompletní serverová řešení a hlavně na prodej samostatných služeb.
