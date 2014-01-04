@@ -290,30 +290,12 @@ Společnost Google se zaměřuje na cloudové služby velice úzce a poskytuje �
 
 \subsubsection{Gmail}
 Asi nejznámější cloudovou službou Google je emailová schránka. V základní verzi poskytuje 15 GB místa a přístup přes IMAP i POP3. Se schránkou automaticky uživatel získává i OpenID\footnote{OpenID je otevřený standard popisující decentralizovaný způsob autentizace uživatelů, který odstraňuje potřebu na straně provozovatele služby poskytovat a vyvíjet vlastní systémy pro autentizaci a který rovněž samotným uživatelům služby umožňuje konsolidaci jejich digitálních identit.\cite{wiki:openID}} díky kterému se může přihlašovat do dalších služeb nejen společnosti Google.
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/googleGmail.png}
-	\caption{Emailová schránka Gmail}
-	\label{fig:googleGmail}
-\end{figure}
 
 \subsubsection{Drive}
 Aplikace Drive je cloudové úložiště pro osobní potřebu uživatele s účtem Google. V základním balíčku je diskový prostor 15 GB, který jde následně za poplatek rozšířit. Nahrané dokumenty a soubory je možné upravovat, ukládat, nebo sdílet. Je samozřejmě možné vytvářet i nové dokumenty. Dále Drive umožňuje spolupráci několika lidí na jednom dokumentu a to i zároveň.
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/googleDrive.png}
-	\caption{Diskové úložiště Drive}
-	\label{fig:googleDrive}
-\end{figure}
 
 \subsubsection{Keep}
 Aplikace Keep slouží pro uchovávání krátkých poznámek a zápisků. Služba je synchronizována mezi zařízeními K poznámkám je možné si přidat oznámení, tedy si můžete poznamenat třeba nezapomenout nakoupit pečivo a když víte, že kolem osmé budete v obchodě, aplikace na mobilním zařízení vás v tu dobu upozorní. Dále je možné vkládat k poznámkám fotky, nebo hlasový komentář.
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/googleKeep.png}
-	\caption{Poznámky Keep}
-	\label{fig:googleKeep}
-\end{figure}
 
 \subsubsection{Enterprise}
 Google Enterprise se skládá z několika, jinak zdarma dostupných, služeb společnosti, které jsou obohaceny o další funkce a možnosti, které přispívají k lepší produktivitě.
@@ -411,13 +393,6 @@ VMware vSphere se dodává v několika \href{http://www.vmware.com/products/vsph
 	\item[Essentials Plus] rozšiřuje edici VMware vSphere Essentials o vysokou dostupnost aplikací a ochranu dat. Pomáhá menším kancelářským IT prostředím konsolidovat kompletně IT infrastrukturu a najít řešení business continuity.\cite{vmware:vSphereOldanyGroup}
 \end{description}
 
-	\begin{figure}[htbp]
-		\centering
-			\includegraphics[width=1.00\textwidth]{ext/vm_vSphere.png}
-		\caption{VMware vSphere\cite{vmware:vSphereOldanyGroupImg}}
-		\label{fig:vm_vSphere}
-	\end{figure}
-
 Mezi \href{http://www.vmware.com/products/vsphere/features.html}{jednotlivé komponenty vSphere} patří:
 \begin{description}
 	\item[Compute] s automatickým deployem k aktualizaci za běhu, funkcemi měření výkonu, lepší akceleraci a dalšími funkcemi.
@@ -461,13 +436,6 @@ Další možností služby je sdílení složek mezi více uživateli služby, k
 
 Služba poskytuje i přístup k historii upravených souborů -- provádí verzování známé ze systémů jako SVN nebo Git.
 
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/dropbox_versioning.png}
-	\caption{Verzování ve službě dropbox}
-	\label{fig:dropbox_versioning}
-\end{figure}
-
 \subsubsection{OnLive}
 \label{sec:onlive}
 Nabízí koncepčně naprosto jiné služby, než zde všechny zmíněné. Jedná se o službu doručování obrazu vzdáleného serveru, který funguje jako výpočetní datové centrum. V tomto centru se na farmě grafických karet a procesorů provádí vysoce náročné výpočetní operace a jejich výsledek v podobě obrazu je doručován po kvalitní datové lince k uživatelům. Služba by se dala přirovnat k funkci vzdálené plochy.
@@ -484,12 +452,6 @@ Druhou variantou je služba Desktop. V tomto případě je poskytován vzdálen�
 \begin{quote}ownCloud je řešení pro ukládání souborů, které můžeme nasadit ve firmě a inteligentně používat pro sdílení souborů přes internet. Nabízí ale i řadu dalších služeb (aplikací, které fungují jako zásuvné moduly), například kalendář, kontakty, úkoly a poznámky, hudební přehrávač, editor/prohlížeč obrázků, přehrávač videí, apod. K tomu se přidávají další vlastnosti jako šifrování a jednoduché verzování souborů.\cite{samuraj:ownCLoud5}
 \end{quote}
 TODO: přidat vlastní omáčku, spousta prostoru pro rozvedení...
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/ownCloud.png}
-	\caption{ownCloud}
-	\label{fig:ownCloud}
-\end{figure}
 
 \subsubsection{Cloud9}
 \href{https://github.com/ajaxorg/cloud9}{Cloud 9 IDE} je vývojové prostředí, které je poháněno javascriptovým frameworkem \href{http://nodejs.org/}{Node.js} běžícím na serveru. Jedná se tak o cloudové open source řešení vývojového prostředí. Jako základ IDE je využíváno editoru kódu \href{http://ace.c9.io/}{Ace}. Prostředí umí všechny základní věci jako zvýrazňování syntaxe, napovídání a doplňování kódu, zobrazování náhledu v případě kódu v HTML5+CSS a JavaScriptu.
@@ -498,27 +460,8 @@ Cloud9 IDE je možné využívat pro projekty na vlastním serveru, nebo využí
 
 Na tomto open source IDE je založena i služba \href{https://c9.io/}{c9.io}, která kromě poskytnutí funkcí a hostování IDE umožňuje klonování projektů a spravování u nich na serveru. Možnost kompilace a deploye se spouštěním serverových částí kódu, poskytuje přístup ke konzole pomocí ssh přes webový prohlížeč (možnost používat tar, wget, git a další nástroje). Navíc služba dokáže dobře spolupracovat s verzovacími nástroji jako \href{https://github.com/}{Github}, \href{https://bitbucket.org/}{Bitbucket}, \href{http://www.windowsazure.com}{Windows Azure} a dalšími.
 Dále tato služba umožňuje spolupráci více lidí nad projektem a možnost editace jednoho souboru se zvýrazněním, kde kolegové soubor právě upravují.
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/c9ioDashboard.png}
-	\caption{c9.io dashboard}
-	\label{fig:c9ioDashboard}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/c9ioEditor.png}
-	\caption{c9.io editor kódu s náhledem výstupu}
-	\label{fig:c9ioEditor}
-\end{figure}
 
 Cloud9 využívá například i embedded zařízení \href{http://beagleboard.org/}{BeagleBoard}, ve kterém běží Linux, nebo Android OS. Díky tomuto editoru můžete programovat přímo na zařízení a okamžitě spouštět a zobrazovat výsledek. Zařízení má mnoho vstupů i výstupů a dá se na něm s přídavnými moduly sestavit v podstatě libovolná aplikace, od multimediálního centra, až po inteligentního robota na úklid domácnosti.
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=1.00\textwidth]{ext/product_detail_black_lg_horiz.png}
-	\caption{Embedded zařízení BeagleBone Black}
-	\label{fig:beagleboneblack}
-\end{figure}
 
 \newpage
 \section{Nasazení a programování pro cloud}
