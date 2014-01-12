@@ -33,7 +33,7 @@ Mojí vizí tedy je, že se svět postupně opět navrátí ke klasickým termin
 \subsection{Co je to cloud}
 Co je to tedy cloud computing a k čemu je nám dobrý? Jedná se o pronajímání výpočetního výkonu jako služby.
 
-Zatímco bychom ve firmě měli velký a drahý server, který bychom museli spravovat, zálohovat a starat se o něj, tak tuto starost můžeme přesunout na někoho jiného. Při pořízení vlastního serveru se počítá s tím, že se po určité době obmění novým a výkonnějším řešením. Případně se pouze obmění jeho komponenty (procesor, paměť, ...) což je dočasné řešení. V tomto případě, kdy firma pořizuje náhradu v podobě výkonnějšího stroje se nazývá vertikální škálování (scale up). Tato metoda je ovšem vhodná pro menší firmu s malým počtem připojených aktivních uživatelů. Cloudové řešení je často složené ze slabších a méně výkonných strojů, které jsou spojeny pomocí síťové infrastruktury a navenek se tváří pro uživatele jako jeden supervýkoný stroj. Jedná se o takzvané horizontální škálování (scale out). Toto řešením má tu výhodu, že dokáže uživatelům přizpůsobovat mnohem lépe své požadavky a v případě potřeby vyššího výkonu přidat další slabší stroj do sítě, nebo naopak některé pro úsporu dočasně vypnout.\nocite{wiki:Skalovatelnost}
+Zatímco bychom ve firmě měli velký a drahý server, který bychom museli spravovat, zálohovat a starat se o něj, tak tuto starost můžeme přesunout na někoho jiného. Při pořízení vlastního serveru se počítá s tím, že se po určité době obmění novým a výkonnějším řešením. Případně se pouze obmění jeho komponenty (procesor, paměť, ...) což je dočasné řešení. V tomto případě, kdy firma pořizuje náhradu v podobě výkonnějšího stroje se nazývá vertikální škálování (scale up). Tato metoda je ovšem vhodná pro menší firmu s malým počtem připojených aktivních uživatelů. Cloudové řešení je často složené ze slabších a méně výkonných strojů, které jsou spojeny pomocí síťové infrastruktury a navenek se tváří pro uživatele jako jeden supervýkoný stroj. Jedná se o takzvané horizontální škálování (scale out). Toto řešením má tu výhodu, že dokáže uživatelům přizpůsobovat mnohem lépe své požadavky a v případě potřeby vyššího výkonu přidat další slabší stroj do sítě, nebo naopak některé pro úsporu dočasně vypnout.\cite{wiki:Skalovatelnost}
 
 \subsubsection{Uživatelský pohled}
 Jak vnímá cloudové služby uživatel? Vidí je tak, že se jedná o aplikace, ke kterým může přistupovat odkudkoliv, nemusí si nic instalovat do počítače a data, která v cloudu využívá nemá uložené u sebe na disku v počítači, ale někde na vzdáleném serveru. Hlavní výhodu vidí v tom, že o data nepřichází s odcizeným fyzickým zařízením, když mu notebook někdo ukradne na letišti.
@@ -53,7 +53,7 @@ K zajištění stability služby a rozložení náporu se využívá služby CDN
 \label{sec:virtualizace}
 Cloud může běžet a fungovat díky virtualizaci služeb a hardware. Virtualizace umožňuje oddělení služeb jednotlivých klientů od sebe a taktéž dynamickou změnu výkonu dle požadavků. Virtualizace s dostatečným výpočetním výkonem je umožněna díky škálovatelnosti zařízení. Zařízení jsou tedy všeobecně méně výkonné servery, dalo by se říci i obyčejné osobní počítače, propojeny do jednoho velkého celku pomocí počítačové sítě. Jejich výkon je díky použití horizontálního škálování zvyšován podle počtu připojených malých serverů a může růst téměř donekonečna.
 
-Virtualizace fyzického stroje známe několik variant\nocite{zive.cz:virtualizace}:
+Virtualizace fyzického stroje známe několik variant\cite{zive.cz:virtualizace}:
 \begin{description}
 	\item[Emulace:] při emulaci dochází ke kompletní emulaci jádra procesoru, registrů, paměti a dalších klíčových součástí systému. Hostitelský systém tedy vytváří kompletní běhové prostředí pro spuštění hostovaného systému. Jedná se o nejnáročnější a nejméně efektivní verzi virtualizace.
 	\item[Virtualizace na úrovni systému:] využívá jednoho společného jádra hostitelského operačního systému. Z toho vychází hlavní nevýhoda a to, že je možné virtualizovat pouze stejný systém ve shodné verzi. Hostitelský systém může oproti hostovaným pouze přidělovat systémové zdroje, jinak se jedná o rovnocenné systémy. Tento způsob virtualizace poskytuje nejvyšší výkon.
@@ -113,7 +113,7 @@ Hlavním odmítnutím přechodu, nebo částečné migraci na cloudové řešen�
 Asi první otázkou, kterou si každý položí po zmínění slova cloud a odevzdání citlivých dat do rukou jiné společnosti, je otázka bezpečnosti. Jelikož data přesouváme k cizímu subjektu, je tato otázka zajisté na místě a měla by být zodpovězena před jakýmkoliv prvním nasazením cloud computingu.
 
 \subsection{Sedm rizik dle Gartner}
-Server InfoWorld upozornil na sedm rizik zveřejněných společností Gartner. \cite{infoworld:7rizik}
+Server \href{http://www.infoworld.com/d/security-central/gartner-seven-cloud-computing-security-risks-853}{InfoWorld}\cite{infoworld:7rizik} upozornil na sedm rizik zveřejněných společností Gartner.
 
 \subsubsection{Privilegovaný uživatelský přístup}
 \begin{quote}
@@ -152,15 +152,15 @@ Ujistěte se, že váš cloud poskytovatel není v ohrožení bankrotu ani přev
 \end{quote}
 
 \subsection{Obecné otázky}
-Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\nocite{businessworld:prvniKroky}
+Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\cite{businessworld:prvniKroky}
 
-Dle serveru \href{http://www.us-cert.gov/security-publications/Common-Risks-Using-Business-Apps-Cloud}{us-cert.gov} existuje několik základních rizik použití firemních dat v cloudu. Tyto rizika jsou popsány v dokumentu \href{http://www.us-cert.gov/sites/default/files/publications/using-cloud-apps-for-business.pdf}{Common Risks of Using Business Apps in the Cloud} \cite{uscert:risks}.
+Dle serveru \href{http://www.us-cert.gov/security-publications/Common-Risks-Using-Business-Apps-Cloud}{us-cert.gov} existuje několik základních rizik použití firemních dat v cloudu. Tyto rizika jsou popsány v dokumentu \href{http://www.us-cert.gov/sites/default/files/publications/using-cloud-apps-for-business.pdf}{Common Risks of Using Business Apps in the Cloud}\cite{uscert:risks}.
 \begin{description}
 	\item[Nemáme plnou kontrolu:] Pokud zakoupíme IT služby od cloudového poskytovatele, nemáme kompletní kontrolu nad výpočetními zdroji. Co se stane, pokud poskytovatel změní podmínky, nebo cenu? Co když nastane výpadek, ukončí provoz služby nebo zkrachuje?
 	\item[Závislost na jednom dodavateli:] Každý poskytovatel služeb je jiný. Mají různé platformy na rozdílných zařízeních, softwaru a s jiným nastavením. Změnit dodavatele v takovémto případě není vůbec snadné. Můžeme se stát závislými na jednom jediném dodavateli služeb. Jako zdárný příklad můžeme uvést migraci emailových účtů. Nastává problém s konverzí, formáty uložených zpráv, přizpůsobením a další problémy.
 	Problém s aplikace mi v cloudu je, že po migraci nemusí fungovat dle očekávání, nebo je není možné migrovat vůbec.
 	\item[Naše data jsou chráněny někým jiným:] Pokud využíváme cloudových služeb, je typické, že naše data jsou umístěna a ochraňována provozovatelem cloudu. Poskytovatel ovšem nemusí mít tak velký zájem ochránit naše data tak, jako my sami.
-	Mohou být odcizena firemní tajemství, nebo mohou být zničena data v důsledku zásahu vládních subjektů, jako živý příklad můžeme uvést \href{http://www.zive.cz/bleskovky/megaupload-zastaven-sefove-zatceni/sc-4-a-162004/default.aspx}{kauzu Megaupload.com}.
+	Mohou být odcizena firemní tajemství, nebo mohou být zničena data v důsledku zásahu vládních subjektů, jako živý příklad můžeme uvést \href{http://www.zive.cz/bleskovky/megaupload-zastaven-sefove-zatceni/sc-4-a-162004/default.aspx}{kauzu Megaupload.com}\cite{zive:megaupload}.
 	\item[Naše bezpečnost je spravována někým jiným:] Provozovatelé cloudu jsou velkými sjednocovately a agregáory oproti klasickým firemním data centrům. Obecně jsou schopni zajistit mnohem větší bezpečnost jejich platformy, jelikož mají mnohem větší prostředky pro její zabezpečení, než malá firma s omezenými zdroji.
 	Nicméně, data více zákazníků jsou seskupována na jeden server a tam jsou mnohem větším potenciálním cílem pro kybernetický útok. Společnost, která si zajišťuje vlastní bezpečnost ovšem zná přesně místa, která nutně potřebuje ochránit a vynaloží pro to maximum, kdežto v cloudu je vynakládána síla na všechny součásti firemního ekosystému shodná.
 \end{description}
@@ -188,7 +188,7 @@ S výše popsaným problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problé
 \subsubsection{Zálohování}
 Při selhání lokálního serveru přicházíme téměř vždy o data. Prvním krokem, jak o svá data nepřijít je zrcadlení disků. Tato metoda umožňuje zabezpečit data proti poruše pevného disku, kdy jsou data zrcadlena na druhém (a dalších) disku a je tím zvýšena bezpečnost fyzických dat. Ovšem ani tento případ nechrání data proti výpadku napájení (možnost poškození konzistence dat nebo databáze), proti přírodním katastrofám (požáru, úderu blesku, zemětřesení) v místě kde se nachází server. Tomuto případu zabrání již pouze zrcadlení dat do jiné destinace, kdy máme druhý server na jiném místě. Toto řešení již ovšem začíná být nákladné, nejen na údržbu, ale i správu a kvalitní konektivitu pro synchronizaci obou serverů.
 
-V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\nocite{podnikatel:zalohovani}
+V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\cite{podnikatel:zalohovani}
 
 \subsubsection{DDoS útok}
 Pokládanou otázkou může být také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáže odolávat takovému útoku lépe, než virtualizovaný server, který může zvýšit výkon a spíše útoku odolat. Druhá otázka která se naskýtá ovšem je, zda-li firemní server v době, kdy na něj je veden útok není možné odpojit od vnější sítě a dále ho lokálně využívat. Tím by se omezil přístup pouze vzdáleně připojeným uživatelům a to pouze v případě, že do firemní sítě neexistuje druhá cesta skrz VPN, přes kterou by se mohli uživatelé připojit a pracovat se serverem z lokální strany sítě.
@@ -268,16 +268,16 @@ Salesforce je jedna z prvních společností, která začala cloudové služby n
 Aktuálně Salesforce nabízí několik hlavních produktů.
 
 \subsubsection{Sales Cloud}
-Jedná se o platformu pro efektivní prodej služeb a produktů odkudkoliv a z jakéhokoliv zařízení. Jde o CRM systém běžící jak na počítačích, tak i všech chytrých mobilních zařízeních. Platforma je založena na Salesforce1 Platform. Sales Cloud spojuje aplikace, zařízení a s nimi i zákazníky. Jedná se o přímé spojení kontaktů, uživatelských účtů, a kritických obchodních informací v jeden celek, odkud jsou tyto informace pak distribuovány do jednotlivých zařízení dle požadavků.\nocite{salesforce:salesCloud}
+Jedná se o platformu pro efektivní prodej služeb a produktů odkudkoliv a z jakéhokoliv zařízení. Jde o CRM systém běžící jak na počítačích, tak i všech chytrých mobilních zařízeních. Platforma je založena na Salesforce1 Platform. Sales Cloud spojuje aplikace, zařízení a s nimi i zákazníky. Jedná se o přímé spojení kontaktů, uživatelských účtů, a kritických obchodních informací v jeden celek, odkud jsou tyto informace pak distribuovány do jednotlivých zařízení dle požadavků.\cite{salesforce:salesCloud}
 
 \subsubsection{Service Cloud}
-Service cloud je též založen na Salesforce1 Platform. Jedná se o doručování obsahu klientům odkudkoliv a jakéhokoliv zařízení. Service Cloud je v podstatě kontejner pro rozesílání informací na sociální sítě, emailem a dalšími prostředky. Dokáže i umožnit reagovat na podněty zaslané zákazníky v jednotlivých komunikačních nástrojích.\nocite{salesforce:serviceCloud}
+Service cloud je též založen na Salesforce1 Platform. Jedná se o doručování obsahu klientům odkudkoliv a jakéhokoliv zařízení. Service Cloud je v podstatě kontejner pro rozesílání informací na sociální sítě, emailem a dalšími prostředky. Dokáže i umožnit reagovat na podněty zaslané zákazníky v jednotlivých komunikačních nástrojích.\cite{salesforce:serviceCloud}
 
 \subsubsection{ExactTarget Marketing Cloud}
-I Marketing Cloud je založen na Salesforce1 Platform. Tato služba umožňuje obchodníkům vytvářet kampaně 1:1, tedy přímo zaměřené na každého uživatele zvlášť. Umožňuje kombinovat tradiční komunikační kanály jako email, mobilní telefon a nové sociální sítě a jakékoliv myslitelné produkty na webu.\nocite{salesforce:marketingCloud}
+I Marketing Cloud je založen na Salesforce1 Platform. Tato služba umožňuje obchodníkům vytvářet kampaně 1:1, tedy přímo zaměřené na každého uživatele zvlášť. Umožňuje kombinovat tradiční komunikační kanály jako email, mobilní telefon a nové sociální sítě a jakékoliv myslitelné produkty na webu.\cite{salesforce:marketingCloud}
 
 \subsubsection{Salesforce1 Platform}
-Salesforce1 Platform umožňuje rychlý vývoj a nasazení aplikací. Jedná se o kompletně cloudové řešení.\nocite{salesforce:platform} Platforma umožňuje
+Salesforce1 Platform umožňuje rychlý vývoj a nasazení aplikací. Jedná se o kompletně cloudové řešení\cite{salesforce:platform}. Platforma umožňuje
 	\begin{itemize}
 		\item Vytvářet vlastní aplikace psaním kódu nebo grafickým editorem,
 		\item spojení dat mezi sebou pomocí výkonného API,
@@ -286,10 +286,10 @@ Salesforce1 Platform umožňuje rychlý vývoj a nasazení aplikací. Jedná se 
 	\end{itemize}
 
 \subsubsection{Salesforce Chatter}
-Chatter je pokročilá podniková sociální síť pro domluvu a synchronizaci vnitropodnikových záležitostí. Aplikace je opět postavena na Salesforce1 Platformě. Po nasazení je možné vytvářet jednotlivé akce pro každé zařízení zvlášť. Chatter je také vhodný pro sdílení a ukládání vnitropodnikových informací a vědomostí.\nocite{salesforce:chatter}
+Chatter je pokročilá podniková sociální síť pro domluvu a synchronizaci vnitropodnikových záležitostí. Aplikace je opět postavena na Salesforce1 Platformě. Po nasazení je možné vytvářet jednotlivé akce pro každé zařízení zvlášť. Chatter je také vhodný pro sdílení a ukládání vnitropodnikových informací a vědomostí.\cite{salesforce:chatter}
 
 \subsubsection{Salesforce Work.com}
-Work.com slouží pro vnitropodnikové přímé učení a školení. Jedná se tak o vhodné řešení pro víceuživatelské motivování v rámci Salesforce CRM systému se zobrazením dosažených milníků jednotlivých týmů a zaměstnanců.\nocite{salesforce:work}
+Work.com slouží pro vnitropodnikové přímé učení a školení. Jedná se tak o vhodné řešení pro víceuživatelské motivování v rámci Salesforce CRM systému se zobrazením dosažených milníků jednotlivých týmů a zaměstnanců.\cite{salesforce:work}
 
 \subsection{Amazon}
 Druhý zástupce cloudových služeb, patřící k těm největším dodnes. Historie služeb Amazonu sahají k téměř samotnému počátku označení cloud, do let po roce 2002. Amazon v té době spustil jejich první službu Amazon web services (AWS), což je dnes asi nejkomplexnější cloudová služba vůbec. Poskytuje nepřeberné množství služeb, od výpočetního výkonu, přes úložiště, databáze, platební systémy, přes monitorování sítě, až po "`pracovní sílu"' (inteligenci) lidí.
@@ -383,7 +383,7 @@ Office 365 je plnohodnotný cloudový kancelářský balík pro domácnosti i fi
 Jako nevýhodu Office 365 vidím, pokud chceme používat klasický desktopový kancelářský balík a nikoliv pouze aplikaci Office 365 ve webovém prohlížeči. V tomto případě si stále musíme zakoupit plnohodnotný kancelářský balík a do něho až následně Office 365 integrovat, což zvyšuje náklady. Otázkou však je, zda-li je klasický program stále potřeba, když je možné soubory v cloudových office editovat i bez připojení lokálně a po připojení se k Internetu soubory nahrát do úložiště.
 
 \subsubsection{Azure}
-Microsoft Azure je cloudová platforma pro vývoj vlastních aplikací. Využívá globálních datacenter společnosti Microsoft. Díky rozsáhlosti sítě a velikosti datacenter poskytuje dostatečný prostor pro škálování a možnost reagovat okamžitě na potřeby navýšení výkonu. Azure umožňuje vyvíjet webové aplikace, využívat cloudové úložiště, obří databáze v podobě Big Data. Slouží i jako platforma pro ukládání dat a přístup k datům aplikací z mobilních zařízení. Azure je možné využívat i jako distribuovanou síť pro multimediální obsah od kódování, ochranu až po streaming. \nocite{ms:azure}
+Microsoft Azure je cloudová platforma pro vývoj vlastních aplikací. Využívá globálních datacenter společnosti Microsoft. Díky rozsáhlosti sítě a velikosti datacenter poskytuje dostatečný prostor pro škálování a možnost reagovat okamžitě na potřeby navýšení výkonu. Azure umožňuje vyvíjet webové aplikace, využívat cloudové úložiště, obří databáze v podobě Big Data. Slouží i jako platforma pro ukládání dat a přístup k datům aplikací z mobilních zařízení. Azure je možné využívat i jako distribuovanou síť pro multimediální obsah od kódování, ochranu až po streaming. \cite{ms:azure}
 
 \subsubsection{Intune}
 \begin{quote}
@@ -405,8 +405,7 @@ Společnost VMware se původně zabývala vývojem předního virtualizačního 
 
 \subsubsection{vSphere}
 \label{sec:vSphere}
-\nocite{vmware:vSphere}
-VMware vSphere je základní stavební kámen pro cloudové i virtualizační řešení. Jedná se o kompletní platformu. Veškeré produkty postavené na VMware řešení pohání v základu právě vSphere což je hlavní vrstva starající se o běh virtuálních zařízení. Nabídka jednotlivých komponent služby vSphere je odvozena od potřeb zákazníka od flexibility, rychlosti, odolnosti až po výkon a úsporu.
+VMware vSphere je základní stavební kámen pro cloudové i virtualizační řešení. Jedná se o kompletní platformu. Veškeré produkty postavené na VMware řešení pohání v základu právě vSphere což je hlavní vrstva starající se o běh virtuálních zařízení. Nabídka jednotlivých komponent služby vSphere je odvozena od potřeb zákazníka od flexibility, rychlosti, odolnosti až po výkon a úsporu.\cite{vmware:vSphere}
 
 Samostatné komponenty se pak zaměřují na jednotlivé odvětví, která zvládají nejlépe. Díky jednotlivým službám je možné systém vyladit k velice dobré škálovatelnosti, dostupnosti a bezpečnosti.
 
@@ -436,7 +435,7 @@ Jedná se o cloudové řešení na platformě VMware vSphere provozovaný přím
 \end{quote}
 
 \subsubsection{vCloud Suite}
-Služba umožňuje vytvářet a spouštět vSphere řešení privátního cloudu, který doručuje cloudové služby ekonomicky a umožňuje dobrou škálovatelnost.\nocite{vmware:vCloudDatasheet}
+Služba umožňuje vytvářet a spouštět vSphere řešení privátního cloudu, který doručuje cloudové služby ekonomicky a umožňuje dobrou škálovatelnost.\cite{vmware:vCloudDatasheet}
 
 vCloud obsahuje všechny komponenty pro vybudování a provoz privátní cloudové infrastruktury. Tato infrastruktura je složena z mnoha jiných produktů společnosti VMware:
 \begin{description}
