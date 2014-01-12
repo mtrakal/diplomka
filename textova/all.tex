@@ -216,9 +216,35 @@ Původně aplikace běželi na firemním serveru, tedy v místě kde typicky fir
 
 I na tyto otázky se musí dokázat odpovědět. Zpravidla se musí brát ohled na legislativy ve všech zemích, což v případě právě cloudu je velice obtížné. Mnoho aplikací může běžet paralelně na mnoha místech na světě.
 
-Na tuto otázku bohužel v rámci práce nedokáži odpovědět a bylo by zapotřebí hlubší zamyšlení se specialistou na legislativu.
+Například server \href{http://www.systemonline.cz/clanky/pravni-aspekty-cloud-computingu.htm}{systemonline.cz} k tomuto tématu uvádí:
+\begin{quotation}
+V současné době jsou nejrozšířenější cloudové služby poskytovány nadnárodními IT společnostmi (např. Microsoft, Amazon, Google), které obvyklé sídlí mimo Českou republiku. Je pak zcela logické, že cloudové smlouvy uzavírané s takovými společnostmi se obvykle budou řídit cizím právním řádem. Proto se může stát, že ač je cloudová smlouva sebelepší, v případě soudního sporu může být i pro žalobce z České republiky místně příslušný soud třeba v Kalifornii. 
 
-TODO: pozjistit, jak to s ní je přesně.
+Kromě poněkud obtížnější vymahatelnosti práva je však pro zdejší uživatele relevantní dodržování zákonů platných v České republice. Typickým příkladem je velmi komplexní právní úprava ochrany osobních údajů zákonem č. 101/2000 Sb., o ochraně osobních údajů. Tento zákon totiž může zásadně rozlišovat, zda se zpracovávané osobní údaje nacházejí na území České republiky, anebo mimo území EU. V případě cloudových služeb uživatel mnohdy netuší, kde přesně jsou jeho data uložena, a pokud taková data obsahují i osobní údaje, mohl by tak (byť i nevědomky) porušovat zákony České republiky.\cite{systemonline:pravniAspekty}
+\end{quotation}
+
+Server \href{http://cfoworld.cz/analyzy/cloud-computing-zajimave-moznosti-ale-i-velka-pravni-rizika-306}{cfoworld.cz} se k tomu vyjadřuje tak, že je třeba situaci konzultovat s právním poradcem:
+\begin{quote}
+Jde například o to, že cloud computing a internet, na němž je toto řešení do značné míry založeno, jsou globální koncepty. Nutně tak dochází ke kolizím s lokálními právními řády v jednotlivých zemích a jejich požadavky. Firmy si tak musí předem zodpovědět, případně i konzultovat s právním poradcem, jestli povaha jejich firemních dat dovoluje, aby byla uložena v zahraničí nebo dokonce neznámo kde.\cite{cfoworld:pravniRizika}
+\end{quote}
+
+Dále specialista na právo, eGovernment a ochranu dat Patrick Van Eecke uvádí v dokumentu na \href{http://www.isaca.org/Groups/Professional-English/cloud-computing/GroupDocuments/DLA_Cloud\%20computing\%20legal\%20issues.pdf}{isaca.org} toto:
+\begin{quote}
+	\begin{itemize}
+		\item EU rules are substantially more restrictive than rules from other countries (particularly US).
+		\item Many legal issues are not yet resolved
+		\item Reform of the current rules in the pipeline, but not for tomorrow
+		\item Three examples of problems:
+		\begin{itemize}
+			\item Who is controller?
+			\item Which law is applicable?
+			\item Transfer outside of EU?
+		\end{itemize}
+	\end{itemize}
+\end{quote}
+Dále se v dokumentu zmiňuje o tom, že je důležité se zaměřit na problém na čí straně leží zodpovědnost. Uvádí také, že právní předpisy EU se vztahují na subjekty podnikající na území EU a na firmy mimo EU jejichž zařízení se na tomto území ovšem nachází. Jedná se tak o datová centra provozovaná organizacemi z nečlenských států a platí v opravdu širokém smyslu slova. Vztahuje se až na soubory cookies\footnote{Jako cookie se v protokolu HTTP označuje malé množství dat, která WWW server pošle prohlížeči, který je uloží na počítači uživatele. Při každé další návštěvě téhož serveru pak prohlížeč tato data posílá zpět serveru.\cite{wiki:cookies}} na klientských zařízeních, čímž naráží na nesmyslný zákon o \href{http://www.justit.cz/wordpress/2011/05/26/vcera-vstoupilo-v-platnost-susenkove-narizeni-eu-a-hned-bylo-odlozeno-o-rok/}{souhlasu s využíváním cookies}, který dodnes nedodržuje ani web Evropské Unie europa.eu.
+
+Dále v dokumentu důrazně doporučuje využívat pouze datacentra na území EU (jako příklad uvádí Amazon, který má svá datacentra i na území Irska), nebo o důsledném přezkoumání smluvních ujednání poskytovatele cloudu.\cite{isaca:legalIssues}
 
 \newpage
 \section{Proč začít využívat cloud}
@@ -450,7 +476,6 @@ Druhou variantou je služba Desktop. V tomto případě je poskytován vzdálen�
 \subsubsection{OwnCloud}
 \begin{quote}ownCloud je řešení pro ukládání souborů, které můžeme nasadit ve firmě a inteligentně používat pro sdílení souborů přes internet. Nabízí ale i řadu dalších služeb (aplikací, které fungují jako zásuvné moduly), například kalendář, kontakty, úkoly a poznámky, hudební přehrávač, editor/prohlížeč obrázků, přehrávač videí, apod. K tomu se přidávají další vlastnosti jako šifrování a jednoduché verzování souborů.\cite{samuraj:ownCLoud5}
 \end{quote}
-TODO: přidat vlastní omáčku, spousta prostoru pro rozvedení...
 
 \subsubsection{Cloud9}
 \href{https://github.com/ajaxorg/cloud9}{Cloud 9 IDE} je vývojové prostředí, které je poháněno javascriptovým frameworkem \href{http://nodejs.org/}{Node.js} běžícím na serveru. Jedná se tak o cloudové open source řešení vývojového prostředí. Jako základ IDE je využíváno editoru kódu \href{http://ace.c9.io/}{Ace}. Prostředí umí všechny základní věci jako zvýrazňování syntaxe, napovídání a doplňování kódu, zobrazování náhledu v případě kódu v HTML5+CSS a JavaScriptu.
