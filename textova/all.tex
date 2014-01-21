@@ -76,7 +76,7 @@ Platforma jako služba znamená, že nám poskytovatel služeb nabízí celé pr
 
 \paragraph{IaaS -- Infrastructure as a Service:}
 \label{sec:iaas}
-Posledním zástupcem je infrastruktura jako služba, kdy je poskytován samotný hardware. O něj se stará poskytovatel a nám tak odpadá starost s nefunkčností fyzických zařízení. Jedná se vlastně o virtualizaci [\ref{sec:virtualizace}], a my se staráme pouze o vlastní aplikace. Zástupcem této služby může být například \href{http://aws.amazon.com/}{Amazon Web Services}.
+Posledním zástupcem je infrastruktura jako služba, kdy je poskytován samotný hardware. O něj se stará poskytovatel a nám tak odpadá starost s nefunkčností fyzických zařízení. Jedná se vlastně o virtualizaci (viz kap. \ref{sec:virtualizace}), a my se staráme pouze o vlastní aplikace. Zástupcem této služby může být například \href{http://aws.amazon.com/}{Amazon Web Services}.
 
 \subsubsection{Dle publikace služeb}
 
@@ -173,7 +173,7 @@ Hlavní obavou, která se objeví jako první je, že ukládáme data mimo firmu
 \subsubsection{Ztráta dat}
 \label{sec:ZtrataDat}
 \begin{quote}
-Pokud má zaměstnanec všechna data u sebe v počítači (dnes spíše v notebooku) a o něj přijde, ať už ztrátou, krádeží nebo poruchou, je firma vystavena problému, kdy o data nenávratně přijde. V USA se jenom na letištích ztratí přes šest set tisíc notebooků ročně, což je alarmující číslo. \cite{notebook:ztraceneNBnaLetistich}
+Pokud má zaměstnanec všechna data u sebe v počítači (dnes spíše v notebooku) a o něj přijde, ať už ztrátou, krádeží nebo poruchou, je firma vystavena problému, kdy o data nenávratně přijde. V USA se jenom na letištích ztratí přes šest set tisíc notebooků ročně, což je alarmující číslo.\cite{notebook:ztraceneNBnaLetistich}
 \end{quote}
 
 Pokud vezmeme data ze zaměstnaneckých zařízení a všechna je přesuneme do cloudu a nastavíme dobře přístupová práva, omezíme tak možnost ztráty cenných dat.
@@ -242,7 +242,7 @@ Dále specialista na právo, eGovernment a ochranu dat Patrick Van Eecke uvádí
 		\end{itemize}
 	\end{itemize}
 \end{quote}
-Dále se v dokumentu zmiňuje o tom, že je důležité se zaměřit na problém na čí straně leží zodpovědnost. Uvádí také, že právní předpisy EU se vztahují na subjekty podnikající na území EU a na firmy mimo EU jejichž zařízení se na tomto území ovšem nachází. Jedná se tak o datová centra provozovaná organizacemi z nečlenských států a platí v opravdu širokém smyslu slova. Vztahuje se až na soubory cookies\footnote{Jako cookie se v protokolu HTTP označuje malé množství dat, která WWW server pošle prohlížeči, který je uloží na počítači uživatele. Při každé další návštěvě téhož serveru pak prohlížeč tato data posílá zpět serveru.\cite{wiki:cookies}} na klientských zařízeních, čímž naráží na nesmyslný zákon o \href{http://www.justit.cz/wordpress/2011/05/26/vcera-vstoupilo-v-platnost-susenkove-narizeni-eu-a-hned-bylo-odlozeno-o-rok/}{souhlasu s využíváním cookies}, který dodnes nedodržuje ani web Evropské Unie europa.eu.
+Dále se v dokumentu zmiňuje o tom, že je důležité se zaměřit na problém na čí straně leží zodpovědnost. Uvádí také, že právní předpisy EU se vztahují na subjekty podnikající na území EU a na firmy mimo EU jejichž zařízení se na tomto území ovšem nachází. Jedná se tak o datová centra provozovaná organizacemi z nečlenských států a platí v opravdu širokém smyslu slova. Vztahuje se až na soubory cookies\footnote{Jako cookie se v protokolu HTTP označuje malé množství dat, která WWW server pošle prohlížeči, který je uloží na počítači uživatele. Při každé další návštěvě téhož serveru pak prohlížeč tato data posílá zpět serveru.\cite{wiki:cookies}} na klientských zařízeních, čímž naráží na nesmyslný zákon o \href{http://www.justit.cz/wordpress/2011/05/26/vcera-vstoupilo-v-platnost-susenkove-narizeni-eu-a-hned-bylo-odlozeno-o-rok/}{souhlasu s využíváním cookies\cite{justit:susenky}}, který dodnes nedodržuje ani web Evropské Unie europa.eu.
 
 Dále v dokumentu důrazně doporučuje využívat pouze datacentra na území EU (jako příklad uvádí Amazon, který má svá datacentra i na území Irska), nebo o důsledném přezkoumání smluvních ujednání poskytovatele cloudu.\cite{isaca:legalIssues}
 
@@ -358,6 +358,8 @@ Cloud Platform je zapouzdření služeb popsaných výše. Díky této službě 
 \subsection{IBM}
 IBM je přední světová společnost v oboru IT. Společnost na trhu s informačními technologiemi působí již od roku 1981, kdy vydala svůj první IBM PC (a od něj nadále označované IBM Compatible). Společnost se postupně odpoutala od výroby stolních počítačů a zaměřila se spíše na vývoj nových technologií, kompletní serverová řešení a hlavně na prodej samostatných služeb.
 
+IBM, v průběhu vypracovávání této práce, koupilo společnost \href{http://www.softlayer.com/}{SoftLayer} a začátkem práce na praktické části (viz kap. \ref{sec:praktickaCast}) uzavřelo zkušební program IBM SmartCloud Enteprise. Nyní tedy stále umožňuje stávajícím zákazníkům využívat cloudu IBM SmartCloud, ovšem novým klientům již poskytuje služby zakoupené společnosti.\cite{zive:ibmKupujeSoftLayer}
+
 \subsubsection{IBM SmartCloud Enterprise}
 \begin{quote}
 IBM SmartCloud Enterprise je flexibilní infrastruktura jako služba (IaaS - Infrastructure as a Service) a platforma jako služba (PaaS - Plaform as a Service) technologie cloud computingu, která je navržena k zajištění rychlého přístupu k všestranně zabezpečeným prostředím virtuálních serverů podnikové třídy a kterou lze s výhodou využít pro činnosti vývoje a testování, jakož i pro další dynamické pracovní zátěže. IBM SmartCloud je ideální pro informatiky i pro vývojáře aplikací. Poskytuje cloudové služby, operační systémy Windows a Linux, infrastrukturní software (databáze, aplikační servery), jež pokrývají veškeré potřeby vašeho podniku.\cite{ibm:smartCloudEnt}
@@ -377,6 +379,9 @@ IBM SmartCloud Enterprise je flexibilní infrastruktura jako služba (IaaS - Inf
 Produkty IBM SmartCloud Application Services představují nabídku platformy IBM v podobě služby. Platforma je provozována v produktu IBM SmartCloud Enterprise, do něhož implementuje virtuální prostředky. Tato výkonná kombinace infrastrukturních a platformových služeb umožňuje klientům vývoj, testování a implementaci výlučně cloudových a cloud podporujících aplikací. Kromě urychlení vývoje aplikací produkty SmartCloud Application Services rovněž pomáhají překonat bariéru mezi vývojovými a provozními procesy (tzv. DevOps). Nástroje pro spolupráci podporují agilní poskytování služeb DevOps a urychlují vývoj implementací z týdnů na minuty.\cite{ibm:smartCloudEnt}
 \end{quote}
 
+\subsubsection{IBM SmartCloud for Social Business}
+Jedná se o produkt IBM, který slouží pro vnitropodnikovou komunikaci a ukládání firemních dokumentů (CRM systém). Služba integruje emailového klienta, kalendář, sdílení dokumentů, chat a schůzky, dále umožňuje ukládání poznámek, to-do listů a další.\cite{ibm:social}
+
 \subsection{Microsoft}
 \subsubsection{Office Web Apps}
 Stejně jako jiné korporace i Microsoft má svůj vlastní kancelářský balík online. Přišel s ním sice později než konkurence, ovšem díky velice propracovanému desktopovému balíku Microsoft Office (nyní pokročilé online službě \href{https://office.microsoft.com}{Office 365}) a dlouhodobému vývoji se rozhodně \href{https://skydrive.live.com}{Office Web Apps} povedl. Webové office jsou zjednodušenou verzí plnohodnotného balíku, který je možné zakoupit.
@@ -387,7 +392,7 @@ Office 365 je plnohodnotný cloudový kancelářský balík pro domácnosti i fi
 Jako nevýhodu Office 365 vidím, pokud chceme používat klasický desktopový kancelářský balík a nikoliv pouze aplikaci Office 365 ve webovém prohlížeči. V tomto případě si stále musíme zakoupit plnohodnotný kancelářský balík a do něho až následně Office 365 integrovat, což zvyšuje náklady. Otázkou však je, zda-li je klasický program stále potřeba, když je možné soubory v cloudových office editovat i bez připojení lokálně a po připojení se k Internetu soubory nahrát do úložiště.
 
 \subsubsection{Azure}
-Microsoft Azure je cloudová platforma pro vývoj vlastních aplikací. Využívá globálních datacenter společnosti Microsoft. Díky rozsáhlosti sítě a velikosti datacenter poskytuje dostatečný prostor pro škálování a možnost reagovat okamžitě na potřeby navýšení výkonu. Azure umožňuje vyvíjet webové aplikace, využívat cloudové úložiště, obří databáze v podobě Big Data. Slouží i jako platforma pro ukládání dat a přístup k datům aplikací z mobilních zařízení. Azure je možné využívat i jako distribuovanou síť pro multimediální obsah od kódování, ochranu až po streaming. \cite{ms:azure}
+Microsoft Azure je cloudová platforma pro vývoj vlastních aplikací. Využívá globálních datacenter společnosti Microsoft. Díky rozsáhlosti sítě a velikosti datacenter poskytuje dostatečný prostor pro škálování a možnost reagovat okamžitě na potřeby navýšení výkonu. Azure umožňuje vyvíjet webové aplikace, využívat cloudové úložiště, obří databáze v podobě Big Data. Slouží i jako platforma pro ukládání dat a přístup k datům aplikací z mobilních zařízení. Azure je možné využívat i jako distribuovanou síť pro multimediální obsah od kódování, ochranu až po streaming.\cite{ms:azure}
 
 \subsubsection{Intune}
 \begin{quote}
@@ -443,7 +448,7 @@ Služba umožňuje vytvářet a spouštět vSphere řešení privátního cloudu
 
 vCloud obsahuje všechny komponenty pro vybudování a provoz privátní cloudové infrastruktury. Tato infrastruktura je složena z mnoha jiných produktů společnosti VMware:
 \begin{description}
-	\item[VMware vSphere] popsaný výše [\ref{sec:vSphere}],
+	\item[VMware vSphere] popsaný výše (viz kap. \ref{sec:vSphere}),
 	\item[VMware vCloud Networking and Security] sloužící pro řízení datového provozu a zabezpečení,
 	\item[VMware vCenter Site Recovery Manager] pro testování, plánování a spouštění scénářů pro katastrofické případy,
 	\item[a dalších.]
@@ -492,6 +497,7 @@ Cloud9 využívá například i embedded zařízení \href{http://beagleboard.or
 
 \newpage
 \section{Popis praktické části}
+\label{sec:praktickaCast}
 TODO
 
 \subsection{Metodika testování}
