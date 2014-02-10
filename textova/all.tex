@@ -228,7 +228,7 @@ Server \href{http://cfoworld.cz/analyzy/cloud-computing-zajimave-moznosti-ale-i-
 Jde například o to, že cloud computing a internet, na němž je toto řešení do značné míry založeno, jsou globální koncepty. Nutně tak dochází ke kolizím s lokálními právními řády v jednotlivých zemích a jejich požadavky. Firmy si tak musí předem zodpovědět, případně i konzultovat s právním poradcem, jestli povaha jejich firemních dat dovoluje, aby byla uložena v zahraničí nebo dokonce neznámo kde.\cite{cfoworld:pravniRizika}
 \end{quote}
 
-Dále specialista na právo, eGovernment a ochranu dat Patrick Van Eecke uvádí v dokumentu na \href{http://www.isaca.org/Groups/Professional-English/cloud-computing/GroupDocuments/DLA_Cloud\%20computing\%20legal\%20issues.pdf}{isaca.org} toto:
+Dále specialista na právo, eGovernment a ochranu dat Patrick Van Eecke uvádí v dokumentu na \href{http://www.isaca.org/Groups/Professional-English/cloud-computing/GroupDocuments/DLA_Cloud\%20computing\%20legal\%20issues.pdf}{isaca.org\cite{isaca:legalIssues}} toto:
 \begin{quote}
 	\begin{itemize}
 		\item EU rules are substantially more restrictive than rules from other countries (particularly US).
@@ -509,6 +509,13 @@ Dále tato služba umožňuje spolupráci více lidí nad projektem a možnost e
 
 Cloud9 využívá například i embedded zařízení \href{http://beagleboard.org/}{BeagleBoard}, ve kterém běží Linux, nebo Android OS. Díky tomuto editoru můžete programovat přímo na zařízení a okamžitě spouštět a zobrazovat výsledek. Zařízení má mnoho vstupů i výstupů a dá se na něm s přídavnými moduly sestavit v podstatě libovolná aplikace, od multimediálního centra, až po inteligentního robota na úklid domácnosti.
 
+\subsubsection{Cloudový operační systém}
+Další velice zajímavou ideou využití cloudu dnešní doby je operační systém, který běží přímo v prohlížeči. Díky velkému rozmachu webových služeb, HTML5 a JavaScriptu je možné vytvářet aplikace, které se synchronizují mezi prohlížečem a serverem. Tento přístup otvírá široké možnosti využití webového prohlížeče i na úkony, na které nebyl primárně určen.
+
+Za největšího zástupce této vize můžeme považovat Google a jejich systém Chrome OS. Systém běží kompletně v prohlížeči a data jsou uložena v cloudovém úložišti v datacentrech Googlu. V případě výpadku internetu je možné používat "`offline"' lokální verzi dat, která jsou dočasně zpřístupněna i v zařízení a po připojení k Internetu se synchronizují zpět na server.
+
+Google sice prosazuje jejich systém ve spojení s netbooky jako kompletní řešení, ale není jediný, kdo systém webového operačního systému vyvíjí a nabízí. Mezi ostatní významné můžeme zařadit například \href{http://www.eyeos.com/}{EyeOS}, \href{http://www.jolicloud.com/jolios}{Joli OS}, nebo \href{https://osw3.com/}{OSW3}. Mnoho řešení je možné využívat díky svobodné licenci i na vlastních serverech, nebo je hostovat u velkých společností v cizím cloudu. Několik dalších zástupců těchto technologií je možné nalézt na webu \href{http://www.hongkiat.com/blog/free-cloud-os/}{hongkiat.com\cite{hongkiat:webos}}.
+
 \newpage
 \section{Popis praktické části}
 \label{sec:praktickaCast}
@@ -542,7 +549,7 @@ Mezi podporované virtualizované servery zařadil Microsoft samozřejmě vlastn
 \paragraph{Datové služby}
 Dle \href{http://www.windowsazure.com/en-us/documentation/}{dokumentace k Windows Azure}\cite{azure:dokumentace} je možné aktuálně vyvíjet pod těmito technologiemi:
 \begin{description}
-	\item [.NET] platforma umožňuje využít libovolný programovací jazyk pro napsání kódu. Zdrojový kód se následně přeloží do, na platformě .NET spustitelného, mezijazyka. Platforma .NET je prímárně určena pouze pro operační systém Windows, ovšem z velké části se povedlo kusy platformy portovat pro Linuxové systémy včetně Mac OS X pod jménem MonoDevelop. Aktuální verze .NET je 4.5.
+	\item [.NET] platforma umožňuje využít libovolný programovací jazyk pro napsání kódu. Zdrojový kód se následně přeloží do, na platformě .NET spustitelného, mezijazyka. Platforma .NET je primárně určena pouze pro operační systém Windows, ovšem z velké části se povedlo kusy platformy portovat pro Linuxové systémy včetně Mac OS X pod jménem MonoDevelop. Aktuální verze .NET je 4.5.
 	\item [Node.js] je softwarový systém navržený pro psaní vysoce škálovatelných internetových aplikací, především webových serverů. Programy pro Node.js jsou psané v jazyce JavaScript, hojně využívající model událostí a asynchronní I/O operace pro minimalizaci režie procesoru a maximalizaci výkonu.\cite{wiki:node.js}
 	\item [Java] jako platforma je multiplatformní software pro vývoj, testování a spouštění aplikací. Funguje v podstatě přesně obráceně, než .NET, jelikož používá jediný programovací jazyk Java a dokáže zdrojový kód přeložit do bajt kódu a ten následně spouštět na všech podporovaných systémech.
 	\item [iOS/Android/Windows Phone] jsou operační systémy určené pro mobilní zařízení, je tedy možné v rámci Windows Azure vyvíjet i pro ně.
@@ -554,9 +561,17 @@ Dle \href{http://www.windowsazure.com/en-us/documentation/}{dokumentace k Window
 \paragraph{Ostatní}
 
 \subsubsection{Vývoj}
-TODO
+Pro vývoj na platformě Azure se využívá pokročilého vývojového prostředí (IDE) Microsoft Visual Studio, nebo libovolných jiných. Funkcionalita služeb cloudu je zpřístupněna skrz sadu vývojářských nástrojů (SDK), které jsou pro jednotlivé programovací jazyky poskytovány. 
+
 \subsubsection{Modelové situace}
-TODO
+Díky veliké škále poskytovaných programovacích jazyků a doplňkových služeb je Azure vhodná platforma téměř pro jakékoliv nasazení a použití.
+
+\paragraph{Webová prezentace/portfolio/e-shop}
+\paragraph{Intranetové aplikace}
+\paragraph{Mobilní aplikace}
+\paragraph{Rendering farm}
+Cloud Azure je díky všestrannému využití možné použít například i jako farmu pro renderování grafických objektů, nebo videí. Společnost AMC Bridge vyvinula doplněk k softwaru SolidWorks pro renderování grafických prvků na cloudových procesorových jádrech.\cite{amcbridge:cloudRender}
+
 \subsubsection{Praktické nasazení a testování}
 TODO
 
