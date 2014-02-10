@@ -317,6 +317,7 @@ Dle posledních průzkumů je \href{http://connect.zive.cz/bleskovky/cloud-amazo
 Pro komplexnost bych zde představil alespoň pár základních, pro tuto práci zajímavých, služeb.
 
 \subsubsection{Elastic Compute Cloud}
+\label{sec:AmazonElasticCC}
 EC2, jak se zkráceně označuje je pronájen výpočetního výkonu cloudu. Jedná se o pronajímané virtuální servery od čistých systémů až ke komplexním řešením s předinstalovanými aplikacemi.
 
 \subsubsection{Simple storage service --- S3}
@@ -355,6 +356,7 @@ Google Enterprise se skládá z několika, jinak zdarma dostupných, služeb spo
 Cloudová služba Print umožňuje, pomocí spojení tiskáren a webu, tisknout z libovolného místa komukoliv z vybraných uživatelů na tiskárně připojené k zařízení, které je připojeno do této služby.
 
 \subsubsection{App Engine}
+\label{sec:googleAppEngine}
 Google App Engine je platforma jako služba, která poskytuje možnosti programování v několika jazycích s využitím MySQL databáze. Programovat lze v Pythonu, Javě, PHP a jazyce Go. Programy následně běží jako webové aplikace. Každá aplikace běží v sandboxu, tedy v chráněném prostředí s omezeným přístupem k operačnímu systému a dalším aplikacím běžícím pod stejným systémem.
 
 \subsubsection{Compute Engine}
@@ -406,6 +408,7 @@ Office 365 je plnohodnotný cloudový kancelářský balík pro domácnosti i fi
 Jako nevýhodu Office 365 vidím, pokud chceme používat klasický desktopový kancelářský balík a nikoliv pouze aplikaci Office 365 ve webovém prohlížeči. V tomto případě si stále musíme zakoupit plnohodnotný kancelářský balík a do něho až následně Office 365 integrovat, což zvyšuje náklady. Otázkou však je, zda-li je klasický program stále potřeba, když je možné soubory v cloudových office editovat i bez připojení lokálně a po připojení se k Internetu soubory nahrát do úložiště.
 
 \subsubsection{Azure}
+\label{sec:Azure}
 Microsoft Azure je cloudová platforma pro vývoj vlastních aplikací. Využívá globálních datacenter společnosti Microsoft. Díky rozsáhlosti sítě a velikosti datacenter poskytuje dostatečný prostor pro škálování a možnost reagovat okamžitě na potřeby navýšení výkonu. Azure umožňuje vyvíjet webové aplikace, využívat cloudové úložiště, obří databáze v podobě Big Data. Slouží i jako platforma pro ukládání dat a přístup k datům aplikací z mobilních zařízení. Azure je možné využívat i jako distribuovanou síť pro multimediální obsah od kódování, ochranu až po streaming.\cite{ms:azure}
 
 \subsubsection{Intune}
@@ -515,6 +518,9 @@ Další velice zajímavou ideou využití cloudu dnešní doby je operační sys
 Za největšího zástupce této vize můžeme považovat Google a jejich systém Chrome OS. Systém běží kompletně v prohlížeči a data jsou uložena v cloudovém úložišti v datacentrech Googlu. V případě výpadku internetu je možné používat "`offline"' lokální verzi dat, která jsou dočasně zpřístupněna i v zařízení a po připojení k Internetu se synchronizují zpět na server.
 
 Google sice prosazuje jejich systém ve spojení s netbooky jako kompletní řešení, ale není jediný, kdo systém webového operačního systému vyvíjí a nabízí. Mezi ostatní významné můžeme zařadit například \href{http://www.eyeos.com/}{EyeOS}, \href{http://www.jolicloud.com/jolios}{Joli OS}, nebo \href{https://osw3.com/}{OSW3}. Mnoho řešení je možné využívat díky svobodné licenci i na vlastních serverech, nebo je hostovat u velkých společností v cizím cloudu. Několik dalších zástupců těchto technologií je možné nalézt na webu \href{http://www.hongkiat.com/blog/free-cloud-os/}{hongkiat.com\cite{hongkiat:webos}}.
+
+\subsubsection{Heroku}
+Služba \href{https://www.heroku.com}{heroku.com} umožňuje hostování frameworků jako je \href{http://www.playframework.com/}{Play}, \href{https://www.djangoproject.com/}{Django}, \href{http://clojure.org/}{Clojure}, \href{http://nodejs.org/}{Node.js}, \href{http://www.scala-lang.org/}{Scala} a mnoha dalších. Jedná se o platformu jako službu založenou na operačním systému Debian nebo Ubuntu. Jde o podobnou službu jakou nabízí \nameref{sec:googleAppEngine}, \nameref{sec:Azure} a nebo \nameref{sec:AmazonElasticCC}. Velkou výhodou tohoto řešení je ovšem cena. V základní verzi je služba poskytována zdarma a tak můžete začít využívat cloudu aniž musíte řešit financování. Až s přibývajícími zákazníky a nedostačujícím výkonem přejít na placenou variantu.
 
 \newpage
 \section{Popis praktické části}
