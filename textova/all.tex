@@ -528,7 +528,19 @@ Služba \href{https://www.heroku.com}{heroku.com} umožňuje hostování framewo
 V rámci praktické části bylo zadáno provést analýzu technologií společností IBM, VMware a Microsoft. Po jejím provedení je cílem vytvořit modelové příklady pro nasazení jednotlivých technologií. Následně bude zvolena některá technologie a pro ni bude vytvořena sada testů pro analýzu vybraných vlastností cloudu.
 
 \subsection{Metodika testování}
-TODO
+\label{p:metodikaTestovani}
+\subsubsection{Reálný vybraný případ}
+Pro realizaci a testování na všech platformách kritických a klíčových služeb bylo vybráno porovnání těchto vlastností:
+\begin{description}
+	\item [Čas k nasazení:] Jak dlouho zabere samotná příprava na možnost začít na platformě vyvíjet, případně odhadovaný čas na implementaci podobného systému na všech platformách.
+	\item [Dostupnosti služeb:] Jakou poskytovatelé služeb garantují dostupnost, zda-li nejsou regionální omezení apod.
+	\item [Dostupnosti dat z Internetu:] Co se stane v případě, kdy bude omezen přístup k Internetu a to jak na straně vývoje, tak poskytovaného obsahu.
+	\item [Možnost zpřístupnění intranetu:] Dále zda-li je možné se dostat k potřebným datům a aplikacím z intranetu, která v cloudu nejsou umístěna.
+	\item [Přístup k filesystému:] Jak je umožněno zpřístupnit data uložená v cloudu. Zda-li je poskytován přístup přes zabezpečený kanál, nebo webové rozhraní.
+	\item [Intranetové aplikace:] Zda-li lze implementovat a využívat privátní intranetové aplikace.
+	\item [HW nároky:] Testování výpočetních nároků jak na vývoj aplikací, tak i nároky na běh aplikací v cloudu. Zda-li podobná aplikace dokáže bězet na obdobné konfiguraci v cloudu jiné společnosti.
+	\item [Hloubka znalostí:] Jaké znalosti musí mít uživatel, který chce pro cloud vyvíjet i uživatel, který cloud pouze nasazuje a nebo využívá.
+\end{description}
 
 \subsection{IBM}
 TODO
@@ -586,8 +598,21 @@ Mobilní aplikace může cloud Azure využívat jako frontend, kdy se nejedná o
 \paragraph{Rendering farm}
 Cloud Azure je díky všestrannému využití možné použít například i jako farmu pro renderování grafických objektů, nebo videí. Společnost AMC Bridge vyvinula doplněk k softwaru SolidWorks pro renderování grafických prvků na cloudových procesorových jádrech.\cite{amcbridge:cloudRender}
 
+\paragraph{Vlastní modelová situace}
+V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestovani} bylo jako primární pro test zvoleno datové úložiště a webová aplikace běžící nad tímto úložištěm. Tím se dá souhrnně otestovat většina definovaných vlastností, které byly stanoveny jako klíčové.
+
+\subsubsection{Příprava testování}
+Pro získání Microsoft Azure musíte podstoupit nutnou \href{https://account.windowsazure.com}{registraci\cite{azure:web}}. A to včetně ověření emailu, telefonního čísla a platební karty ze které vám bude stržena a znovu připsána drobná částka pro ověření platnosti a funkce.
+Registraci do služby Azure není možné uskutečnit v prohlížeči Chrome, jelikož se web nenačte korektně a chybí mu prvky pro vyplnění údajů.
+
+Po registraci je možné \href{http://www.windowsazure.com/en-us/downloads/}{stáhnout developerské prostředí\cite{azure:download}} Microsoft Visual Studio 2013 Express (to je dostupné zdarma i bez registrace do Azure) a s ním i SDK pro vývoj aplikací na platformě Azure. V nabídce je i mnoho dalších dostupných řešení.
+
+Po stažení a spuštění malého souboru instalátoru se začnou stahovat a připravovat instalační soubory. Na mém PC a lince 40mbit/s instalace trvala přibližně čtyřicet minut včetně instalace Visual Studia, SDK, aktualizací a propojení s mým účtem. Do hodiny od začátku registrace, pokud máte rychlou Internetovou linku na stažení programů (přes 1 GB dat) a nevýkonný notebook, je již možné začít vyvíjet nad cloudovými službami.
+
+Výhodu Azure vidím v přidané hodnotě \href{http://www.windowsazure.com/en-us/gallery/store/}{obchodu Store\cite{azure:store}}, který nabízí mnoho kompletních předpřipravených komponent. Není tak problém využít připraveného ověřování uživatelů, API pro OCR na rozpoznávání textu a dalších zajímavých služeb.
+
 \subsubsection{Praktické nasazení a testování}
-TODO
+Po dokončení instalace se zobrazí \href{http://www.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-get-started/}{webová stránka s ukázkou vývoje\cite{azure:howto}} v ASP.NET pro Azure, což může skvěle posloužit jako odrazový můstek.
 
 \subsection{VMware}
 TODO
