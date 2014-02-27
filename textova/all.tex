@@ -543,11 +543,38 @@ Pro realizaci a testování na všech platformách kritických a klíčových sl
 \end{description}
 
 \subsection{IBM}
-TODO
+Nalézt vhodnou službu která by odpovídala potřebám a využití v této práci byl téměř nesplnitelný úkol. Web společnosti IBM je tak rozlehlý a nekonzistentní, že jednotlivá oddělení uvnitř IBM nemohou naprosto tušit, co dělají ostatní oddělení. Na webu společnosti jsem nalezl minimálně tři produkty, které se buď překrývají nabídkou služeb, nebo jsou shodné jen zaštiťované jinou společností, kterou IBM koupilo.
+
+Naštěstí IBM právě spustilo betatesting naprosto nového cloud computingu \href{https://ace.ng.bluemix.net/}{IBM Cloud Platform Codename: BlueMix}\cite{bluemix:web}, který je dostupný zdarma v omezeném režimu (počet aplikací, služeb, paměti). Cloud je provozován nad \href{https://www.softlayer.com/about/datacenters}{datacentry} odkoupené společnosti \href{https://www.softlayer.com/}{SoftLayer}. Povedlo se mi získat do betatestu přístup a tak mohu pro testování části služeb využít právě připravovaného cloudu BlueMix.
+
 \subsubsection{Používané technologie}
-TODO
+IBM o podrobnostech použitých technologiích na serverech mlčí. Malý souhrn informací lze nalézt v \href{https://www.ng.bluemix.net/docs/DeepDive.html}{dokumentaci k BlueMixu}. Z informací lze vyčíst, že cloudovou službu pohání open source projekt \href{https://www.openstack.org/}{OpenStack}\footnote{OpenStack je svobodná technologie pro provoz cloudů typu IaaS (infrastruktura jako služba). Původně tento projekt založila firma Rackspace Hosting společně s NASA, postupně se k němu připojilo více než 150 subjektů včetně takových hráčů, jako je IBM, Red Hat, Cisco nebo HP. Kód je šířen pod licencí Apache 2.0.\cite{toposs:openStack}} a pro deploy na servery se využívá příkazové řádky nazývané \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI} (cf). Další drobná informace, která lze získat je, že na serverech je spuštěn operační systém Linux.
+
+\paragraph{Virtuální servery}
+Služba BlueMix je PaaS, nikoliv IaaS, tedy neposkytuje přímý přístup k infrastruktuře.
+
+TODO? Zkusit otestovat plnohodnotný SoftLayer?
+
+\paragraph{Datové služby}
+Dle webu \href{https://ace.ng.bluemix.net}{BlueMix}\cite{bluemix:web} je možné aktuálně vyvíjet nad těmito technologiemi:
+\begin{description}
+	\item [Java] jako platforma je multiplatformní software pro vývoj, testování a spouštění aplikací. Funguje v podstatě přesně obráceně, než .NET, jelikož používá jediný programovací jazyk Java a dokáže zdrojový kód přeložit do bajt kódu a ten následně spouštět na všech podporovaných systémech.
+	\item [Node.js] je softwarový systém navržený pro psaní vysoce škálovatelných internetových aplikací, především webových serverů. Programy pro Node.js jsou psané v jazyce JavaScript, hojně využívající model událostí a asynchronní I/O operace pro minimalizaci režie procesoru a maximalizaci výkonu.\cite{wiki:node.js}
+	\item [Ruby on Rails] je framework pro vývoj webových aplikací napojených na databázi, používající návrhový vzor Model-view-controller. Vytvořil jej dánský programátor David Heinemeier Hansson při práci na projektu Basecamp.\cite{wiki:rails}
+	\item [Ruby Sinatra] je volně dostupný open source webový framework a DSL napsaný v Ruby, pojmenovaný podle známého zpěváka Franka Sinatry. Jedná se o alternativu k frameworkům Ruby on Rails, Merb, Nitro, Camping a Rango. Využívá serverového rozhraní Rack.\cite{wiki:sinatra}
+\end{description}
+Na těchto technologiích lze vyvíjet, ovšem není to rozhodně konečný výčet poskytovaných služeb.
+
+\paragraph{Ostatní}
+TODO?
+
 \subsubsection{Vývoj}
-TODO
+Vývoj na platformě BlueMix probíhá na lokálním stroji vývojáře a to v libovolném vývojovém prostředí IDE, které umožňuje vývoj ve výše zmíněných jazycích. Po vytvoření aplikace je následně projekt odeslán na cloudový server pomocí příkazové řádky \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI}.
+
+Druhou možností vývoje pro BlueMox je využití cloudového nástroje \href{https://hub.jazz.net/}{JazzHub}. Nástroj umožňuje používání online IDE, automatického deploye, týmové spolupráce a dalších užitečných věcí jako je bug reportovací nástroj, nebo plánování projektu pomocí \href{http://cs.wikipedia.org/wiki/Agiln\%C3\%AD_metodiky}{agilních metodik}\footnote{Agilní metodiky jsou skupiny metod původně určených pro vyvíjení softwaru založené na iterativním a inkrementálním vývoji. Umožňují rychlý vývoj softwaru a zároveň dokáží reagovat na změnu požadavků v průběhu vývojového cyklu. Podle těchto metodik se správnost systému ověří jedině pomocí rychlého vývoje, předložení zákazníkovi a následných úprav dle zpětné vazby.\cite{wiki:agilniMetodiky}} (\href{http://en.wikipedia.org/wiki/Scrum_(software_development)}{Scrum\cite{wiki:scrum}}/\href{http://www.sprintmethod.cz/}{Sprint method}).
+
+Jak začít vyvíjet pomocí BlueMixu je popsané v \href{https://www.ng.bluemix.net/docs}{dokumentaci\cite{bluemix:dokumentace}} na stránce o vývoji aplikací -- \href{https://www.ng.bluemix.net/docs/BuildingWeb.jsp}{Building a web application\cite{bluemix:buildingWeb}}.
+
 \subsubsection{Modelové situace}
 TODO
 \subsubsection{Praktické nasazení a testování}
@@ -565,7 +592,7 @@ Služby Azure běží nad virtualizovanými servery technologií Hyper-V.
 Mezi podporované virtualizované servery zařadil Microsoft samozřejmě vlastní operační systém Windows, následně operační systém Linux, SQL Server 2012, SharePoint 2013, Oracle Database, Oracle WebLogic Server a ActiveDirectory.
 
 \paragraph{Datové služby}
-Dle \href{http://www.windowsazure.com/en-us/documentation/}{dokumentace k Windows Azure}\cite{azure:dokumentace} je možné aktuálně vyvíjet pod těmito technologiemi:
+Dle \href{http://www.windowsazure.com/en-us/documentation/}{dokumentace k Windows Azure}\cite{azure:dokumentace} je možné aktuálně vyvíjet nad těmito technologiemi:
 \begin{description}
 	\item [.NET] platforma umožňuje využít libovolný programovací jazyk pro napsání kódu. Zdrojový kód se následně přeloží do, na platformě .NET spustitelného, mezijazyka. Platforma .NET je primárně určena pouze pro operační systém Windows, ovšem z velké části se povedlo kusy platformy portovat pro Linuxové systémy včetně Mac OS X pod jménem MonoDevelop. Aktuální verze .NET je 4.5.
 	\item [Node.js] je softwarový systém navržený pro psaní vysoce škálovatelných internetových aplikací, především webových serverů. Programy pro Node.js jsou psané v jazyce JavaScript, hojně využívající model událostí a asynchronní I/O operace pro minimalizaci režie procesoru a maximalizaci výkonu.\cite{wiki:node.js}
