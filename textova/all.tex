@@ -548,7 +548,7 @@ Nalézt vhodnou službu která by odpovídala potřebám a využití v této pr�
 Naštěstí IBM právě spustilo betatesting naprosto nového cloud computingu \href{https://ace.ng.bluemix.net/}{IBM Cloud Platform Codename: BlueMix}\cite{bluemix:web}, který je dostupný zdarma v omezeném režimu (počet aplikací, služeb, paměti). Cloud je provozován nad \href{https://www.softlayer.com/about/datacenters}{datacentry} odkoupené společnosti \href{https://www.softlayer.com/}{SoftLayer}. Povedlo se mi získat do betatestu přístup a tak mohu pro testování části služeb využít právě připravovaného cloudu BlueMix.
 
 \subsubsection{Používané technologie}
-IBM o podrobnostech použitých technologiích na serverech mlčí. Malý souhrn informací lze nalézt v \href{https://www.ng.bluemix.net/docs/DeepDive.html}{dokumentaci k BlueMixu}. Z informací lze vyčíst, že cloudovou službu pohání open source projekt \href{https://www.openstack.org/}{OpenStack}\footnote{OpenStack je svobodná technologie pro provoz cloudů typu IaaS (infrastruktura jako služba). Původně tento projekt založila firma Rackspace Hosting společně s NASA, postupně se k němu připojilo více než 150 subjektů včetně takových hráčů, jako je IBM, Red Hat, Cisco nebo HP. Kód je šířen pod licencí Apache 2.0.\cite{toposs:openStack}} a pro deploy na servery se využívá příkazové řádky nazývané \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI} (cf). Další drobná informace, která lze získat je, že na serverech je spuštěn operační systém Linux.
+IBM o podrobnostech použitých technologiích na serverech mlčí. Malý souhrn informací lze nalézt v \href{https://www.ng.bluemix.net/docs/DeepDive.html}{dokumentaci k BlueMixu}. Z informací lze vyčíst, že cloudovou službu pohání open source projekt \href{https://www.openstack.org/}{OpenStack}\footnote{OpenStack je svobodná technologie pro provoz cloudů typu IaaS (infrastruktura jako služba). Původně tento projekt založila firma Rackspace Hosting společně s NASA, postupně se k němu připojilo více než 150 subjektů včetně takových hráčů, jako je IBM, Red Hat, Cisco nebo HP. Kód je šířen pod licencí Apache 2.0.\cite{toposs:openStack}} a pro deploy na servery se využívá příkazové řádky nazývané \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI} (\textit{cf}). Další drobná informace, která lze získat je, že na serverech je spuštěn operační systém Linux.
 
 \paragraph{Virtuální servery}
 Služba BlueMix je PaaS, nikoliv IaaS, tedy neposkytuje přímý přístup k infrastruktuře.
@@ -577,8 +577,31 @@ Jak začít vyvíjet pomocí BlueMixu je popsané v \href{https://www.ng.bluemix
 
 \subsubsection{Modelové situace}
 TODO
+
+\subsubsection{Příprava testování}
+Pro přístup do BlueMixu je potřeba si zaregistrovat \href{https://www.ibm.com/account/profile}{IBM ID}. Při registraci nejsou požadovány žádné podrobnější informace o klientovi, pouze email a jméno. Po jeho založení lze požádat na webu \href{https://ace.ng.bluemix.net}{BlueMix\cite{bluemix:web}} o přístup do betatestu nové cloudové služby. V případě, že je váš uváděný záměr se službou shledán přijatelný, je vám umožněn přístup a lze začít okamžitě využívat poskytovaných služeb.
+
+V \href{https://ace.ng.bluemix.net/#/resources}{administraci} je možné vybírat z běhových prostředí nad kterými chceme aplikaci vytvořit. K nim lze následně přiřadit podpůrné služby (databáze, cache, git, a další).
+
+Po vytvoření aplikace se na přiřazené webové adrese objeví základní informace a předpřipravený projekt. Pro jeho editaci je potřeba si nainstalovat \href{https://www.ng.bluemix.net/docs/BuildingWeb.jsp#install-cf}{\textit{cf}}. Poté stáhnout dostupný projekt a nad ním začít vytvářet aplikaci. Po jejím dokončení zbývá poslední fáze a to odeslání na server. To se děje právě pomocí aplikace \textit{cf}.
+\begin{enumerate}
+	\item Připojení na BlueMix:\\
+		\textit{cf api https://api.ng.bluemix.net},
+	\item přihlášení a nastavení prostředí:\\
+		\textit{cf login -u IBM\_ID}\\
+		\textit{cf target -o IBM\_ID -s dev},
+	\item samotný push na server:\\
+		\textit{cf push PROJEKT -p SOUBOR_PROJEKTU}.
+\end{enumerate}
+
+Aplikace je následně dostupná na adrese: PROJEKT.bluemix.net.
+
 \subsubsection{Praktické nasazení a testování}
 TODO
+
+\subsubsection{Souhrn testování}
+TODO
+
 
 \subsection{Microsoft}
 Z portfolia nabízených služeb má význam se v této části zabývat pouze službou Azure. Ostatní služby jsou předpřipravené a nemají moc velký potenciál k vlastnímu vývoji a analýze. Proto se zaměřím právě na Azure. Microsoft v rámci jejich cloudového řešení Azure nabízí zdarma měsíční zkušební lhůtu, tedy zkoumání jsem prováděl právě na této variantě.
