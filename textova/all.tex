@@ -579,8 +579,9 @@ Jak začít vyvíjet pomocí BlueMixu je popsané v \href{https://www.ng.bluemix
 TODO
 
 \subsubsection{Příprava testování}
-Pro přístup do BlueMixu je potřeba si zaregistrovat \href{https://www.ibm.com/account/profile}{IBM ID}. Při registraci nejsou požadovány žádné podrobnější informace o klientovi, pouze email a jméno. Po jeho založení lze požádat na webu \href{https://ace.ng.bluemix.net}{BlueMix\cite{bluemix:web}} o přístup do betatestu nové cloudové služby. V případě, že je váš uváděný záměr se službou shledán přijatelný, je vám umožněn přístup a lze začít okamžitě využívat poskytovaných služeb.
+Pro přístup do BlueMixu je potřeba si zaregistrovat \href{https://www.ibm.com/account/profile}{IBM ID}. Při registraci nejsou požadovány žádné podrobnější informace o klientovi, pouze email a jméno. Po jeho založení lze požádat na webu \href{https://ace.ng.bluemix.net}{BlueMix\cite{bluemix:web}} o přístup do betatestu této nové cloudové služby. V případě, že je váš uváděný záměr se službou shledán přijatelný, je vám umožněn přístup a lze začít okamžitě využívat poskytovaných služeb.
 
+\subsubsection{Praktické nasazení a testování}
 V \href{https://ace.ng.bluemix.net/#/resources}{administraci} je možné vybírat z běhových prostředí nad kterými chceme aplikaci vytvořit. K nim lze následně přiřadit podpůrné služby (databáze, cache, git, a další).
 
 Po vytvoření aplikace se na přiřazené webové adrese objeví základní informace a předpřipravený projekt. Pro jeho editaci je potřeba si nainstalovat \href{https://www.ng.bluemix.net/docs/BuildingWeb.jsp#install-cf}{\textit{cf}}. Poté stáhnout dostupný projekt a nad ním začít vytvářet aplikaci. Po jejím dokončení zbývá poslední fáze a to odeslání na server. To se děje právě pomocí aplikace \textit{cf}.
@@ -596,12 +597,14 @@ Po vytvoření aplikace se na přiřazené webové adrese objeví základní inf
 
 Aplikace je následně dostupná na adrese: PROJEKT.bluemix.net.
 
-\subsubsection{Praktické nasazení a testování}
-TODO
-
 \subsubsection{Souhrn testování}
-TODO
-
+\begin{description}
+	\item [Čas k nasazení:] na dnes běžném výpočetním výkonu a nadprůměrnou Internetovou linkou se čas potřebný k začátku vývoje pohyboval kolem půl hodiny (není započítán čas pro instalaci IDE, jelikož žádné není nativně dodávané a je třeba využívat vlastní). To není vůbec špatný čas. Nejdelší čas v aktuálním stavu může zabrat vyhodnocení (a případné zamítnutí) požadavku na vstup do betatestu služby. V mém případě ovšem IBM reagovalo v řádu minut. Díky tomu, že IBM poskytuje online nástroj pro vývoj \href{https://hub.jazz.net}{JazzHub} není v podstatě IDE ani k samotnému vývoji potřeba, ovšem spíše bych ho doporučil, jelikož jejich webový editor není moc povedený. Ostatní možnosti v rámci JazzHubu nejsou vůbec špatné.
+	\item [Dostupnosti služeb:] IBM pro své kritické části cloudových služeb poskytuje, dle jejich SLA, 99,9\% dostupnost služeb. Tím se řadí v podstatě k tomu nejlepšímu, co lze na trhu dostat.
+	\item [Možnost zpřístupnění intranetu:] testovaný nový produkt je pouze platforma jako služba, tedy nenabízí přímý přístup k infrastruktuře. Jediné možné spojení s intranetovou infrastrukturou je napojení na firemní databázi nebo webové služby. Oboje by ovšem v takovém případě museli být dostupné skrz síť Internet a nikoli privátní kanál do cloudu. Tedy v tomto případě se nemá dále cenu tímto zabývat a spíše se dá konstatovat, že PaaS toto využití neumožňuje.
+	\item [Přístup k filesystému:] opět BlueMix neumožňuje. Jediný způsob využití filesystému je v rámci nahrávání projektu na server, kdy je možné filesystém využít. Mnohem lepší variantou jak ukládat data na této službě jsou databáze. BlueMix má několik typů databází (relační, cache, noSQL, JSON DB) a tak není problém ukládat v podstatě všechna data přímo do databází. Z výčtu můžeme jmenovat MySQL, PostgreSQL, MongoDB nebo DB2.
+	\item [Intranetové aplikace:] postavené nad BlueMixem nejsou problém, jelikož platforma poskytuje službu \href{http://www.ng.bluemix.net/docs/Services/CloudIntegration/CloudIntegration.html}{Cloud Integration}, která slouží pro ověřování pomocí VCAP\_SERVICES. Celé řešení autorizace a autentizace uživatelů je dostupné pro \href{http://www.cloudfoundry.org}{Cloud Foundry} na githubu: \href{https://github.com/cloudfoundry/uaa}{CloudFoundry User Account and Authentication (UAA) Server}.
+\end{description}
 
 \subsection{Microsoft}
 Z portfolia nabízených služeb má význam se v této části zabývat pouze službou Azure. Ostatní služby jsou předpřipravené a nemají moc velký potenciál k vlastnímu vývoji a analýze. Proto se zaměřím právě na Azure. Microsoft v rámci jejich cloudového řešení Azure nabízí zdarma měsíční zkušební lhůtu, tedy zkoumání jsem prováděl právě na této variantě.
