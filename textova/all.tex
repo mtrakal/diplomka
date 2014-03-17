@@ -714,7 +714,9 @@ Bohužel po zkoumání i dalších produktů VMware jsem došel ke zjištění, 
 \subsection{Amazon}
 Amazon nabízí pro využití cloudu jednu souhrnnou službu \href{http://aws.amazon.com/}{Amazon AWS\cite{amazon:aws}} (Amazon Web Services), která je samozřejmě zpoplatněna. Služba zahrnuje jak výpočetní výkon, úložiště, databáze a další nadstandardní služby. Amazon nabízí velice přívětivé podmínky pro využití zkušební verze na dostatečně dlouhou dobu. Z tohoto důvodu jsem se rozhodl otestovat právě jejich cloudové řešení. Navíc se jedná o největší cloudovou službu na světě a tak si myslím, že by ve srovnání neměla chybět.
 
-Kompletní ceník služeb je možné nalézt na stránce \href{http://aws.amazon.com/ec2/pricing/}{Pricing\cite{amazon:ec2Pricing}}. Ceny se pohybují od \$0.020 za nejmenší řešení po částky kolem \$7 za hodinu výpočetního výkonu.
+Kompletní ceník služeb je možné nalézt na stránce \href{http://aws.amazon.com/ec2/pricing/}{Pricing\cite{amazon:ec2Pricing}}. Ceny se pohybují od \$0.020 za nejmenší řešení po částky kolem \$7 za hodinu výpočetního výkonu. Stejně jako Microsoft u Azure má i Amazon pro AWS velice podorbný \href{http://calculator.s3.amazonaws.com/index.html}{kalkulátor cen\cite{amazon:calculator}}.
+
+A že ani velcí hráči nejsou neomylní může potvrdit Tomáš Heran ze společnosti GoodData, se kterým byl namluven rozhovor pro \href{http://www.java.cz/article/czpodcast-56-cloud-aws}{java.cz\cite{java:aws}}. V rozhovoru popisuje výpadek Amazonu a postupné "`nahazování"' služeb. Dále popisuje jak jejich společnost využívá služeb AWS, cenovou politiku a nevýhody služby.
 
 \subsubsection{Používané technologie}
 Oproti Microsoftu a IBM Amazon má technickou stránku serverů celkem pěkně zdokumentovanou. Z \href{http://aws.amazon.com/ec2/instance-types/}{technických dokumentů\cite{amazon:ec2Instances}} se dá zjistit, že servery pohání procesory řady Intel Xeon a úložiště je složeno převážně již z SSD disků. Grafický cluster pak pohání NVIDIA Tesla GPU pro zajištění vysokého paralelního výpočetního výkonu. Pro grafický cluster je poskytováno grafické API v podobě OpenGL a DirectX, pro přímé programování jsou dostupné technologie CUDA a OpenCL.
@@ -760,6 +762,20 @@ Kromě aplikační a databázové vrstvy nabízí AWS i již připravené aplika
 Jelikož Amazon poskytuje velkou šíři nabízených služeb, neupřednostňuje ani nedoporučuje jedno vývojové IDE ani postup vývoje software. Volbu nechává na každém uživateli. Tím odpadá jakékoliv stahování velkých balíků, které je třeba instalovat a nastavovat. Pro vývoj tedy stačí zvolit oblíbené IDE, které využíváte i na jinou práci, pokud umožňuje vyvíjet v poskytované technologii.
 
 \subsubsection{Modelové situace}
+V rámci téměř neomezených možností nasazení služeb nad AWS není problém implementovat jakoukoliv službu.
+
+\paragraph{Webová prezentace/portfolio/e-shop}
+Tím, že je využíváno výhod cloudu a škálovatelnosti, lze i v AWS nasadit miniweb/portfolio o jedné stránce až po obří systémy. Tím, že AWS disponuje největším cloudovým prostředím nebude pro jejich službu nejspíš žádný web nerealizovatelný. Aktuálně u nich hostují velikáni v poskytování služeb jako Netflix, Autodesk a mnoho dalších.
+
+\paragraph{Intranetové aplikace}
+Většina společností potřebuje pro svůj chod vnitropodnikový software.
+
+I společnosti jako NASA využívají cloudu právě od Amazonu. Pokud AWS poskytuje dostatečný výkon pro NASA a splňuje jejich bezpečnostní kritéria, mám dojem, že jakékoliv jiné nasazení bude oproti tomu pouze drobné využití jejich kapacit.
+
+\paragraph{Rendering farm}
+Oproti ostatním společnostem má AWS přímo farmu grafických karet pro vykreslování grafiky. Tím může dosáhnout nejvyššího výkonu za relativně krátkou dobu a s nižšími náklady, než nechávat grafické prvky počítat na výpočetních jádrech procesorů.
+
+Jak využít právě Rendering farm nad AWS je zdokumentováno na video návodu na \href{http://www.judpratt.com/tutorials/ec2-renderfarm/}{judpratt.com\cite{judpratt:ec2renderfarm}}
 
 \paragraph{Vlastní modelová situace}
 V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestovani} bylo jako primární pro test zvoleno datové úložiště a webová aplikace běžící nad tímto úložištěm. Tím se dá souhrnně otestovat většina definovaných vlastností, které byly stanoveny jako klíčové.
@@ -772,8 +788,22 @@ V rámci testování EC2 (Elastic Compute Cloud) jsem zkoušel virtuální serve
 
 Chod systému je o poznání pomalejší, než na obdobné konfiguraci v cloudu Azure od Microsoftu.
 
+\subsubsection{Souhrn testování}
+http://aws.amazon.com/ec2/details/
+
+\begin{description}
+	\item [Čas k nasazení:] na dnes běžném výpočetním výkonu a nadprůměrnou Internetovou linkou se čas potřebný k začátku vývoje pohyboval třiceti minut včetně registrace. Do času jsem nezapočítal čas pro instalaci IDE, jelikož jsem využíval již nainstalované prostředí.
+	\item [Dostupnosti služeb:] AWS garantuje dostupnost služeb na vysoké úrovni. V jejich \href{http://aws.amazon.com/ec2/sla/}{SLA podmínkách\cite{amazon:sla}} vymezují dostupnost veškerých služeb jako 99,95\%. To je ještě o něco málo více, než nabízejí ostatní služby. U každé služby (mimo služeb v rámci Free Tier) je dle dokumentace možné zvolit datacentrum dle potřeby a dále zvolit segment v datacentru (tzv. Availability Zones). Tím je zaručeno, že ačkoliv je využíváno jednoho datacentra, budou data v jiných fyzických částech datacentra a nehrozí tak kompletní výpadek služeb v případě poruchy jedné oblasti. Datacentra má Amazon \href{http://aws.amazon.com/about-aws/globalinfrastructure/regional-product-services/}{dle dokumentace\cite{amazon:locations}} v těchto lokalitách: N. Virginia, Oregon, N. California, Ireland, Singapore, Tokyo, Sydney, São Paulo, Beijing a dalších.
+	\item [Dostupnosti dat z Internetu:] v rámci testování byla poskytovaná rychlost přístupu do sítě Internet dostačující. Přesto bohužel virtuální server vykazoval zpomalení. V nejlevnější variantě a zkušební verzi dosahovala infrastruktura rychlostí kolem 50-100 mbit/s v obou směrech. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}. V rámci infrastruktury intranetu, při vytvořené virtuální síti, byly jednotlivé servery propojeny rychlostí 1 gbit/s (této rychlosti servery mezi sebou nedosahovaly, pokud byly umístěny v různých lokalitách/datacentrech, kde přenosová rychlost klesala k rychlosti spojení do Internetu, což je stejné jako u Azure, v rámci Availability Zones však rychlost byla maximální).
+	\item [Možnost zpřístupnění intranetu:] TODO
+	\item [Přístup k filesystému:] TODO
+	\item [Intranetové aplikace:] TODO
+	\item [HW nároky:] TODO
+	\item [Hloubka znalostí:] TODO
+\end{description}
+
 \subsection{Srovnání vlastností a parametrů}
-http://aws.amazon.com/ec2/details/, http://aws.amazon.com/ec2/sla/ SLA 99,95\%
+TODO
 
 \newpage
 \section{Závěr}
