@@ -33,7 +33,7 @@ Mojí vizí tedy je, že se svět postupně opět navrátí ke klasickým termin
 \subsection{Co je to cloud}
 Co je to tedy cloud computing a k čemu je nám dobrý? Jedná se o pronajímání výpočetního výkonu jako služby.
 
-Zatímco bychom ve firmě měli velký a drahý server, který bychom museli spravovat, zálohovat a starat se o něj, tak tuto starost můžeme přesunout na někoho jiného. Při pořízení vlastního serveru se počítá s tím, že se po určité době obmění novým a výkonnějším řešením. Případně se pouze obmění jeho komponenty (procesor, paměť, ...) což je dočasné řešení. V tomto případě, kdy firma pořizuje náhradu v podobě výkonnějšího stroje se nazývá vertikální škálování (scale up). Tato metoda je ovšem vhodná pro menší firmu s malým počtem připojených aktivních uživatelů. Cloudové řešení je často složené ze slabších a méně výkonných strojů, které jsou spojeny pomocí síťové infrastruktury a navenek se tváří pro uživatele jako jeden supervýkonný stroj. Jedná se o takzvané horizontální škálování (scale out). Toto řešením má tu výhodu, že dokáže uživatelům přizpůsobovat mnohem lépe své požadavky a v případě potřeby vyššího výkonu přidat další slabší stroj do sítě, nebo naopak některé pro úsporu dočasně vypnout.\cite{wiki:Skalovatelnost}
+Zatímco bychom ve firmě měli velký a drahý server, který bychom museli spravovat, zálohovat a starat se o něj, tak tuto starost můžeme přesunout na někoho jiného. Při pořízení vlastního serveru se počítá s tím, že se po určité době obmění novým a výkonnějším řešením. Případně se pouze obmění jeho komponenty (procesor, paměť, ...) což je dočasné řešení. V tomto případě, kdy firma pořizuje náhradu v podobě výkonnějšího stroje se nazývá vertikální škálování (scale up). Tato metoda je ovšem vhodná pro menší firmu s malým počtem připojených aktivních uživatelů. Cloudové řešení je často složené ze slabších a méně výkonných strojů, které jsou spojeny pomocí síťové infrastruktury a navenek se tváří pro uživatele jako jeden supervýkonný stroj. Jedná se o takzvané horizontální škálování (scale out). Toto řešením má tu výhodu, že dokáže uživatelům přizpůsobovat mnohem lépe své požadavky a v případě potřeby vyššího výkonu přidat další slabší stroj do sítě, nebo naopak některé pro úsporu dočasně vypnout.\cite{wiki:Skalovatelnost}\nocite{cpress:cloudComputing}
 
 \subsubsection{Uživatelský pohled}
 Jak vnímá cloudové služby uživatel? Vidí je tak, že se jedná o aplikace, ke kterým může přistupovat odkudkoliv, nemusí si nic instalovat do počítače a data, která v cloudu využívá nemá uložené u sebe na disku v počítači, ale někde na vzdáleném serveru. Hlavní výhodu vidí v tom, že o data nepřichází s odcizeným fyzickým zařízením, když mu notebook někdo ukradne na letišti.
@@ -719,7 +719,7 @@ Kompletní ceník služeb je možné nalézt na stránce \href{http://aws.amazon
 \subsubsection{Používané technologie}
 Oproti Microsoftu a IBM Amazon má technickou stránku serverů celkem pěkně zdokumentovanou. Z \href{http://aws.amazon.com/ec2/instance-types/}{technických dokumentů\cite{amazon:ec2Instances}} se dá zjistit, že servery pohání procesory řady Intel Xeon a úložiště je složeno převážně již z SSD disků. Grafický cluster pak pohání NVIDIA Tesla GPU pro zajištění vysokého paralelního výpočetního výkonu. Pro grafický cluster je poskytováno grafické API v podobě OpenGL a DirectX, pro přímé programování jsou dostupné technologie CUDA a OpenCL.
 
-Infrastrukturu cloudu dle dostupných informací na serveru \href{http://www.zdnet.com/blog/open-source/amazon-ec2-cloud-is-made-up-of-almost-half-a-million-linux-servers/10620}{zdnet.com\cite{zdnet:amazonLinux}} pohání Red Hat Enterprise Linux (RHEL).
+Infrastrukturu cloudu dle dostupných informací na serveru \href{http://www.zdnet.com/blog/open-source/amazon-ec2-cloud-is-made-up-of-almost-half-a-million-linux-servers/10620}{zdnet.com\cite{zdnet:amazonLinux}} pohání Red Hat Enterprise Linux (RHEL). Pro virtualizaci systémů se využívá technologie XEN.
 
 \paragraph{Virtuální servery}
 Mezi dostupnými virtuálními servery poskytovanými v rámci AWS lze v \href{http://aws.amazon.com/ec2/details/}{dokumentaci EC2\cite{amazon:ec2Details}} nalézt: CentOS, Debian, SUSE Linux Enterprise, Amazon Linux, Oracle Enterprise Linux, Ubuntu, Red Hat Enterprise Linux a Windows Server.
@@ -746,18 +746,18 @@ Na vrstvě pro ukládání dat AWS nabízí též celou řadu možností:
 \paragraph{Ostatní}
 Kromě aplikační a databázové vrstvy nabízí AWS i již připravené aplikace, které lze na pár kliknutí nasadit a okamžitě začít využívat. Jedná se o publikační nástroje a služby řešící business logiku (BI).
 \begin{description}
-	\item [Wordpress]
-	\item [Drupal]
-	\item [Joomla!]
-	\item [MediaWiki]
-	\item [Alfresco]
-	\item [Jaspersoft Reporting \& Analytics for AWS]
-	\item [MicroStrategy]
-	\item [SAP Business Objects]
-	\item [Kognito Analytics Platform]
+	\item [Wordpress] je svobodný open source redakční publikační systém napsaný v PHP a MySQL. Je vyvíjen pod licencí GNU GPL a je silně podporován společností Automattic, jejíž vývojáři se WordPressu věnují.\cite{wiki:wordpress}
+	\item [Drupal] je softwarový systém pro správu obsahu, který původně napsal Dries Buytaert. Umožňuje tvorbu internetových časopisů, blogů, internetových obchodů a jiných komplexních systémů.\cite{wiki:drupal}
+	\item [Joomla!] je bezplatný open source CMS pro účely publikování informací na internetu a intranetu. Je napsána v jazyce PHP a využívá databázi MySQL. Joomla! podporuje caching, indexaci stránek, RSS, tisknutelné verze stránek, zobrazování novinek, blogy, diskusní fóra, hlasování, kalendář, vyhledávání v rámci webserveru, lokalizace a vícejazyčné verze.\cite{wiki:joomla}
+	\item [MediaWiki] je název software (wiki systému), na kterém běží Wikipedie a další projekty nadace Wikimedia. MediaWiki se někdy proto označuje jako engine (motor) Wikipedie. MediaWiki je svobodný software, šířený pod licencí GNU GPL.\cite{wiki:mediawiki}
+	\item [Alfresco] je vedoucí Open Source alternativa ECM (enterprise contetnt management) systémů, určený pro Microsoft Windows a Unix-like operační systém. Je navržen pro uživatele kladoucí důraz na vysokou dostupnost, modulárnost a rozšiřitelnost systému.\cite{wiki:alfresco}
+	\item [Jaspersoft Reporting \& Analytics for AWS] je open source reportovací nástroj s variabilním výstupem. Umožňuje výstup reportu například na obrazovku, tiskárnu, do PDF, HTML stránky, XML dokumentu, tabulkového procesoru, textových souborů a dalších formátů.
+	\item [MicroStrategy] jedná se o nástrom pro komplexní BI. Pomocí MicroStrategy BI platformy zákazníci získávají možnosti tvorby přehledných grafů, tabulek (reporting), využívání interaktivních panelů (dashboardů), využívání pokročilých analýzy, prediktivních analýz obchodních příležitostí a mnohé další\cite{oksystem:microstrategy}.
+	\item [SAP Business Objects] je opět specializovaný korporátní nástroj pro BI vyvíjený společností SAP.
 \end{description}
 
 \subsubsection{Vývoj}
+Jelikož Amazon poskytuje velkou šíři nabízených služeb, neupřednostňuje ani nedoporučuje jedno vývojové IDE ani postup vývoje software. Volbu nechává na každém uživateli. Tím odpadá jakékoliv stahování velkých balíků, které je třeba instalovat a nastavovat. Pro vývoj tedy stačí zvolit oblíbené IDE, které využíváte i na jinou práci, pokud umožňuje vyvíjet v poskytované technologii.
 
 \subsubsection{Modelové situace}
 
@@ -768,6 +768,9 @@ V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestov
 Po provedení registrace do služby \href{https://aws.amazon.com/free/}{AWS Free}, kde je požadováno vyplnění platebních údajů včetně karty a ověření telefonního čísla pomocí vyslovení PIN kódu anglickému automatu, můžete začít využívat služeb zdarma.
 
 \subsubsection{Praktické nasazení a testování}
+V rámci testování EC2 (Elastic Compute Cloud) jsem zkoušel virtuální server s nainstalovaným systémem Windows Server 2012. Jedná se o nejnižší variantu, která je poskytována zdarma. Systémová instance byla typu \textit{t1.micro} a obsahovala 615 MB paměti RAM, jedno jádro procesoru Intel Xeon E5-2650 a gigabitovou přípojku do intranetu. Reálné rychlosti spojení z Internetu se pohybuje kolem 50 mbit/s a do Internetu kolem sta megabit. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}
+
+Chod systému je o poznání pomalejší, než na obdobné konfiguraci v cloudu Azure od Microsoftu.
 
 \subsection{Srovnání vlastností a parametrů}
 http://aws.amazon.com/ec2/details/, http://aws.amazon.com/ec2/sla/ SLA 99,95\%
