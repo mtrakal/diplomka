@@ -784,26 +784,28 @@ V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestov
 Po provedení registrace do služby \href{https://aws.amazon.com/free/}{AWS Free}, kde je požadováno vyplnění platebních údajů včetně karty a ověření telefonního čísla pomocí vyslovení PIN kódu anglickému automatu, můžete začít využívat služeb zdarma.
 
 \subsubsection{Praktické nasazení a testování}
-V rámci testování EC2 (Elastic Compute Cloud) jsem zkoušel virtuální server s nainstalovaným systémem Windows Server 2012. Jedná se o nejnižší variantu, která je poskytována zdarma. Systémová instance byla typu \textit{t1.micro} a obsahovala 615 MB paměti RAM, jedno jádro procesoru Intel Xeon E5-2650 a gigabitovou přípojku do intranetu. Reálné rychlosti spojení z Internetu se pohybuje kolem 50 mbit/s a do Internetu kolem sta megabit. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}
+V rámci testování EC2 (Elastic Compute Cloud) jsem zkoušel virtuální server s nainstalovaným systémem Windows Server 2012. Jedná se o nejnižší variantu, která je poskytována zdarma. Systémová instance byla typu \textit{t1.micro} a obsahovala 615 MB paměti RAM, jedno jádro procesoru Intel Xeon E5-2650 a gigabitovou přípojku do intranetu. Reálné rychlosti spojení z Internetu se pohybují kolem 50 mbit/s a do Internetu kolem sta megabit. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}
 
 Chod systému je o poznání pomalejší, než na obdobné konfiguraci v cloudu Azure od Microsoftu.
 
+Kromě testu EC2 jsem nad cloudem ještě nasadil virtuální stroj s webovým serverem a databází na \href{http://ec2-54-186-102-209.us-west-2.compute.amazonaws.com/}{adrese cloudu}, která je ve tvaru \textit{er2-IP-ADRESA.LOKACE-DATACENTRA.compute.amazonaws.com}, což není moc přívětivé. Proto jsem pro ni nad vlastní doménou založil CNAME záznam v podobě: \href{http://dp-aws.mtrakal.cz}{dp-aws.mtrakal.cz}, kde se můžete po dobu (snad jednoho roku) podívat na výsledek.
+
 \subsubsection{Souhrn testování}
-http://aws.amazon.com/ec2/details/
+V porovnání s ostatními poskytovateli služeb, je jasně vidět, že má Amazon obří náskok. Ať už v poskytovaném výkonu, kvalitní specifikaci, nebo podrobném monitorování služeb. Monitorování je krásně vidět od stavu serverů na \href{http://status.aws.amazon.com/}{status.aws.amazon.com}, až po monitoring jednotlivých služeb, výkonu úložiště, nebo vytížení vlastních virtuálních instancí strojů.
 
 \begin{description}
 	\item [Čas k nasazení:] na dnes běžném výpočetním výkonu a nadprůměrnou Internetovou linkou se čas potřebný k začátku vývoje pohyboval třiceti minut včetně registrace. Do času jsem nezapočítal čas pro instalaci IDE, jelikož jsem využíval již nainstalované prostředí.
 	\item [Dostupnosti služeb:] AWS garantuje dostupnost služeb na vysoké úrovni. V jejich \href{http://aws.amazon.com/ec2/sla/}{SLA podmínkách\cite{amazon:sla}} vymezují dostupnost veškerých služeb jako 99,95\%. To je ještě o něco málo více, než nabízejí ostatní služby. U každé služby (mimo služeb v rámci Free Tier) je dle dokumentace možné zvolit datacentrum dle potřeby a dále zvolit segment v datacentru (tzv. Availability Zones). Tím je zaručeno, že ačkoliv je využíváno jednoho datacentra, budou data v jiných fyzických částech datacentra a nehrozí tak kompletní výpadek služeb v případě poruchy jedné oblasti. Datacentra má Amazon \href{http://aws.amazon.com/about-aws/globalinfrastructure/regional-product-services/}{dle dokumentace\cite{amazon:locations}} v těchto lokalitách: N. Virginia, Oregon, N. California, Ireland, Singapore, Tokyo, Sydney, São Paulo, Beijing a dalších.
 	\item [Dostupnosti dat z Internetu:] v rámci testování byla poskytovaná rychlost přístupu do sítě Internet dostačující. Přesto bohužel virtuální server vykazoval zpomalení. V nejlevnější variantě a zkušební verzi dosahovala infrastruktura rychlostí kolem 50-100 mbit/s v obou směrech. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}. V rámci infrastruktury intranetu, při vytvořené virtuální síti, byly jednotlivé servery propojeny rychlostí 1 gbit/s (této rychlosti servery mezi sebou nedosahovaly, pokud byly umístěny v různých lokalitách/datacentrech, kde přenosová rychlost klesala k rychlosti spojení do Internetu, což je stejné jako u Azure, v rámci Availability Zones však rychlost byla maximální).
-	\item [Možnost zpřístupnění intranetu:] TODO
-	\item [Přístup k filesystému:] TODO
-	\item [Intranetové aplikace:] TODO
-	\item [HW nároky:] TODO
-	\item [Hloubka znalostí:] TODO
+	\item [Možnost zpřístupnění intranetu:] Amazon AWS nabízí službu Virtual Private Cloud (VPC), což je oddělení privátního cloudu a spojení skrz VPN s vnitropodnikovým datacentrem. Tím můžeme propojit cloudovou službu s jakoukoliv intranetovou aplikací.
+	\item [Přístup k filesystému:] Přímý přístup k filesystému je opět možný pouze v rámci IaaS z virtuálního stroje. I tak se nejedná o přímý přístup, jelikož se přistupuje k namapovaným jednotkám z \href{http://aws.amazon.com/big-data/}{BigData} (i virtuální disky jsou ukládány jako BLOB v databázi). Další možností zpřístupnění souborů je úložiště \href{http://aws.amazon.com/s3/}{S3}, které ukládá data jako dvojici key-value (+ metadata). Kdy při nahrávání do úložiště obdržíte unikátní klíč a skrz něj můžete přistupovat k jednotlivým souborům v úložišti.
+	\item [HW nároky:] Tím, že nám AWS nediktuje vývojové nástroje je pouze na uživateli, jak náročné prostředí pro vývoj zvolí. Od toho se bude odvíjet i náročnost na HW programátora. Pro samotný vývoj dostačuje ale i naprosto běžný notebook a průměrně rychlá Internetová linka pro upload a nasazení.
+	\item [Hloubka znalostí:] Vzhledem ke komplexnosti a podrobnosti nabízených služeb, je celkem obtížné už jen zvolit vhodnou kombinaci služeb, aby správně vyhovovali potřebám. Administrace je výrazně složitější a obsáhlejší, než obou předchozích testovaných, tedy už zde musí být někdo s vyššími znalostmi oboru. Programování je na stejné úrovni, jako pro jakoukoliv jinou platformu a záleží pouze na vývojáři a službách, které plánuje využívat. V každém případě bych tuto službu považoval za nejpokročilejší a vyžadoval k jejímu nasazení i mnohem více zaškoleného uživatele. Pro práci se službou bych navrhoval vystudování technického oboru alespoň bakalářského stupně.
 \end{description}
 
 \subsection{Srovnání vlastností a parametrů}
 TODO
+http://www.root.cz/clanky/uloziste-v-cloudu-porovnani-amazon-a-azure/
 
 \newpage
 \section{Závěr}
