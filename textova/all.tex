@@ -553,8 +553,6 @@ IBM o podrobnostech použitých technologiích na serverech mlčí. Malý souhrn
 \paragraph{Virtuální servery}
 Služba BlueMix je PaaS, nikoliv IaaS, tedy neposkytuje přímý přístup k infrastruktuře.
 
-TODO? Zkusit otestovat plnohodnotný SoftLayer?
-
 \paragraph{Datové služby}
 Dle webu \href{https://ace.ng.bluemix.net}{BlueMix}\cite{bluemix:web} je možné aktuálně vyvíjet nad těmito technologiemi:
 \begin{description}
@@ -564,9 +562,6 @@ Dle webu \href{https://ace.ng.bluemix.net}{BlueMix}\cite{bluemix:web} je možné
 	\item [Ruby Sinatra] je volně dostupný open source webový framework a DSL napsaný v Ruby, pojmenovaný podle známého zpěváka Franka Sinatry. Jedná se o alternativu k frameworkům Ruby on Rails, Merb, Nitro, Camping a Rango. Využívá serverového rozhraní Rack.\cite{wiki:sinatra}
 \end{description}
 Na těchto technologiích lze vyvíjet, ovšem není to rozhodně konečný výčet poskytovaných služeb.
-
-\paragraph{Ostatní}
-TODO?
 
 \subsubsection{Vývoj}
 Vývoj na platformě BlueMix probíhá na lokálním stroji vývojáře a to v libovolném vývojovém prostředí IDE, které umožňuje vývoj ve výše zmíněných jazycích. Po vytvoření aplikace je následně projekt odeslán na cloudový server pomocí příkazové řádky \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI}.
@@ -644,9 +639,6 @@ Dle \href{http://www.windowsazure.com/en-us/documentation/}{dokumentace k Window
 	\item [Python] je dynamický objektově orientovaný skriptovací jazyk.
 	\item [Ruby] je interpretovaný skriptovací programovací jazyk. Díky své jednoduché syntaxi je poměrně snadný k naučení, přesto však dostatečně výkonný, aby dokázal konkurovat známějším jazykům jako je Python a Perl. Je plně objektově orientovaný – vše v Ruby je objekt.\cite{wiki:ruby}
 \end{description}
-
-\paragraph{Ostatní}
-TODO?
 
 \subsubsection{Vývoj}
 Pro vývoj na platformě Azure se využívá pokročilého vývojového prostředí (IDE) Microsoft Visual Studio, nebo libovolných jiných. Funkcionalita služeb cloudu je zpřístupněna skrz sadu vývojářských nástrojů (SDK), které jsou pro jednotlivé programovací jazyky poskytovány. 
@@ -804,8 +796,41 @@ V porovnání s ostatními poskytovateli služeb, je jasně vidět, že má Amaz
 \end{description}
 
 \subsection{Srovnání vlastností a parametrů}
-TODO
-http://www.root.cz/clanky/uloziste-v-cloudu-porovnani-amazon-a-azure/
+Jelikož práce a testování bylo z velké části subjektivní a ovlivněno i předchozími zkušenostmi s jednotlivými technologiemi, začnu porovnání produktů právě z mého pohledu a následně se budu věnovat jednotlivým oblastem testování.
+
+\subsubsection{Subjektivní hodnocení}
+Pokud mám služby porovnat subjektivně a z nasbíraných zkušeností, musím jako nejintuitivnější a nejvíce příjemnou službu hodnotit Azure od Microsoftu. Se službou se mi pracovalo přirozeně, neobsahovala nadstandardní nastavení, které by mne zbytečně mátlo a bez větších problémů jsem nad ní byl schopný pracovat. Uvítal bych podrobnější informace o stavu systému.
+
+Následně se mi dobře pracovalo a Amazon AWS, který je opravdu rozsáhlý, se spoustou nastavení, které ho dělá lehce nepřehledný. Pokud bych ho využíval déle, než pouze v rámci diplomové práce a zvykl bych si na drobné nejasnosti v konfiguraci, službu bych využíval nejspíše velice rád. Z testovaných služeb podává nejpodrobnější informace o stavu systému i cloudu samotného, lze vybírat z nejvíce připravených řešení a služby jdou asi nejlépe optimalizovat na požadované zatížení.
+
+Z mého pohledu se mi nejhůře z testovaných pracovalo s IBM BlueMix. Ovšem musím vzít v potaz, že se jedná o absolutně novou začínající službu. Ta má i přes jednoduchost služby ohromný potenciál a do budoucna má určitě co nabídnout. Bohužel prozatím je webová administrace velice strohá a postrádá i základní logování, které by mohlo pomoci při vývoji, nebo jsem ho alespoň neobjevil.
+
+\subsubsection{Výkon}
+Z pohledu výkonu služeb bohužel nemám šanci produkty jak srovnat, jelikož ve všech případech jsem měl přístup jen k té nejzákladnější konfiguraci. V ní je uživatel rád, že běží tak, jak vůbec běží. Přesto nejlepší pocit jsem měl z Azure a jejich Windows Serveru, který měl perfektní odezvu i přes slabý hardware na kterém běžel a oproti AWS byl schopný mnohem rychleji reagovat.
+
+Systém nad AWS vykazoval zpomalení systému kvůli velice pomalému přístupu na disk, kdy přenosová rychlost klesala i pod 1 MB/s. To ovšem přičítám sdíleným prostředkům procesoru a i diskovému úložišti a v reálném provozu na lepší konfiguraci by k tomuto nedocházelo.
+
+\subsubsection{Cena}
+Pokud srovnávám cenovou politiku, vychází Amazon a Microsoft velice podobně. Obě služby začínají na ceně od \$0.02 za hodinu provozu.
+
+\subsubsection{Diskové úložiště/databáze}
+V této oblasti je jednoznačným vítězem Amazon s jejich S3 a BigData, která se dají navíc připojovat i jako oddíly k virtuálním strojům. V tom Amazon nemá konkurenci a pokud chcete využívat cloud pro uskladnění dat, ať už strukturovaných, nebo skladování obřích obrazů disků a dalších, doporučil bych právě služby Amazonu.
+
+\subsubsection{Dostupnost služeb}
+Jelikož jsem během celé práce nezpozoroval ani na jedné z testovaných služeb výpadek nemohu podat vlastní statistiky. Pokud ovšem budu vycházet z SLA, která by měla být pro poskytovatele závazná, opět nejlépe vychází Amazon, který pro každé datacentrum garantuje 99,95\% dostupnost služeb, což je nejvyšší číslo, které se mezi testovanými objevilo.
+
+\subsubsection{Čas k nasazení}
+Čas k nasazení služby, alespoň tedy čas měřitelný, ne ten, který je potřeba k samotnému vývoji aplikací běžících nad službou je měřitelný dobře. V této kategorii si nejlépe stojí BlueMix od IBM, jelikož nepotřebuje u registrace téměř žádné údaje a hned po registraci vás nechá pracovat aniž by bylo cokoliv dále nastavovat. Oproti tomu služby od Microsoftu je nutné nejdříve po registraci připravit a nainstalovat IDE ve kterém je doporučeno vyvíjet aby byl bezproblémový deploy na servery.
+
+Ovšem čas maximálně hodina, která byla ke zprovoznění potřebná není pro další vývoj nijak omezující. Tedy kategorii nepřikládám velkou váhu. Navíc tuto činnost většina uživatelů provede pouze jednou.
+
+\subsubsection{Hloubka znalostí}
+Údaj pro srovnání služby na složitost správy a konfigurace považuji za celkem důležitý. Pokud budu mít kvalitní službu a nebudu mít ve firmě vývojáře, kteří nad službou budou schopni vyvíjet a nakonfigurovat ji, nebude pro firmu mít žádný význam. Společnost stejně bude muset přistoupit k jiné službě, nebo investovat další nemalé prostředky na zaškolení, případně nabrat nové vývojáře, což je ve finále nejdražší, jelikož musí projít zaškolením do vnitropodnikových zásad a přístupu k vývoji.
+
+Z mého pohledu v této kategorii nejlépe vychází Microsoft Azure, který je jednoduchý na správu a rychle jsem se v něm zorientoval a mohl začít vyvíjet. To je ovšem opět silně individuální, jelikož jsem měl předchozí několikaletou zkušenost s vývojem na podobné platformě, ačkoliv pouze lokálních aplikací. Pokud bych v rámci studia na FEI UPCE byl směřován k jiným vývojovým nástrojům a technologiím dal bych určitě přednost zase jiné službě, která by mi více vyhovovala.
+
+\subsubsection{Ostatní}
+Před pár dny vyšel na serveru \href{http://root.cz}{root.cz} článek \href{http://www.root.cz/clanky/uloziste-v-cloudu-porovnani-amazon-a-azure/}{Úložiště v cloudu: porovnání Amazon a Azure\cite{root:porovnaniAzureAWS}} o porovnání úložiště Amazon AWS a Microsoft Azure z pohledu oddělení redakčního vývoje serveru \href{http: //ihned.cz}{IHNED.cz}
 
 \newpage
 \section{Závěr}
