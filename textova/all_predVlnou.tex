@@ -1,0 +1,847 @@
+\section{Úvod}
+V posledních několika letech vnímám zvýšené povědomí o cloud computingu. Ovšem téměř nikdo v mém  okolí není schopný podat ucelený pohled na to, co se za tímto "`módním"' pojmem skrývá a podrobně pojem vysvětlit a vymezit jeho hranice. Mám za to, že většina uživatelů používajících pojem cloud a cloud computing ve finále téměř netuší, o čem hovoří a mylně ho pokládají za něco, čím ve skutečnosti není. Z tohoto důvodu jsem se rozhodl pro vytvoření této práce a získání komplexnějšího pohledu na celou problematiku.
+
+\subsection{Cíl práce}
+Předpokládaným cílem práce je vytvoření souhrnného dokumentu o problematice cloud computingu, komplexně a podrobně rozepsat a prozkoumat, co se pod tímto pojmem skrývá. Práce bude ve finále uceleným prozkoumáním pojmů spojených s cloud computingem a cloudem obecně. Měla by vysvětlovat jeho podstatu a čtenáři přinést užitečné informace k pochopení problematiky. Dalším milníkem práce bude vytvoření srovnání jednotlivých společností a jejich služeb, které potencionálním klientům mohou nabídnout. Mezi hlavní vybrané společnosti patří IBM, VMware a Microsoft s jejich produkty.
+
+\newpage
+\section{Seznámení s cloud computingem}
+Cloud computing je relativně nový pojem, přesto služby pod ním skrývané jsou tu s námi téměř od počátku počítačů. Pod pojmem cloud computing si dnes představujeme pronajímané služby, kterých využíváme vzdáleně. Služby jsou poskytované převážně velkými společnostmi, které mají dostatečné prostředky pro zřízení datacenter s velkým výpočetním, nebo úložným prostorem. Z jejich strojů si pak propůjčujeme výkon a diskovou kapacitu, kde probíhají naše výpočty, za které platíme. O ucelený seznam všech významných společností zabývajících se cloud computingem se postarala společnost \href{http://www.ulitzer.com}{Ulitzer} a publikovala ho v článku \href{http://web2.sys-con.com/node/1386896}{The Top 250 Players in the Cloud Computing Ecosystem\cite{syscon:top250}}.
+
+\subsection{Historie}
+Před cloud computingem musela být inspirace. Tu nacházím v dávné historii ICT.
+
+\subsubsection{Sedmdesátá léta}
+Vrátíme se do doby, kdy v obřích místnostech tepala srdce prvních mainframů\footnote{V původním slova smyslu se jednalo o sálové počítače na děrné štítky, následně v průběhu let získaly interaktivní uživatelské rozhraní.}. Již do této doby by se dal datovat počátek cloud computingu. Počátek vidím právě v době, kdy obří místnosti nestačily na jediný počítač s výpočetním výkonem, kterému se dnes doslova vysmějí i hodinky a kalkulačka. Dovolím si tvrdit, že inspirace dnešních cloudových systémů je právě na počátku sedmdesátých let dvacátého století, kdy začínala doba sálových počítačů s připojenými terminály a pronájem strojového času byl jediný možný ukazatel pro účtování. Sálový počítač lze přirovnat k dnešním datacentrům, oboje plní funkci centrálního úložiště a výpočetního střediska, ke kterému se stačí připojit pomocí tenkého klienta, dříve terminálu, dnes například webového prohlížeče a data zpracovávat vzdáleně.
+
+Právě počátkem sedmdesátých let začaly vznikat první počítačové sítě, kde tenký klient obsahoval pouze klávesnici a výstupní zařízení. Veškeré úkony zpracovával právě sálový počítač. Zpracování dat na dálku, aniž bychom se museli starat o to, kde a na jakém stroji bude výpočet proveden, to je hlavní myšlenka dnešního cloud computingu. Tedy trend se opět vrací k obřím sálům datových center, kde jsou prováděny výpočetní úkony. Strojový čas je poskytován jako služba.
+
+\subsubsection{Přítomnost}
+Od sedmdesátých let ICT vývoj směřoval spíše k osobním počítačům. Veškeré výpočty se s nástupem osobních počítačů začaly přesouvat do prostor jednotlivých firem a domácností. K tomu došlo převážně snižující se cenou osobních počítačů a také nedostupností a cenou přístupu k síti Internet. Následně kolem roku 2002 začal vznikat první opravdový cloud. V té době již byla dostatečná infrastruktura a propustnost sítí na to, aby bylo možné realizovat velké datové přenosy, a tak zasílat objemná data do datových center na výpočet a jejich opětovný příjem s výsledky.
+
+V roce 2002 spouští jako první Amazon svoji službu Amazon Web Services, ke které se dá datovat první milník cloud computingu jako takového. O pár let později spouští i svoje další služby S3 a EC2. A následně se v roce 2008 přidávají další poskytovatelé služeb Google s jejich App Engine a o rok později Microsoft s Windows Azure.
+
+Dnes na trhu operuje spousta více či méně kvalitních a úspěšných poskytovatelů cloudových služeb.
+
+Vývoj postoupil, výpočetní výkon a úložný prostor jak ve firemní, tak domácí sféře začíná být nedostačující, a proto se výkon využívá právě z cloudů, kde výpočet může proběhnout mnohem rychleji a "`levněji"'.
+
+\subsubsection{Předpokládaný směr vývoje}
+Vize, kterou mám, je taková, že cloud a vzdálený přístup naprosto nahradí dnešní pojetí počítačů a veškerý obsah bude ukládán v datových centrech společností. My se k němu budeme pouze připojovat pomocí tenkých klientů. Již dnes vidím právě tento vývoj například v oblasti mobilních zařízení, která nedisponují výpočetním výkonem ani úložištěm a většinu obsahu získávají pomocí bezdrátového připojení právě z cloudu, ať už jako multimédia nebo osobní data, která si stahují pouze na dobu nezbytně nutnou.
+
+Mojí vizí tedy je, že se svět postupně opět navrátí ke klasickým terminálům, pouze dnes asi spíše v pojetí tabletů a jiných mobilních zařízení.
+
+\subsection{Co je to cloud}
+Co je to tedy cloud computing a k čemu je nám dobrý? Jedná se o pronajímání výpočetního výkonu jako služby.
+
+Místo abychom ve firmě měli velký a drahý server, který bychom museli spravovat, zálohovat a starat se o něj, tak tuto starost můžeme přesunout na někoho jiného. Při pořízení vlastního serveru se počítá s tím, že se po určité době obmění novým a výkonnějším řešením. Případně se pouze obmění jeho komponenty (procesor, paměť, \ldots), což je dočasné řešení. V tento případ, kdy firma pořizuje náhradu v podobě výkonnějšího stroje, se nazývá vertikální škálování (scale up). Tato metoda je ovšem vhodná pro menší firmu s malým počtem připojených aktivních uživatelů. Cloudové řešení je často složené ze slabších a méně výkonných strojů, které jsou spojeny pomocí síťové infrastruktury a navenek se tváří pro uživatele jako jeden supervýkonný stroj. Jedná se o takzvané horizontální škálování (scale out). Toto řešení má tu výhodu, že dokáže uživatelům přizpůsobovat mnohem lépe své požadavky a v případě potřeby vyššího výkonu přidat další slabší stroj do sítě, nebo naopak některé pro úsporu dočasně vypnout.\cite{wiki:Skalovatelnost}\nocite{cpress:cloudComputing}
+
+\subsubsection{Uživatelský pohled}
+Jak vnímá cloudové služby uživatel? Vidí je tak, že se jedná o aplikace, ke kterým může přistupovat odkudkoliv, nemusí si nic instalovat do počítače a data, která v cloudu využívá, nemá uložené u sebe na disku v počítači, ale někde na vzdáleném serveru. Hlavní výhodu vidí v tom, že o data nepřichází s odcizeným fyzickým zařízením, když mu notebook někdo ukradne na letišti.
+
+Další nespornou výhodu vidí v tom, že data jsou na rozdíl od jeho notebooku zálohována.
+
+\subsubsection{Jak vidí cloud vývojář}
+Z pohledu vývojáře se tedy jedná o poskytovaný server, na kterém běží operační systém a vývojové běhové prostředí. Typicky se jedná o server s nasazeným operačním systémem GNU Linux, a nebo serverové verze Microsoft Windows. Servery jsou rozmístěny na několika geografických místech po celém světě, a tak nehrozí výpadek a ztráta dat, ani při přírodní katastrofě, kterou si běžný uživatel vůbec nepřipouští. Na těchto serverech je v rámci cloudu poskytován úložný prostor pro data, databáze a webový server, který zprostředkovává službu uživatelům. Někteří poskytovatelé nabízejí i další služby jako přidanou hodnotu.
+
+Aplikace jsou doručovány jako HTTP služby, tvořené převážně HTML, CSS a asynchronním JavaScriptem, díky tomu pro zobrazení takové aplikace stačí moderní webový prohlížeč. Díky HTML5 jsou tyto aplikace dostupné i v offline verzi, kdy se nově vzniklá data synchronizují do cloudu po připojení k Internetu.
+
+Další možností, jak doručovat služby cloudu uživatelům, je využití vzdálené plochy, kdy se uživateli zobrazuje vzdálené prostředí přímo na jeho monitoru a jeho zobrazovací zařízení (počítač, tablet, mobilní telefon, a další) se chová pouze jako tenký klient, který má na starost pouze přijímat obraz. Této metody se využívá například u služby \nameref{sec:onlive}.
+
+K zajištění stability služby a rozložení náporu se využívá služby CDN. To je služba, která přesměruje uživatele na sever, který je k němu nejblíže na cestě v síti. Má tedy nejlepší odezvu a dostupnost služeb. Případně je tato služba využita pro rozložení zátěže v případě, že některý server je více zatížen a nápor by nemusel ustát. Jednou z nejvýznamnějších společností zabývající se službou CDN je společnost \href{http://www.akamai.com/}{Akamai}, která zprostředkovává dostupnost služeb pro Microsoft (např. Windows Update), služby společnosti Apple, částečně je síť využívána i pro zprostředkování videa ze serveru YouTube a mnoha dalších významných společností.
+
+\subsubsection{Virtualizace}
+\label{sec:virtualizace}
+Cloud může běžet a fungovat díky virtualizaci služeb a hardware. Virtualizace umožňuje oddělení služeb jednotlivých klientů od sebe a taktéž dynamickou změnu výkonu dle požadavků. Virtualizace s dostatečným výpočetním výkonem je umožněna díky škálovatelnosti zařízení. Zařízení jsou tedy všeobecně méně výkonné servery, dalo by se říci i obyčejné osobní počítače, propojeny do jednoho velkého celku pomocí počítačové sítě. Jejich výkon je díky použití horizontálního škálování zvyšován podle počtu připojených malých serverů a může růst téměř donekonečna.
+
+Virtualizace fyzického stroje známe několik variant\cite{zive.cz:virtualizace}:
+\begin{description}
+\item[Emulace:] při emulaci dochází ke kompletní virtualizaci jádra procesoru, registrů, paměti a dalších klíčových součástí systému. Hostitelský systém tedy vytváří kompletní běhové prostředí pro spuštění hostovaného systému. Jedná se o nejnáročnější a nejméně efektivní verzi virtualizace.
+	\item[Virtualizace na úrovni systému:] využívá jednoho společného jádra hostitelského operačního systému. Z toho vychází hlavní nevýhoda a to, že je možné virtualizovat pouze stejný systém ve shodné verzi. Hostitelský systém může oproti hostovaným pouze přidělovat systémové zdroje, jinak se jedná o rovnocenné systémy. Tento způsob virtualizace poskytuje nejvyšší výkon.
+	\item[Plná virtualizace:] Hostovaný stroj je emulován pomocí virtualizačního hardware. U plné virtualizace nedochází k emulaci procesoru a systémy tak běží v nativním režimu a tím pádem využívají plný výkon. K virtualizaci dochází pouze v případě práce se vstupně výstupním zařízením (čtení/zápis na disk apod.), kdy musí dojít k překladu adres a vzniká tím režie.
+	\item[Paravirtualizace:] pro běh musí existovat upravené jádro systému (\href{http://cs.wikipedia.org/wiki/Hypervizor}{hypervizor}), které umožňuje hostovaným systémům přístup k hardware. Vstupně výstupní volání jsou převedeny již v hostovaných systémech na volání hypervizoru a odpadá tak značná část režie oproti plné virtualizaci.
+\end{description}
+Pro cloud se využívá plné virtualizace a paravirtualizace, které jsou do jisté míry podobné. Těchto typů se využívá kvůli vysokému poskytovanému výkonu a vhodnému přizpůsobení pro nový hardware.
+
+Kromě virtualizace fyzického stroje existuje ještě pár jiných typů virtualizace. Mezi nimi můžeme najít virtualizaci fyzické sítě, diskových polí a aplikační virtualizaci (databáze).
+
+\subsubsection{Dle poskytovaných služeb}
+
+\paragraph{SaaS --- Software as a Service:}
+\label{sec:saas}
+V tomto případě klient požaduje od cloudu pouze zprostředkování využívání cizího nebo vlastního softwaru, který poběží na strojích třetí strany. Aplikace je tedy pronajímána jako služba. Klient tedy platí za přístup a zprostředkování aplikace. Jako příklad můžeme uvést například \href{apps.google.com}{Google Apps}, nebo \href{http://domains.live.com}{Microsoft Outlook}.
+
+\paragraph{PaaS --- Platform as a Service:}
+\label{sec:paas}
+Platforma jako služba znamená, že nám poskytovatel služeb nabízí celé prostředí pro vývoj aplikací, které následně běží v cloudu. Poskytován je jak IDE pro vývoj, tak i API, přes které se vyvíjí, případně programovací jazyk, ve kterém následně aplikace na serveru běží. Nevýhodou je, že se jedná o proprietární řešení a je většinou nepřenosné. Jako příklad můžeme uvést \href{appengine.google.com}{Google App Engine}.
+
+\paragraph{IaaS --- Infrastructure as a Service:}
+\label{sec:iaas}
+Posledním zástupcem je infrastruktura jako služba, kdy je poskytován samotný hardware. O něj se stará poskytovatel, a nám tak odpadá starost s nefunkčností fyzických zařízení. Jedná se vlastně o virtualizaci (viz kap. \ref{sec:virtualizace}), a my se staráme pouze o vlastní aplikace. Zástupcem této služby může být například \href{http://aws.amazon.com/}{Amazon Web Services}.
+
+\subsubsection{Dle publikace služeb}
+
+\paragraph{Veřejný cloud:} pod tímto pojmem rozumíme službu, která je poskytována plošně, pro všechny uživatele se zobrazuje a poskytuje stejný obsah, nebo velice podobný. Jako cloudovou veřejnou službu je možné si představit třeba stream servery, které poskytují multimediální obsah široké veřejnosti. Jako příklad můžeme uvést všem dobře známý video server  \href{http://youtube.com}{youtube.com}, dále \href{http://vimeo.com}{vimeo.com} a z hudebních serverů pro příklad \href{http://grooveshark.com}{grooveshark.com} a nebo \href{http://soundcloud.com}{soundcloud.com}.
+
+\paragraph{Privátní cloud:} znamená, že k němu má přístup pouze určitá skupina uživatelů, kteří ji využívají. Typickým příkladem budiž cloud, který využívá společnost pro ukládání firemních dat. Cílem takového cloudu bude, aby k němu neměla přístup neoprávněná osoba, proto cloud privátní. Za privátní cloud bychom mohli považovat \href{https://drive.google.com}{Google Drive} nebo službu \href{https://dropbox.com/}{Dropbox}, které se ovšem díky možnosti vytvářet veřejné odkazy a sdílet vnitřní data řadí již spíše do cloudových služeb hybridních.
+
+\paragraph{Hybridní cloud:} tento model využívá předchozích obou variant, které jsou spolu spojeny pomocí komunikačního protokolu. Pro veřejnost se tedy cloud jeví jako veřejný, přesto může obsahovat mnohem více informací, než ke kterým se běžný uživatel dostane a s kterými tak může pracovat.
+Výhodou hybridního cloudu je možnost využívat služeb třetích stran, aniž bychom jakkoliv ovlivnili privátní data a museli je poskytovat veřejně.
+
+\subsubsection{Výhody}
+Cloudové řešení má nespočet výhod a důvodů, proč jej začít využívat.
+
+\begin{description}
+  \item [Údržba] z pohledu zákazníka je nulová. Není třeba instalovat aktualizace, nebo instalaci SW na jednotlivé stroje. Díky tomu, že vše probíhá z jediného místa, stačí vyměnit software na jednom místě a okamžitě ho získají všichni.
+	\item [Výkon] je vždy dostatečný. Zatímco v případě lokálního serveru je jeho výkon většinu času předimenzovaný a v okamžiku, kdy je ho potřeba opravdu hodně, najednou je nedostatečný, v případě cloudu toto neplatí. Pokud potřebujeme větší výkon, necháme si ho přidělit, nebo je dočasně přidělen automaticky. V době, kdy náš výpočetní výkon není potřeba, využívá ho někdo jiný.
+  \item [Hardware] není potřeba pořizovat, tedy nám nezastarává a není potřeba pořizovat novější stroje, což by bylo spojeno s vysokými náklady. Dále díky tomu nemusíme řešit jejich napájení a nutnost mít místnost s klimatizací.
+  \item [Mobilita] je zajištěna díky vzdálenému přístupu k aplikaci, tedy není nutné, aby se uživatelé připojovali z jediného místa a mohou službu využít odkudkoliv.
+\end{description}
+
+\subsubsection{Nevýhody}
+Hlavním odmítnutím přechodu, nebo částečné migraci na cloudové řešení jsou níže vypíchnuté nevýhody a strach, pojďme si je tedy představit.
+
+\begin{description}
+  \item [Závislost] na třetí straně vidím jako největší nevýhodu. Pokud si vybereme službu u společnosti, která se za rok rozhodne svoje služby ukončit, nemáme s tím možnost nic udělat. Nemáme možnost ovlivnit, když se třetí strana rozhodne svůj software změnit na jinou verzi apod.
+  \item [Výpadek] Internetu je kritický pro vzdálený přístup ke službě využívající cloud.
+  \item [Dohled] nad službou má třetí strana a ne my. Nemáme tedy možnost monitorovat, jaký je stav serverů, kde jsou naše data a podobně.
+  \item [Přenositelnost] je další problém. Aplikace bývá napsána přímo pro prostředí cloudu který využíváme, pokud se rozhodneme změnit společnost, musíme přepsat i aplikace a migrovat veškerá data, pokud nám na nich záleží.
+  \item [Export dat] není též samozřejmostí, migrovat proto jinam je celkem obtížný úkol.
+\end{description}
+
+\newpage
+\section{Bezpečnost a cloud}
+Asi první otázkou, kterou si každý položí po zmínění slova cloud a odevzdání citlivých dat do rukou jiné společnosti, je otázka bezpečnosti. Jelikož data přesouváme k cizímu subjektu, je tato otázka zajisté na místě a měla by být zodpovězena před jakýmkoliv prvním nasazením cloud computingu.
+
+\subsection{Sedm rizik dle Gartner}
+Server \href{http://www.infoworld.com/d/security-central/gartner-seven-cloud-computing-security-risks-853}{InfoWorld}\cite{infoworld:7rizik} upozornil na sedm rizik zveřejněných společností \href{http://www.gartner.com/}{Gartner}.
+
+\subsubsection{Privilegovaný uživatelský přístup}
+\begin{quote}
+Externě outsourcované služby v oblasti zpracování citlivých dat se vymykají kontrolám, které za normálních okolností IT oddělení využívají u interních in-house programů. Proto je nutné zjistit si o lidech, kteří budou spravovat vaše data maximum informací, včetně těch, které se týkají výběru konkrétních administrátorů a kontroly jejich přístupu k vašim datům.\cite{cloud.cz:7rizik}
+\end{quote}
+
+\subsubsection{Dodržování právních předpisů}
+\begin{quote}
+Zákazníci jsou ve finále vždy zodpovědní za bezpečnost a úplnost svých vlastních dat, byť by byla ve správě poskytovatelů služeb. Spolehliví poskytovatelé služeb jsou podrobováni externím auditům a nepochybně se nebudou bránit prokázat svou schopnost data zabezpečit. Naproti tomu těm poskytovatelům, kteří se kontrolám auditu brání, by se firmy měly raději obloukem vyhnout.\cite{cloud.cz:7rizik}
+\end{quote}
+
+\subsubsection{Geografické umístění dat}
+\begin{quote}
+Při využití cloud platformy nebudete vědět, kde se vaše data nacházejí – nejspíš nebudete znát ani zemi, v které jsou uložena. Gartner proto radí, abyste si od svého poskytovatele vymohli závazek k ukládání a zpracovávání dat pod jurisdikcí konkrétní země, a smluvně se dohodli i na dodržování místních požadavků uchování důvěrných informací klientů.\cite{cloud.cz:7rizik}
+\end{quote}
+
+\subsubsection{Segregace dat}
+\begin{quote}
+Firemní data se v cloudu obvykle nacházejí ve sdíleném prostředí ve společnosti dat od ostatních zákazníků. Šifrování je efektivní, ale není to všelék. Podle Gartner navíc někdy můžou šifrovací selhání data úplně znehodnotit a i normální šifrování může zkomplikovat dostupnost. Cloud provider by měl tedy firmě poskytnout důkaz toho, že šifrovací protokoly byly navrženy a testovány zkušenými profesionály.\cite{cloud.cz:7rizik}
+\end{quote}
+Mělo by proto ve sdíleném prostředí docházet k tzv. segregaci dat, aby nemohla být zpřístupněna jinou firmou.\footnote{Segregace, dle slovníku cizích slov, znamená: oddělování, rozdělování, vylučování.}
+
+\subsubsection{Obnovení/Zotavení}
+\begin{quote}
+Váš cloud poskytovatel by vám měl dát vědět, co se s vašimi daty a službami stane v případě nějaké nehody. Podle Gartner jsou totiž řešení postrádající schopnost replikace dat a aplikací vystavena ohromnému riziku selhání. Ověřte si proto, zda je váš provider schopen provést kompletní obnovu a jak dlouho by případně trvala.\cite{cloud.cz:7rizik}
+\end{quote}
+
+\subsubsection{Podpora průzkumu}
+\begin{quote}
+Pátrat po nežádoucích či ilegálních aktivitách může být v cloud computingu nemožné, varuje Gartner. Protože se zápisy a data od mnoha různých zákazníků často nacházejí na společném místě, a nebo jsou hostována napříč několika měnícími se provozovateli, je velmi obtížné cloud služby prověřovat. Firmy by tedy od svých cloud providerů měly vyžadovat podporu konkrétních typů šetření, včetně předložení důkazů o tom, že poskytovatel má s poskytováním tohoto typu služeb zkušenosti.\cite{cloud.cz:7rizik}
+\end{quote}
+
+\subsubsection{Dlouhodobá životaschopnost}
+\begin{quote}
+Ujistěte se, že váš cloud poskytovatel není v ohrožení bankrotu ani převzetí od jiné firmy. I když se takový scénář může zdát nepravděpodobný, je dobré vědět, že i v takovém případě budou vaše data dostupná. Gartner radí ověřit si u potenciálních dodavatelů, zda by byli v tomto případě schopni získat data zpět a zda by byla dostupná ve formátu, který lze importovat do replikované aplikace.\cite{cloud.cz:7rizik}
+\end{quote}
+
+\subsection{Obecné otázky}
+Obavy z nasazení a přesunu dat do cloudu není pouze bezpečnost, ale i spousta dalších drobných obav. Mezi uváděnými v průzkumech je třeba i příliš mnoho poskytovatelů, strach ze špatného rozhodnutí.\cite{businessworld:prvniKroky}
+
+Dle serveru \href{http://www.us-cert.gov/security-publications/Common-Risks-Using-Business-Apps-Cloud}{us-cert.gov} existuje několik základních rizik použití firemních dat v cloudu. Tyto rizika jsou popsány v dokumentu \href{http://www.us-cert.gov/sites/default/files/publications/using-cloud-apps-for-business.pdf}{Common Risks of Using Business Apps in the Cloud}\cite{uscert:risks}.
+\begin{description}
+	\item[Nemáme plnou kontrolu:] Pokud zakoupíme IT služby od cloudového poskytovatele, nemáme kompletní kontrolu nad výpočetními zdroji. Co se stane, pokud poskytovatel změní podmínky nebo cenu? Co když nastane výpadek, ukončí provoz služby nebo zkrachuje?
+	\item[Závislost na jednom dodavateli:] Každý poskytovatel služeb je jiný. Mají různé platformy na rozdílných zařízeních, softwaru a s jiným nastavením. Změnit dodavatele v takovémto případě není vůbec snadné. Můžeme se stát závislými na jednom jediném dodavateli služeb. Jako zdárný příklad můžeme uvést migraci emailových účtů. Nastává problém s konverzí, formáty uložených zpráv, přizpůsobením a další problémy.
+	Problém s aplikacemi v cloudu je, že po migraci nemusí fungovat dle očekávání, nebo je není možné migrovat vůbec.
+	\item[Naše data jsou chráněny někým jiným:] Pokud využíváme cloudových služeb, je typické, že naše data jsou umístěna a ochraňována provozovatelem cloudu. Poskytovatel ovšem nemusí mít tak velký zájem ochránit naše data tak jako my sami.
+	Mohou být odcizena firemní tajemství, nebo mohou být zničena data v důsledku zásahu vládních subjektů, jako živý příklad můžeme uvést \href{http://www.zive.cz/bleskovky/megaupload-zastaven-sefove-zatceni/sc-4-a-162004/default.aspx}{kauzu Megaupload.com}\cite{zive:megaupload}.
+	\item[Naše bezpečnost je spravována někým jiným:] Provozovatelé cloudu jsou velkými sjednocovateli a agregátory oproti klasickým firemním datacentrům. Obecně jsou schopni zajistit mnohem větší bezpečnost jejich platformy, jelikož mají mnohem větší prostředky pro její zabezpečení než malá firma s omezenými zdroji.
+	Nicméně data více zákazníků jsou seskupována na jeden server a tam jsou mnohem větším potenciálním cílem pro kybernetický útok. Společnost, která si zajišťuje vlastní bezpečnost ovšem zná přesně místa, která nutně potřebuje ochránit a vynaloží pro to maximum, kdežto v cloudu je vynakládána síla na všechny součásti firemního ekosystému shodná.
+\end{description}
+
+Dále uvádím další popisované problémy, se kterými se jakožto uživatelé cloudu budou klienti potýkat.
+
+\subsubsection{Data u třetí společnosti}
+Hlavní obavou, která se objeví jako první, je, že ukládáme data mimo firmu a její servery, tedy do rukou někoho třetího. Nikdy tedy nemůžeme mít jistotu, jak s daty zachází a hlavně jak dobře je jeho řešení bezpečné. Měli bychom proto cloud využívat obezřetně a rozhodovat, která data jsou již tak citlivá, aby v cloudu být nemohla.
+
+\subsubsection{Ztráta dat}
+\label{sec:ZtrataDat}
+\begin{quote}
+Pokud má zaměstnanec všechna data u sebe v počítači (dnes spíše v notebooku) a přijde o něj, ať už ztrátou, krádeží nebo poruchou, je firma vystavena problému, kdy o data nenávratně přijde. V USA se jenom na letištích ztratí přes šest set tisíc notebooků ročně, což je alarmující číslo.\cite{notebook:ztraceneNBnaLetistich}
+\end{quote}
+
+Pokud vezmeme data ze zaměstnaneckých zařízení a všechna je přesuneme do cloudu a nastavíme dobře přístupová práva, omezíme tak možnost ztráty cenných dat.
+\begin{itemize}
+	\item Data budou neustále zálohována v cloudu,
+	\item v případě ztráty notebooku nepřichází firma o tolik dat a může rychle reagovat omezením přístupu do cloudu apod., což v případě uložení všech dat na disku není dost dobře možné.
+\end{itemize}
+
+\subsubsection{Odcizení a zneužití dat}
+S výše popsaným problémem (\nameref{sec:ZtrataDat}) úzce souvisí i problém odcizení a zneužití dat. V případě odcizení plných dat je firma postižena v celém rozsahu, kdy přichází o kompletní know-how a cenné informace. V případě využití cloudu funguje notebook pouze jako tenký klient a na jeho disku je jen nutné postačující minimum důležitých dat. V tomto případě firma nepřichází o celé své duševní bohatství a bez větších problémů může nadále bez potíží fungovat.
+
+\subsubsection{Zálohování}
+Při selhání lokálního serveru přicházíme téměř vždy o data. Prvním krokem, jak o svá data nepřijít, je zrcadlení disků. Tato metoda umožňuje zabezpečit data proti poruše pevného disku, kdy jsou data zrcadlena na druhém (a dalších) disku a je tím zvýšena bezpečnost fyzických dat. Ovšem ani tento případ nechrání data proti výpadku napájení (možnost poškození konzistence dat nebo databáze), proti přírodním katastrofám (požáru, úderu blesku, zemětřesení) v místě, kde se nachází server. Tomuto případu zabrání již pouze zrcadlení dat do jiné destinace, kdy máme druhý server na jiném místě. Toto řešení již ovšem začíná být nákladné, nejen na údržbu, ale i správu a kvalitní konektivitu pro synchronizaci obou serverů.
+
+V tu chvíli je možné začít uvažovat opět o cloudovém řešení, kdy se předpokládá, že cloudové řešení je na všechny tyto varianty připraveno a mělo by požadavky na redundantní datacentra s kvalitní infrastrukturou a zálohováním být připraveno. Tedy se o zálohování nestará firma, ale provozovatel cloudu.\cite{podnikatel:zalohovani}
+
+\subsubsection{DDoS útok}
+Pokládanou otázkou může být také obrana proti DDoS útoku. Zde vyvstává otázka, zda-li firemní server dokáže odolávat takovému útoku lépe než virtualizovaný server, který může zvýšit výkon a spíše útoku odolat. Druhá otázka, která se naskýtá, ovšem je, zda-li firemní server v době, kdy na něj je veden útok, není možné odpojit od vnější sítě a dále ho lokálně využívat. Tím by se omezil přístup pouze vzdáleně připojeným uživatelům, a to pouze v případě, že do firemní sítě neexistuje druhá cesta skrz VPN, přes kterou by se mohli uživatelé připojit a pracovat se serverem z lokální strany sítě.
+V každém případě, pokud bude systém čelit DDoS útoku, bude s ním s největší pravděpodobností tak jako tak dost těžké pracovat.
+
+\subsection{Výhody zabezpečení}
+Kromě nevýhod má zabezpečení v cloudu i své výhody, pojďme si je tedy shrnout.
+
+\subsubsection{Centralizace}
+Díky centrálnímu řízení zabezpečení přístupu do služby cloud je jeho správa jednodušší než při správě několika strojů. Veškeré nastavení se okamžitě aplikuje pro všechny služby a odpadá práce s vícenásobnou konfigurací.
+
+Veškerá data jsou navíc na jednom místě a uživatelé mají přístup pouze k datům, která potřebují. V případě ztráty koncového zařízení společnost nepřichází o nikterak závažnou část know-how.
+
+\subsubsection{Monitorování}
+Služby cloudu umožňují podrobně monitorovat chování a provádět audit při přístupu. Tedy je vše logováno a lze dohledat. Navíc díky monitoringu dochází v případě výpadku služby k okamžitému spuštění "`záložního"' řešení tak, aby nedocházelo k výpadkům služby jako takové. Přesun na jiný stroj je možné provést i v případě, kdy dojde k napadení jednoho stroje, který případně dočasně odstavíte a můžete jej analyzovat pro odhalení bezpečnostní slabiny.
+
+\subsubsection{Protokolování}
+Pod pojmem protokolování si lze představit obecně používanější výraz, a to logování. Protokolování v cloudu se provádí v podstatě u všech operací a po celou dobu běhu cloudu. Je více než vhodné zaznamenávat celkové dění a chod cloudu pro zpětnou kontrolu a případné zjištění spotřebovaného výkonu apod. V cloudu většinou není nějaká speciální potřeba protokolování omezovat. Resp. o jeho záznamy se můžeme zajímat až v době, když by nám začal docházet úložný prostor a náklady na navýšení úložného prostoru by byly neadekvátní k pozitivům protokolování. V takovém případě by mělo smysl omezit protokolování na kratší dobu než od počátku věků.
+
+\subsubsection{Bezpečnostní testování}
+O zabezpečení cloudu se z velké části stará její poskytovatel. Ve svých službách většinou zahrnuje antivirový a další software a stará se o zabezpečení celého cloudu jako celku. Díky tomu, že cloud využívá mnoho klientů a zabezpečení se vyvíjí pro všechny najednou, cena nákladů na vývoj a testování nového systému zabezpečení rapidně klesá s počtem klientů, kteří cloud využívají. Díky tomu nám klesnou výdaje za zabezpečení na nutné minimum, ke kterému bychom se s vlastním řešením jen těžko přibližovali.
+
+\subsection{Legislativa}
+Původně aplikace běžely na firemním serveru, tedy v místě kde typicky firma sídlila a zároveň podnikala. Tohle cloud mění, data a aplikace jsou zpravidla umístěny v jiném místě nebo i státě. Tím vyvstává otázka legislativy. Jelikož aplikace běží na serveru v jedné zemi a je využívána v jiné, které zákony se tedy na ni mají vztahovat? Zákony země, kde jsou servery fyzicky umístěny, nebo místa, kde je vykonávána činnost firmy?
+
+I na tyto otázky se musí dokázat odpovědět. Zpravidla se musí brát ohled na legislativy ve všech zemích, což je právě v případě cloudu velice obtížné. Mnoho aplikací může běžet paralelně na mnoha místech na světě.
+
+Například server \href{http://www.systemonline.cz/clanky/pravni-aspekty-cloud-computingu.htm}{systemonline.cz} k tomuto tématu uvádí:
+\begin{quotation}
+V současné době jsou nejrozšířenější cloudové služby poskytovány nadnárodními IT společnostmi (např. Microsoft, Amazon, Google), které obvyklé sídlí mimo Českou republiku. Je pak zcela logické, že cloudové smlouvy uzavírané s takovými společnostmi se obvykle budou řídit cizím právním řádem. Proto se může stát, že ač je cloudová smlouva sebelepší, v případě soudního sporu může být i pro žalobce z České republiky místně příslušný soud třeba v Kalifornii. 
+
+Kromě poněkud obtížnější vymahatelnosti práva je však pro zdejší uživatele relevantní dodržování zákonů platných v České republice. Typickým příkladem je velmi komplexní právní úprava ochrany osobních údajů zákonem č. 101/2000 Sb., o ochraně osobních údajů. Tento zákon totiž může zásadně rozlišovat, zda se zpracovávané osobní údaje nacházejí na území České republiky, anebo mimo území EU. V případě cloudových služeb uživatel mnohdy netuší, kde přesně jsou jeho data uložena, a pokud taková data obsahují i osobní údaje, mohl by tak (byť i nevědomky) porušovat zákony České republiky.\cite{systemonline:pravniAspekty}
+\end{quotation}
+
+Server \href{http://cfoworld.cz/analyzy/cloud-computing-zajimave-moznosti-ale-i-velka-pravni-rizika-306}{cfoworld.cz} se k tomu vyjadřuje tak, že je třeba situaci konzultovat s právním poradcem:
+\begin{quote}
+Jde například o to, že cloud computing a internet, na němž je toto řešení do značné míry založeno, jsou globální koncepty. Nutně tak dochází ke kolizím s lokálními právními řády v jednotlivých zemích a jejich požadavky. Firmy si tak musí předem zodpovědět, případně i konzultovat s právním poradcem, jestli povaha jejich firemních dat dovoluje, aby byla uložena v zahraničí nebo dokonce neznámo kde.\cite{cfoworld:pravniRizika}
+\end{quote}
+
+Dále specialista na právo, eGovernment a ochranu dat Patrick Van Eecke uvádí v dokumentu na \href{http://www.isaca.org/Groups/Professional-English/cloud-computing/GroupDocuments/DLA_Cloud\%20computing\%20legal\%20issues.pdf}{isaca.org\cite{isaca:legalIssues}} toto:
+\begin{quote}
+	\begin{itemize}
+		\item Zákony EU jsou podstatně více omezující, než zákony v ostatních zemích (zejména USA).
+		\item Mnoho právních otázek, dosud není vyřešeno.
+		\item Nutná reforma stávajících zákonů.
+		\item Tři příklady problémů:
+		\begin{itemize}
+			\item Kdo je regulátor?
+			\item Které zákony jsou aplikovatelné?
+			\item Přenos mimo EU?
+		\end{itemize}
+	\end{itemize}
+\end{quote}
+Dále se v dokumentu zmiňuje o tom, že je důležité se zaměřit na problém, na čí straně leží zodpovědnost. Uvádí také, že právní předpisy EU se vztahují na subjekty podnikající na území EU a na firmy mimo EU, jejichž zařízení se na tomto území ovšem nachází. Jedná se tak o datová centra provozovaná organizacemi z nečlenských států a platí v opravdu širokém smyslu slova. Vztahuje se až na soubory cookies\footnote{Jako cookie se v protokolu HTTP označuje malé množství dat, která WWW server pošle prohlížeči, který je uloží na počítači uživatele. Při každé další návštěvě téhož serveru pak prohlížeč tato data posílá zpět serveru.\cite{wiki:cookies}} na klientských zařízeních, čímž naráží na nesmyslný zákon o \href{http://www.justit.cz/wordpress/2011/05/26/vcera-vstoupilo-v-platnost-susenkove-narizeni-eu-a-hned-bylo-odlozeno-o-rok/}{souhlasu s využíváním cookies\cite{justit:susenky}}, který dodnes nedodržuje ani web Evropské Unie europa.eu.
+
+Dále v dokumentu důrazně doporučuje využívat pouze datacentra na území EU (jako příklad uvádí Amazon, který má svá datacentra i na území Irska), nebo o důsledném přezkoumání smluvních ujednání poskytovatele cloudu.\cite{isaca:legalIssues}
+
+\newpage
+\section{Proč začít využívat cloud}
+Cloud nám může nabízet spoustu výhod, jak je popsáno výše. Mezi hlavní lákadla, proč cloud opravdu nasadit, uvádí \href{http://www.cloud-lounge.org/why-use-clouds.html}{cloud-lounge.org}\cite{cloudlounge:ProcCloud} tyto:
+\begin{description}
+	\item [Snížení nákladů] díky sdílení hardware a jeho efektivnímu sdílení mezi více klienty.
+	\item [Univerzální přístup] umožní přístup odkudkoliv a práci přes Internet i z domova, pokud by bylo potřeba.
+	\item [Aktuální software] díky neustálému vývoji a dobré zpětné vazbě od více klientů.
+	\item [Volba aplikací] umožní výběr z několika aplikací pro cloud a zvolení té vhodné pro klienta a jeho potřeby.
+	\item [Potenciál být úspornější a ekologičtější] opět díky sdílenému výpočetnímu výkonu, kdy se nespotřebovává tolik energie, pokud výkon nevyužíváme naplno.
+	\item [Flexibilita] díku možnosti změny aplikací dle potřeb klienta.
+\end{description}
+Na serveru \href{http://souki.cz}{souki.cz} se objevil článek \href{http://www.souki.cz/proc-jsme-migrovali-do-cloudu-amazonu-aws}{Proč jsme migrovali do cloudu Amazonu (AWS)\cite{souki:procMigrovat}}, ve kterém autor uvádí několik důvodů, proč se pro ně vyplatilo migrovat do cloudu.
+\begin{description}
+	\item [Důvod 1: Auto-scaling] Díky tomu, že jak uvádí autor, mají jejich e-shopy specifickou klientelu a nárazové návštěvnosti, měli dvě možnosti. Buď nakoupit po většinu času předimenzovaný hardware a nechat ho pracovat bez vytížení, a nebo využít cloudu a v případě potřeby nárazově navýšit výkon. Samozřejmě je vyšlo mnohem levněji řešení nákupu dodatečného výkonu v cloudu, než nevytížený vlastní server, který pouze spotřebovává energii, potřebuje údržbu a prostory s konektivitou.
+	\item [Důvod 2: Best practices a ušetřený čas] V AWS si sice můžete pronajmout jen surový výpočetní výkon a vše si udělat sami, ale daleko zajímavější je použít to, co už je připraveno, anebo oni sami doporučí. Na vlastních serverech jsme například měli udělaný cluster pro MySQL. Strávili jsme hodně času, aby tam dokonale fungoval failover a zálohování. Po dlouhém vývoji nám zálohy fungovaly tak, že jedním kliknutím šlo obnovit databázi do libovolného času. V Amazonu je tohle naprostá samozřejmost a dostanete takovou funkci rovnou.
+
+AWS má navíc opravdu velmi dobrou technickou podporu. Když jsem narazil na něco, co jsem nevěděl jak vyřešit, stačilo napsat na podporu (placenou 50\$/měsíc) a do hodiny přišla velmi podrobná odpověď s odkazy na dokumentaci a několika návrhy, jak bych k tomu mohl přistoupit.\cite{souki:procMigrovat}
+	\item [Důvod 3: Monitoring] Všechny stavební bloky v AWS mají velmi podrobný monitoring. Nemyslím tím jen měření dostupnosti, ale podrobné údaje o počtech přístupů na disk, průměrné době odezvy aplikace atd. Když je nějaký problém, stačí si vyfiltrovat metriky, najít nějakou s výkyvem a hned je vidět příčina. Oproti vlastnímu měření má toto výhodu, že se měří věci, které by mě nenapadlo měřit.\cite{souki:procMigrovat}
+	\item [Důvod 4: Experimenty] Chtěli jste si někdy zkusit, jak se bude vaše aplikace chovat, když bude mít úplně jinak postavenou infrastrukturu? Nebo otestovat změnu infrastruktury na části provozu? Se skutečnými servery to je celkem problém. Musíte totiž mít nějaké připravené bokem, aby bylo na čem zkoušet. Případně to zkusíte v menším měřítku a doufáte, že se to bude v plné verzi chovat stejně. V cloudu to není problém.\cite{souki:procMigrovat}
+	\item [Důvod 5: Vývoj] Minimálně jednou týdně mi přijde od AWS email, co přidali nového. A nejsou to žádné drobnosti. Neustále rozšiřují stávající služby a hlavně přidávají nové. Víceméně každý týden tak říkám „to je super, to hned nasadíme!“ Stejně tak aktualizují i infrastrukturu.\cite{souki:procMigrovat}
+\end{description}
+Na konci článku autor uvádí jejich shrnutí za dobu, po kterou jsou aktuálně v cloudu.
+\begin{quote}
+Jsme v cloudu asi čtyři měsíce, ale pořád mi přijde, že využíváme jen zlomek toho, co nabízí. Vůbec nechápu, proč jsme do něj nemigrovali už dávno. Pokud začínáte s novým projektem, tak ho rozhodně vyzkoušejte. Kdybychom do cloudu migrovali už dříve, ušetříme stovky hodin vývoje infrastruktury kvůli růstu požadavků. V cloudu si vyrobíte aplikaci, běží vám tam za pár dolarů a když je úspěšná, tak prostě jen naklikáte více prostředků. Žádné závazky, žádné starosti.\cite{souki:procMigrovat}
+\end{quote}
+
+\newpage
+\section{Cloud od velkých společností}
+Za cloudové řešení lze, z toho co zatím víme, považovat v podstatě jakékoliv virtualizované řešení, které má vyřešeno rozložení zátěže na několik fyzických zařízení, je zálohované a umožňuje nám vzdálený běh aplikací. Takový cloud je možné spustit i v rámci podniku, i když bychom to asi přesto cloudem nenazývali. Zde se podíváme na několik zástupců, kteří poskytují cloud s velkým cé, tedy zaběhlé a renomované řešení velkých korporací.
+
+\subsection{Salesforce}
+Salesforce je jedna z prvních společností, která začala cloudové služby nabízet. Jejich prvním produktem byl oblíbený cloudový CRM\footnote{Customer relationship management -- řízení vztahů se zákazníky} software.
+
+Aktuálně Salesforce nabízí několik hlavních produktů a v nejbližší době chystá expanzi na český trh: \href{http://connect.zive.cz/clanky/cloudovy-fenomen-salesforcecom-chysta-expanzi-v-cesku/sc-320-a-171592/default.aspx}{Cloudový fenomén Salesforce.com chystá expanzi v Česku\cite{zive:salesforceExpanze}}.
+
+\begin{quote}
+Americký cloudový fenomén Salesforce.com chystá expanzi na českém trhu. Je to součást rozsáhlejších celoevropských aktivit a globálního růstu společnosti, která v podstatě spustila vlnu firemních aplikací dostupných za pravidelný poplatek přes cloud (software jako služba, SaaS). Firma už nyní v Česku aktivně rozjíždí obchodní aktivity a během příštího roku otevře ve Velké Británii evropské datové centrum, které bude tuzemské zákazníky obsluhovat.\cite{zive:salesforceExpanze}
+\end{quote}
+
+\subsubsection{Sales Cloud}
+Jedná se o platformu pro efektivní prodej služeb a produktů odkudkoliv a z jakéhokoliv zařízení. Jde o CRM systém běžící jak na počítačích, tak i všech chytrých mobilních zařízeních. Platforma je založena na Salesforce1 Platform. Sales Cloud spojuje aplikace, zařízení a s nimi i zákazníky. Jedná se o přímé spojení kontaktů, uživatelských účtů, a kritických obchodních informací v jeden celek, odkud jsou tyto informace pak distribuovány do jednotlivých zařízení dle požadavků.\cite{salesforce:salesCloud}
+
+\subsubsection{Service Cloud}
+Service Cloud je též založen na Salesforce1 Platform. Jedná se o doručování obsahu klientům odkudkoliv a jakéhokoliv zařízení. Service Cloud je v podstatě kontejner pro rozesílání informací na sociální sítě, emailem a dalšími prostředky. Umožňuje i reagovat na podněty zaslané zákazníky v jednotlivých komunikačních nástrojích.\cite{salesforce:serviceCloud}
+
+\subsubsection{ExactTarget Marketing Cloud}
+I Marketing Cloud je založen na Salesforce1 Platform. Tato služba umožňuje obchodníkům vytvářet kampaně 1:1, tedy přímo zaměřené na každého uživatele zvlášť. Umožňuje kombinovat tradiční komunikační kanály jako email, mobilní telefon a nové sociální sítě a jakékoliv myslitelné produkty na webu.\cite{salesforce:marketingCloud}
+
+\subsubsection{Salesforce1 Platform}
+Salesforce1 Platform umožňuje rychlý vývoj a nasazení aplikací. Jedná se o kompletně cloudové řešení\cite{salesforce:platform}. Platforma umožňuje
+	\begin{itemize}
+		\item vytvářet vlastní aplikace psaním kódu nebo grafickým editorem,
+		\item spojení dat mezi sebou pomocí výkonného API,
+		\item nasadit a zpřístupnit jakoukoliv aplikaci na Salesforce,
+		\item získat a využívat předem připravené aplikace z AppExchange.
+	\end{itemize}
+
+\subsubsection{Salesforce Chatter}
+Chatter je pokročilá podniková sociální síť pro domluvu a synchronizaci vnitropodnikových záležitostí. Aplikace je opět postavena na Salesforce1 Platformě. Po nasazení je možné vytvářet jednotlivé akce pro každé zařízení zvlášť. Chatter je také vhodný pro sdílení a ukládání vnitropodnikových informací a vědomostí.\cite{salesforce:chatter}
+
+\subsubsection{Salesforce Work.com}
+Work.com slouží pro vnitropodnikové přímé učení a školení. Jedná se tak o vhodné řešení pro víceuživatelské motivování v rámci Salesforce CRM systému se zobrazením dosažených milníků jednotlivých týmů a zaměstnanců.\cite{salesforce:work}
+
+\subsection{Amazon}
+Druhý zástupce cloudových služeb, patřící k těm největším dodnes. Historie služeb Amazonu sahají k téměř samotnému počátku označení cloud, do let po roce 2002. Amazon v té době spustil jejich první službu Amazon web services (AWS), což je dnes asi nejkomplexnější cloudová služba vůbec. Poskytuje nepřeberné množství služeb, od výpočetního výkonu, přes úložiště, databáze, platební systémy, přes monitorování sítě, až po "`pracovní sílu"' (inteligenci) lidí.
+
+Dle posledních průzkumů je \href{http://connect.zive.cz/bleskovky/cloud-amazonu-je-vetsi-nez-cloudy-microsoftu-ibm-a-googlu-dohromady/sc-321-a-171477/default.aspx}{Cloud Amazonu větší, než cloudy Microsoftu, IBM a Googlu dohromady\cite{zive:amazonCloud}}.
+
+Pro komplexnost bych zde představil alespoň pár základních, pro tuto práci zajímavých, služeb.
+
+\subsubsection{Elastic Compute Cloud}
+\label{sec:AmazonElasticCC}
+EC2, jak se zkráceně označuje, je pronájem výpočetního výkonu cloudu. Jedná se o pronajímané virtuální servery od čistých systémů až ke komplexním řešením s předinstalovanými aplikacemi.
+
+\subsubsection{Simple storage service --- S3}
+Nejspíše nejvyužívanější služba Amazonu. Jedná se o úložiště, tedy službu, kam můžeme nahrávat data a uskladnit je v prostoru cloudu. Jedná se o neomezené (omezením jsou finanční možnosti hostované firmy) úložiště pro libovolný obsah. Služba se dá využívat buď samostatně jako jednoduché úložiště s poskytováním dat před HTTP, nebo jako úložiště pro ostatní služby AWS.
+
+Další zajímavou přidanou hodnotou služby je poskytování obsahu přes distribuovanou síť BitTorrent. Pokud je tedy potřeba distribuovat obsah více příjemcům, je tato volba velice zajímavou možností. Bohužel má omezení, kdy je takto možné distribuovat soubory pouze menší 5 GB. Přesný popis je dostupný na \href{http://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html}{docs.aws.amazon.com}
+
+\subsubsection{Amazon CloudFront}
+CloudFront je služba pro decentralizované distribuované dodání obsahu. Služba funguje jako CDN, kdy obsah je zrcadlen na několika serverech po celém světě a zaručuje co nejrychlejší doručení dat k uživatelům. Díky CDN se použije nejbližší geograficky, nebo nejméně vytížený server. Výhodou je i to, že je velice malá šance, že by vypadly všechny servery a obsah se tak stal úplně nedostupný, spíše je naopak zaručeno, že obsah bude velice dobře dostupný.
+
+Jedná se tak o vyspělejší úložiště S3, se kterým tato služba spolupracuje. V S3 vyberete obsah, který se má rozdistribuovat mezi ostatní datová centra aby, byl dostupnější.
+
+\subsection{Google}
+Společnost Google se zaměřuje na cloudové služby velice úzce a poskytuje široké spektrum služeb. Mezi produkty se nachází jak aplikace pro běžného uživatele, až po firemní klientelu a vysoce specifické a náročné aplikace.
+
+\subsubsection{Gmail}
+Asi nejznámější cloudovou službou Google je emailová schránka. V základní verzi poskytuje 15 GB místa a přístup přes IMAP i POP3. Se schránkou automaticky uživatel získává i OpenID\footnote{OpenID je otevřený standard popisující decentralizovaný způsob autentizace uživatelů, který odstraňuje potřebu na straně provozovatele služby poskytovat a vyvíjet vlastní systémy pro autentizaci a který rovněž samotným uživatelům služby umožňuje konsolidaci jejich digitálních identit.\cite{wiki:openID}}, díky kterému se může přihlašovat do dalších služeb nejen společnosti Google.
+
+\subsubsection{Drive}
+Aplikace Drive je cloudové úložiště pro osobní potřebu uživatele s účtem Google. V základním balíčku je diskový prostor 15 GB, který jde následně za poplatek rozšířit. Nahrané dokumenty a soubory je možné upravovat, ukládat, nebo sdílet. Je samozřejmě možné vytvářet i nové dokumenty. Dále Drive umožňuje spolupráci několika lidí na jednom dokumentu, a to i zároveň.
+
+\subsubsection{Keep}
+Aplikace Keep slouží pro uchovávání krátkých poznámek a zápisků. Služba je synchronizována mezi zařízeními K poznámkám je možné si přidat oznámení, tedy si můžete poznamenat třeba nezapomenout nakoupit pečivo, a když víte, že kolem osmé budete v obchodě, aplikace na mobilním zařízení vás v tu dobu upozorní. Dále je možné vkládat k poznámkám fotky, nebo hlasový komentář.
+
+\subsubsection{Enterprise}
+Google Enterprise se skládá z několika jinak zdarma dostupných služeb společnosti, které jsou obohaceny o další funkce a možnosti, které přispívají k lepší produktivitě.
+\begin{description}
+	\item[Spolupráce:] aplikace pro sdílené úložiště dat Disk, Kalendář pro lepší organizaci času, cloudové služby pro editaci dokumentů Apps, emailová schránka Gmail a aplikace pro videohovory a IM komunikaci Hangouts.
+	\item[Vizualizace obchodních dat:] pro vizualizaci je možné využít desktopové aplikace Earth Pro, programovat a zobrazovat data nad mapami pomocí Maps Engine, a nebo využívat Koordinátor pro vizualizaci aktuálních poloh osob nebo vozů a jejich navádění.
+	\item[Vyhledávání] jak obyčejných dat na Internetu, specifických analýz nad nalezenými daty, tak i prohledávání firemních webů.
+	\item[Infrastruktura] sloužící pro spouštění vlastních aplikací v cloudu, výpočetně náročné operace, ukládání aplikačních dat a využívání BigQuery pro analyzování velkého množství dat.
+	\item[Web pro firmy] za pomoci Google Sites, moderního multiplatformního prohlížeče Chrome a počítačů založených na operačním systému ChromeOS.
+\end{description}
+
+\subsubsection{Cloud Print}
+Cloudová služba Print umožňuje, pomocí spojení tiskáren a webu, tisknout z libovolného místa komukoliv z vybraných uživatelů na tiskárně připojené k zařízení, které je připojeno do této služby.
+
+\subsubsection{App Engine}
+\label{sec:googleAppEngine}
+Google App Engine je platforma jako služba, která poskytuje možnosti programování v několika jazycích s využitím MySQL databáze. Programovat lze v Pythonu, Javě, PHP a jazyce Go. Programy následně běží jako webové aplikace. Každá aplikace běží v sandboxu, tedy v chráněném prostředí s omezeným přístupem k operačnímu systému a dalším aplikacím běžícím pod stejným systémem.
+
+\subsubsection{Compute Engine}
+Služba Compute Engine umožňuje spouštět vysoce náročné výpočty v cloudu Google na virtuálních serverech, ve kterých běží operační systém Debian a nebo CentOS.
+
+\subsubsection{Cloud Storage}
+Poskytuje vysoce dostupné a lokálně přístupné úložiště dat pro libovolně náročné služby. Díky lokální mezipaměti je přístup z lokalit velice rychlý. K datům se díky službě CDN dostanete odkudkoliv. Díky redundantním úložištím v mnoha lokalitách jsou data dobře chráněny.
+
+\subsubsection{BigQuery}
+BigQuery je webová služba pro interaktivní analýzu nad obřími datasety (nad miliardami řádků).
+
+\subsubsection{Cloud Platform}
+Cloud Platform je zapouzdření služeb popsaných výše. Díky této službě je možné získat všechny výše nabízené v jednom balíku jako celek.
+
+\subsection{IBM}
+IBM je přední světová společnost v oboru IT. Společnost na trhu s informačními technologiemi působí již od roku 1981, kdy vydala svůj první IBM PC (a od něj nadále označované IBM Compatible). Společnost se postupně odpoutala od výroby stolních počítačů a zaměřila se spíše na vývoj nových technologií, kompletní serverová řešení a hlavně na prodej samostatných služeb.
+
+IBM v průběhu vypracovávání této práce koupilo společnost \href{http://www.softlayer.com/}{SoftLayer} a začátkem práce na praktické části (viz kap. \ref{sec:praktickaCast}) uzavřelo zkušební program IBM SmartCloud Enterprise. Nyní tedy stále umožňuje stávajícím zákazníkům využívat cloudu IBM SmartCloud, ovšem novým klientům již poskytuje služby zakoupené společnosti.\cite{zive:ibmKupujeSoftLayer}
+
+\subsubsection{IBM SmartCloud Enterprise}
+\begin{quote}
+IBM SmartCloud Enterprise je flexibilní infrastruktura jako služba (IaaS --- Infrastructure as a Service) a platforma jako služba (PaaS --- Platform as a Service) technologie cloud computingu, která je navržena k zajištění rychlého přístupu k všestranně zabezpečeným prostředím virtuálních serverů podnikové třídy a kterou lze s výhodou využít pro činnosti vývoje a testování, jakož i pro další dynamické pracovní zátěže. IBM SmartCloud je ideální pro informatiky i pro vývojáře aplikací. Poskytuje cloudové služby, operační systémy Windows a Linux, infrastrukturní software (databáze, aplikační servery), jež pokrývají veškeré potřeby vašeho podniku.\cite{ibm:smartCloudEnt}
+\end{quote}
+
+\begin{description}
+	\item[Development and test] umožňuje vyvíjet software přímo na infrastruktuře IBM, aniž bychom potřebovali lokální výpočetní výkon pro vývoj a testování. Zároveň hned po vyvinutí a otestování je možné software nasadit a hned ho začít používat.
+	\item[Batch processing] umožňuje plánovat a následně spouštět opakující se úlohy v čase, kdy nebude třeba rapidně navyšovat výpočetní výkon a tím i cenu.
+	\item[Web site hosting] poskytuje infrastrukturu v dynamickém platovém modelu pro provozování webových stránek, kdy se opět platí jen za spotřebovaný výkon, a tím rapidně snižuje cenu provozu. Služba umožňuje minimalizovat i datový tok.
+	\item[Big data] stejně jako u ostatních společností slouží pro zpracování obřích objemů dat. IBM k tomu využívá Apache Hadoop\footnote{Hadoop je open source framework pro zpracování, ukládání a analýzu velkého množství distribuovaných, nestrukturovaných dat v řádech petabytů a exabytů.\cite{ibm:hadoop}}.
+	\item[Information management] slouží pro správu informací v korporátní sféře. Dále pro bezpečný příjem a ukládání dat, a to i ve spolupráci s big data. Umožňuje online nepřetržitě analyzovat emailové logy, komunikaci, webové logy a další.
+	\item[Other uses] mezi dalšími použitími můžeme nalézt služby na spolupráci a socializaci, řízení aplikačního životního cyklu, optimalizaci aplikačních serverů, experimentální webové služby a pokročilé analýzy dat.
+\end{description}
+
+\subsubsection{IBM SmartCloud Application Services}
+\begin{quote}
+Produkty IBM SmartCloud Application Services představují nabídku platformy IBM v podobě služby. Platforma je provozována v produktu IBM SmartCloud Enterprise, do něhož implementuje virtuální prostředky. Tato výkonná kombinace infrastrukturních a platformních služeb umožňuje klientům vývoj, testování a implementaci výlučně cloudových a cloud podporujících aplikací. Kromě urychlení vývoje aplikací produkty SmartCloud Application Services rovněž pomáhají překonat bariéru mezi vývojovými a provozními procesy (tzv. DevOps). Nástroje pro spolupráci podporují agilní poskytování služeb DevOps a urychlují vývoj implementací z týdnů na minuty.\cite{ibm:smartCloudEnt}
+\end{quote}
+
+\subsubsection{IBM SmartCloud for Social Business}
+Jedná se o produkt IBM, který slouží pro vnitropodnikovou komunikaci a ukládání firemních dokumentů (CRM systém). Služba integruje emailového klienta, kalendář, sdílení dokumentů, chat a schůzky, dále umožňuje ukládání poznámek, to-do listů a další.\cite{ibm:social}
+
+\subsection{Microsoft}
+\subsubsection{Office Web Apps}
+Stejně jako jiné korporace i Microsoft má svůj vlastní kancelářský balík online. Přišel s ním sice později než konkurence, ovšem díky velice propracovanému desktopovému balíku Microsoft Office (nyní pokročilé online službě \href{https://office.microsoft.com}{Office 365}) a dlouhodobému vývoji se rozhodně \href{https://skydrive.live.com}{Office Web Apps} povedl. Webové office jsou zjednodušenou verzí plnohodnotného balíku, který je možné zakoupit.
+
+\subsubsection{Office 365}
+Office 365 je plnohodnotný cloudový kancelářský balík pro domácnosti i firmy. V tomto balíku je možné využívat všech výhod webového balíku Office Web Apps jako sdílení dokumentů, přístup odkudkoliv, spolupráci více uživatelů a další. 
+
+Jako nevýhodu Office 365 vidím, pokud chceme používat klasický desktopový kancelářský balík a nikoliv pouze aplikaci Office 365 ve webovém prohlížeči. V tomto případě si stále musíme zakoupit plnohodnotný kancelářský balík a do něho až následně Office 365 integrovat, což zvyšuje náklady. Otázkou však je, zda-li je klasický program stále potřeba, když je možné soubory v cloudových office editovat i bez připojení lokálně a po připojení se k Internetu soubory nahrát do úložiště.
+
+\subsubsection{Azure}
+\label{sec:Azure}
+Microsoft Azure je cloudová platforma pro vývoj vlastních aplikací. Využívá globálních datacenter společnosti Microsoft. Díky rozsáhlosti sítě a velikosti datacenter poskytuje dostatečný prostor pro škálování a možnost reagovat okamžitě na potřeby navýšení výkonu. Azure umožňuje vyvíjet webové aplikace, využívat cloudové úložiště, obří databáze v podobě Big Data. Slouží i jako platforma pro ukládání dat a přístup k datům aplikací z mobilních zařízení. Azure je možné využívat i jako distribuovanou síť pro multimediální obsah od kódování, ochranu až po streaming.\cite{ms:azure}
+
+\subsubsection{Intune}
+\begin{quote}
+Windows Intune kombinuje možnosti cloudu s on-premise infrastrukturou a nabízí řešení, které lze přizpůsobit podle vašich potřeb na správu počítačů a mobilních zařízení.\cite{ms:intune}
+\end{quote}
+
+Jedná se tak o cloudovou službu, která umožňuje spravovat zabezpečení jednotlivých firemních zařízení a jejich přizpůsobení. Jiné zabezpečení bude kladeno na mobilní zařízení a jiné na pevné stanice v kancelářích a naprosto jiné pro samostatné firemní servery. Všechno toto nastavení lze díky Intune spravovat z jednoho místa. Služba umožňuje i snadnou distribuci aktualizací a samotného softwaru.
+
+\subsubsection{Hyper-V}
+Hyper-V je virtualizační služba, která je dostupná pro klasické počítače a nikoliv jen pro cloudové řešení. Hyper-V běží pod jedním hostitelským operačním systémem (obvykle Serverovou verzí MS Windows) a umožňuje spouštění dalších hostovaných virtuálních operačních systémů v rámci jednoho fyzického stroje.
+
+Hyper-V je možné získat jako aplikaci instalovatelnou jako součást systému zdarma. Druhou variantou je získat Hyper-V jako samostatný celek Microsoft Hyper-V Server, který je jakožto samostatný hypervisor, bez nutnosti mít hostitelský systém, poskytován též zdarma.
+
+\subsubsection{Dynamics CRM Online}
+Jako ostatní společnosti i Microsoft poskytuje hotové řešení pro podniky a komunikaci se zákazníky. V tomto případě se opět jedná o CRM systém s možností analyzovat trh, trendy a vývoj prodeje. Umožňuje sledovat produktivitu prodeje a díky tomu zlepšit prodej produktů.
+
+\subsection{VMware}
+Společnost VMware se původně zabývala vývojem předního virtualizačního nástroje. Tato společnost postupně nabrala do svého portfolia i další služby a rozšířila působnost obecně na virtualizaci a služby s ní úzce spojené. Mezi ně si dovolím zařadit právě i cloud.
+
+\subsubsection{vSphere}
+\label{sec:vSphere}
+VMware vSphere je základní stavební kámen pro cloudové i virtualizační řešení. Jedná se o kompletní platformu. Veškeré produkty postavené na VMware řešení pohání v základu právě vSphere, což je hlavní vrstva starající se o běh virtuálních zařízení. Nabídka jednotlivých komponent služby vSphere je odvozena od potřeb zákazníka od flexibility, rychlosti, odolnosti až po výkon a úsporu.\cite{vmware:vSphere}
+
+Samostatné komponenty se pak zaměřují na jednotlivá odvětví, která zvládají nejlépe. Díky jednotlivým službám je možné systém vyladit k velice dobré škálovatelnosti, dostupnosti a bezpečnosti.
+
+VMware vSphere se dodává v několika \href{http://www.vmware.com/products/vsphere/compare.html}{základních balíčcích}:
+\begin{description}
+	\item[Standard] poskytuje základní řešení pro konsolidaci aplikací. Toto řešení pomáhá snížit náklady na hardware a urychlovat zavádění aplikací.\cite{vmware:vSphereOldanyGroup}
+	\item[Enterprise] je robustní řešení, které můžete použít k optimalizaci IT aktiv, k zajištění nákladově efektivní business continuity a zefektivnění IT operací pomocí automatizace.\cite{vmware:vSphereOldanyGroup}
+	\item[Enterprise Plus] přináší kompletní škálu funkcí VMware vSphere pro transformaci datových center v jednoduché cloudové infrastruktury, pro fungování dnešních zařízení bok po boku s flexibilními spolehlivými IT službami.\cite{vmware:vSphereOldanyGroup}
+	\item[Essentials] je určen pro malé kanceláře a poskytuje jednoduchý kompletní balíček služeb za rozumnou cenu. Pomůže vám zvirtualizovat až tři fyzické servery, konsolidovat a řídit pracovní zátěž mnoha aplikací a sníží vaše provozní a hardwarové náklady.\cite{vmware:vSphereOldanyGroup}
+	\item[Essentials Plus] rozšiřuje edici VMware vSphere Essentials o vysokou dostupnost aplikací a ochranu dat. Pomáhá menším kancelářským IT prostředím konsolidovat kompletně IT infrastrukturu a najít řešení business continuity.\cite{vmware:vSphereOldanyGroup}
+\end{description}
+
+Mezi \href{http://www.vmware.com/products/vsphere/features.html}{jednotlivé komponenty vSphere} patří:
+\begin{description}
+	\item[Compute] s automatickým deployem k aktualizaci za běhu, funkcemi měření výkonu, lepší akceleraci a dalšími funkcemi.
+	\item[Network] s monitoringem mezi jednotlivými virtuálními stroji, řízením provozu a vyšší optimalizací běhu datově náročných aplikací.
+	\item[Availability] umožňující lepší škálovatelnost, migrování strojů i dat a pokročilou zálohou.
+	\item[Automation] pro vyšší automatizaci prováděných rutinních úkolů.
+	\item[Management] speciálně navržené workflow pro řízení běhu platformy. Management umožňuje přesněji sledovat využití výkonu, optimalizovat diskové kapacity a celkový stav infrastruktury.
+	\item[Security] integruje ESXi firewall pro omezení přístupu a vShield Endpoint pro přesunutí provozu na stroje určené pouze pro kontrolu datového provozu a nevytěžování aplikačních strojů.
+	\item[Storage] s lepší správou úložiště, vhodný výběr úložiště, lepší škálovatelnost a výkonnost díky využití clustrového souborového systému.
+\end{description}
+
+\subsubsection{vCloud Hybrid Service}
+\begin{quote}
+Jedná se o cloudové řešení na platformě VMware vSphere provozovaný přímo společností VMware. Hybrid Service je kompletní infrastruktura, která umožňuje spouštění libovolné kompatibilní aplikace (tisíce aplikací) na více než 90 podporovaných operačních systémech.\cite{vmware:hybridService}
+\end{quote}
+
+\subsubsection{vCloud Suite}
+Služba umožňuje vytvářet a spouštět vSphere řešení privátního cloudu, který doručuje cloudové služby ekonomicky a umožňuje dobrou škálovatelnost.\cite{vmware:vCloudDatasheet}
+
+vCloud obsahuje všechny komponenty pro vybudování a provoz privátní cloudové infrastruktury. Tato infrastruktura je složena z mnoha jiných produktů společnosti VMware:
+\begin{description}
+	\item[VMware vSphere] popsaný výše (viz kap. \ref{sec:vSphere}),
+	\item[VMware vCloud Networking and Security] sloužící pro řízení datového provozu a zabezpečení,
+	\item[VMware vCenter Site Recovery Manager] pro testování, plánování a spouštění scénářů pro katastrofické případy,
+	\item[a dalších.]
+\end{description}
+
+\subsubsection{vCenter Server}
+V případě vCenter se jedná o univerzální centrum pro správu ESXi hypervizorů i vSphere celku. vCenter je aplikace pro Windows a Linux. Aplikace umožňuje zjednodušit pravidelné operace, zálohování, klonování virtuálních strojů a další. 
+
+\subsection{Další jiná využití cloudu}
+Kromě velkých hráčů na trhu zde jsou i menší společnosti, které neposkytují komplexní služby, ale zaměřují se spíše na specifická odvětví. I mezi těmito produkty jsou ovšem velice zdařilé projekty, ač většinou k jiným účelům, než se dají použít výše zmíněné cloudové služby.
+
+\subsubsection{Dropbox}
+Dropbox je synchronizační cloudová služba a úložiště. Služba funguje na principu synchronizace všech klientských stanic a mobilních telefonů a jejich obsahu. Data jsou primárně ukládána v koncových stanicích a obsah se klonuje do úložiště Dropboxu. Odtud se v případě zjištění, že na některém zařízení obsah chybí, kopíruje i do něho. 
+
+V případě mobilních zařízení se nesynchronizuje přímo, ale jako jednotlivé soubory, aby v zařízení nezabíral tolik místa a zbytečně nevytěžoval omezený a pomalý datový tarif. Služba umožňuje automaticky z mobilních zařízení synchronizovat pořízený multimediální obsah.
+
+Další možností služby je sdílení složek mezi více uživateli služby, kdy se ostatním zobrazí obsah sdíleného adresáře, se kterým následně mohou pracovat.
+
+Služba poskytuje i přístup k historii upravených souborů -- provádí verzování známé ze systémů jako SVN nebo Git.
+
+\subsubsection{OnLive}
+\label{sec:onlive}
+Nabízí koncepčně naprosto jiné služby, než zde všechny zmíněné. Jedná se o službu doručování obrazu vzdáleného serveru, který funguje jako výpočetní datové centrum. V tomto centru se na farmě grafických karet a procesorů provádí vysoce náročné výpočetní operace a jejich výsledek v podobě obrazu je doručován po kvalitní datové lince k uživatelům. Služba by se dala přirovnat k funkci vzdálené plochy.
+
+Služba aktuálně nabízí dvě varianty poskytovaného obsahu.
+
+\paragraph{OnLive Games}
+V prvním případě je doručovaný obsah zaměřen na herní průmysl, kdy se v datovém centru vypočítávají operace hry a klientovi je doručen pouze obraz v podobě snímků.
+Od uživatele jde interakce na server, kde se zakomponuje pohyb jeho polohovacím zařízením do hry a obraz se změnou je opět odeslán k uživateli. V tomto případě je kladen vysoký nárok na kvalitní internetové připojení a nízkou latenci, jelikož je třeba, aby byl obraz i reakce plynulé.
+\paragraph{OnLive Desktop}
+Druhou variantou je služba Desktop. V tomto případě je poskytován vzdáleně operační systém společnosti Microsoft s předinstalovaným kancelářským balíkem Office. Systém běží na vysoce výkonných serverech, tedy práce s ním je plynulá a reakce okamžité. Opět zde platí podmínka na kvalitní datovou linku, ovšem již s ne tak vysokými nároky jako u výše zmiňované herní služby. Služba je zaměřena na uživatele na cestách, kteří potřebují z různých zařízení přistupovat ke svému počítači a nechtějí, nebo nemohou s sebou neustále brát notebook. Systém je možné spouštět i na tabletech se systémem Mac a Android.
+
+\subsubsection{OwnCloud}
+\begin{quote}ownCloud je řešení pro ukládání souborů, které můžeme nasadit ve firmě a inteligentně používat pro sdílení souborů přes internet. Nabízí ale i řadu dalších služeb (aplikací, které fungují jako zásuvné moduly), například kalendář, kontakty, úkoly a poznámky, hudební přehrávač, editor/prohlížeč obrázků, přehrávač videí, apod. K tomu se přidávají další vlastnosti jako šifrování a jednoduché verzování souborů.\cite{samuraj:ownCLoud5}
+\end{quote}
+
+\subsubsection{Cloud9}
+\href{https://github.com/ajaxorg/cloud9}{Cloud 9 IDE} je vývojové prostředí, které je poháněno javascriptovým frameworkem \href{http://nodejs.org/}{Node.js} běžícím na serveru. Jedná se tak o cloudové open source řešení vývojového prostředí. Jako základ IDE je využíváno editoru kódu \href{http://ace.c9.io/}{Ace}. Prostředí umí všechny základní věci jako zvýrazňování syntaxe, napovídání a doplňování kódu, zobrazování náhledu v případě kódu v HTML5+CSS a JavaScriptu.
+
+Cloud9 IDE je možné využívat pro projekty na vlastním serveru, nebo využívat některého z hostingových cloudových center.
+
+Na tomto open source IDE je založena i služba \href{https://c9.io/}{c9.io}, která kromě poskytnutí funkcí a hostování IDE umožňuje klonování projektů a spravování u nich na serveru. Možnost kompilace a deploye se spouštěním serverových částí kódu poskytuje přístup ke konzole pomocí ssh přes webový prohlížeč (možnost používat tar, wget, git a další nástroje). Navíc služba dokáže dobře spolupracovat s verzovacími nástroji jako \href{https://github.com/}{Github}, \href{https://bitbucket.org/}{Bitbucket}, \href{http://www.windowsazure.com}{Windows Azure} a dalšími.
+Dále tato služba umožňuje spolupráci více lidí nad projektem a možnost editace jednoho souboru se zvýrazněním, kde kolegové soubor právě upravují.
+
+Cloud9 využívá například i embedded zařízení \href{http://beagleboard.org/}{BeagleBoard}, ve kterém běží Linux, nebo Android OS. Díky tomuto editoru můžete programovat přímo na zařízení a okamžitě spouštět a zobrazovat výsledek. Zařízení má mnoho vstupů i výstupů a dá se na něm s přídavnými moduly sestavit v podstatě libovolná aplikace od multimediálního centra až po inteligentního robota na úklid domácnosti.
+
+\subsubsection{Cloudový operační systém}
+Další velice zajímavou ideou využití cloudu dnešní doby je operační systém, který běží přímo v prohlížeči. Díky velkému rozmachu webových služeb, HTML5 a JavaScriptu je možné vytvářet aplikace, které se synchronizují mezi prohlížečem a serverem. Tento přístup otvírá široké možnosti využití webového prohlížeče i na úkony, na které nebyl primárně určen.
+
+Za největšího zástupce této vize můžeme považovat Google a jejich systém Chrome OS. Systém běží kompletně v prohlížeči a data jsou uložena v cloudovém úložišti v datacentrech Googlu. V případě výpadku internetu je možné používat "`offline"' lokální verzi dat, která jsou dočasně zpřístupněna i v zařízení a po připojení k Internetu se synchronizují zpět na server.
+
+Google sice prosazuje jejich systém ve spojení s netbooky jako kompletní řešení, ale není jediný, kdo systém webového operačního systému vyvíjí a nabízí. Mezi ostatní významné zástupce můžeme zařadit například \href{http://www.eyeos.com/}{EyeOS}, \href{http://www.jolicloud.com/jolios}{Joli OS}, nebo \href{https://osw3.com/}{OSW3}. Mnoho řešení je možné využívat díky svobodné licenci i na vlastních serverech, nebo je hostovat u velkých společností v cizím cloudu. Několik dalších zástupců těchto technologií je možné nalézt na webu \href{http://www.hongkiat.com/blog/free-cloud-os/}{hongkiat.com\cite{hongkiat:webos}}.
+
+\subsubsection{Heroku}
+Služba \href{https://www.heroku.com}{heroku.com} umožňuje hostování frameworků, jako je \href{http://www.playframework.com/}{Play}, \href{https://www.djangoproject.com/}{Django}, \href{http://clojure.org/}{Clojure}, \href{http://nodejs.org/}{Node.js}, \href{http://www.scala-lang.org/}{Scala} a mnoha dalších. Jedná se o platformu jako službu založenou na operačním systému Debian nebo Ubuntu. Jde o podobnou službu, jakou nabízí \nameref{sec:googleAppEngine}, \nameref{sec:Azure} a nebo \nameref{sec:AmazonElasticCC}. Velkou výhodou tohoto řešení je ovšem cena. V základní verzi je služba poskytována zdarma, a tak můžete začít využívat cloudu, aniž musíte řešit financování. Až s přibývajícími zákazníky a nedostačujícím výkonem lze přejít na placenou variantu.
+
+\newpage
+\section{Popis praktické části}
+\label{sec:praktickaCast}
+V rámci praktické části bylo zadáno provést analýzu technologií společností IBM, VMware a Microsoft. Po jejím provedení je cílem vytvořit modelové příklady pro nasazení jednotlivých technologií. Následně bude zvolena některá technologie a pro ni bude vytvořena sada testů pro analýzu vybraných vlastností cloudu.
+
+\subsection{Metodika testování}
+\label{p:metodikaTestovani}
+\subsubsection{Reálný vybraný případ}
+Pro realizaci a testování na všech platformách kritických a klíčových služeb bylo vybráno porovnání těchto vlastností:
+\begin{description}
+	\item [Čas k nasazení:] Jak dlouho zabere samotná příprava na možnost začít na platformě vyvíjet, případně odhadovaný čas na implementaci podobného systému na všech platformách.
+	\item [Dostupnosti služeb:] Jakou poskytovatelé služeb garantují dostupnost, zda-li nejsou regionální omezení apod.
+	\item [Dostupnosti dat z Internetu:] Co se stane v případě, kdy bude omezen přístup k Internetu, a to jak na straně vývoje, tak poskytovaného obsahu.
+	\item [Možnost zpřístupnění intranetu:] Dále zda-li je možné se dostat k potřebným datům a aplikacím z intranetu, která v cloudu nejsou umístěna.
+	\item [Přístup k filesystému:] Jak je umožněno zpřístupnit data uložená v cloudu. Zda-li je poskytován přístup přes zabezpečený kanál, nebo webové rozhraní.
+	\item [Intranetové aplikace:] Zda-li lze implementovat a využívat privátní intranetové aplikace.
+	\item [HW nároky:] Testování výpočetních nároků jak na vývoj aplikací, tak i nároky na běh aplikací v cloudu. Zda-li podobná aplikace dokáže běžet na obdobné konfiguraci v cloudu jiné společnosti.
+	\item [Hloubka znalostí:] Jaké znalosti musí mít uživatel, který chce pro cloud vyvíjet i uživatel, který cloud pouze nasazuje a nebo využívá.
+\end{description}
+
+\subsection{IBM}
+Nalézt vhodnou službu, která by odpovídala potřebám a využití v této práci, byl téměř nesplnitelný úkol. Web společnosti IBM je tak rozlehlý a nekonzistentní, že jednotlivá oddělení uvnitř IBM nemohou naprosto tušit, co dělají ostatní oddělení. Na webu společnosti jsem nalezl minimálně tři produkty, které se buď překrývají nabídkou služeb, nebo jsou shodné, jen zaštiťované jinou společností, kterou IBM koupilo.
+
+Naštěstí IBM právě spustilo betatesting naprosto nového cloud computingu \href{https://ace.ng.bluemix.net/}{IBM Cloud Platform Codename: BlueMix}\cite{bluemix:web}, který je dostupný zdarma v omezeném režimu (počet aplikací, služeb, paměti). Cloud je provozován nad \href{https://www.softlayer.com/about/datacenters}{datacentry} odkoupené společnosti \href{https://www.softlayer.com/}{SoftLayer}. Povedlo se mi získat do betatestu přístup, a tak mohu pro testování části služeb využít právě připravovaného cloudu BlueMix.
+
+\subsubsection{Používané technologie}
+IBM o podrobnostech použitých technologií na serverech mlčí. Malý souhrn informací lze nalézt v \href{https://www.ng.bluemix.net/docs/DeepDive.html}{dokumentaci k BlueMixu}. Z informací lze vyčíst, že cloudovou službu pohání open source projekt \href{https://www.openstack.org/}{OpenStack}\footnote{OpenStack je svobodná technologie pro provoz cloudů typu IaaS (infrastruktura jako služba). Původně tento projekt založila firma Rackspace Hosting společně s NASA, postupně se k němu připojilo více než 150 subjektů včetně takových hráčů, jako je IBM, Red Hat, Cisco nebo HP. Kód je šířen pod licencí Apache 2.0.\cite{toposs:openStack}} a pro deploy na servery se využívá příkazové řádky, nazývané \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI} (\texttt{cf}). Další drobná informace, která lze získat, je, že na serverech je spuštěn operační systém Linux.
+
+\paragraph{Virtuální servery}
+Služba BlueMix je PaaS, nikoliv IaaS, tedy neposkytuje přímý přístup k infrastruktuře.
+
+\paragraph{Datové služby}
+Dle webu \href{https://ace.ng.bluemix.net}{BlueMix}\cite{bluemix:web} je možné aktuálně vyvíjet nad těmito technologiemi:
+\begin{description}
+	\item [Java] jako platforma je multiplatformní software pro vývoj, testování a spouštění aplikací. Funguje v podstatě přesně obráceně než .NET, jelikož používá jediný programovací jazyk Java a dokáže zdrojový kód přeložit do bajt kódu a ten následně spouštět na všech podporovaných systémech.
+	\item [Node.js] je softwarový systém navržený pro psaní vysoce škálovatelných internetových aplikací, především webových serverů. Programy pro Node.js jsou psané v jazyce JavaScript, hojně využívající model událostí a asynchronní I/O operace pro minimalizaci režie procesoru a maximalizaci výkonu.\cite{wiki:node.js}
+	\item [Ruby on Rails] je framework pro vývoj webových aplikací napojených na databázi, používající návrhový vzor Model---view---controller. Vytvořil jej dánský programátor David Heinemeier Hansson při práci na projektu Basecamp.\cite{wiki:rails}
+	\item [Ruby Sinatra] je volně dostupný open source webový framework a DSL napsaný v Ruby, pojmenovaný podle známého zpěváka Franka Sinatry. Jedná se o alternativu k frameworkům Ruby on Rails, Merb, Nitro, Camping a Rango. Využívá serverového rozhraní Rack.\cite{wiki:sinatra}
+\end{description}
+Na těchto technologiích lze vyvíjet, ovšem není to rozhodně konečný výčet poskytovaných služeb.
+
+\subsubsection{Vývoj}
+Vývoj na platformě BlueMix probíhá na lokálním stroji vývojáře, a to v libovolném vývojovém prostředí IDE, které umožňuje vývoj ve výše zmíněných jazycích. Po vytvoření aplikace je následně projekt odeslán na cloudový server pomocí příkazové řádky \href{https://github.com/cloudfoundry/cli}{Cloud Foundry CLI}.
+
+Druhou možností vývoje pro BlueMix je využití cloudového nástroje \href{https://hub.jazz.net/}{JazzHub}. Nástroj umožňuje používání online IDE, automatického deploye, týmové spolupráce a dalších užitečných věcí, jako je bug reportovací nástroj, nebo plánování projektu pomocí \href{http://cs.wikipedia.org/wiki/Agiln\%C3\%AD_metodiky}{agilních metodik}\footnote{Agilní metodiky jsou skupiny metod původně určených pro vyvíjení softwaru, založené na iterativním a inkrementálním vývoji. Umožňují rychlý vývoj softwaru a zároveň dokáží reagovat na změnu požadavků v průběhu vývojového cyklu. Podle těchto metodik se správnost systému ověří jedině pomocí rychlého vývoje, předložení zákazníkovi a následných úprav dle zpětné vazby.\cite{wiki:agilniMetodiky}} (\href{http://en.wikipedia.org/wiki/Scrum_(software_development)}{Scrum\cite{wiki:scrum}}/\href{http://www.sprintmethod.cz/}{Sprint method}).
+
+Jak začít vyvíjet pomocí BlueMixu je popsané v \href{https://www.ng.bluemix.net/docs}{dokumentaci\cite{bluemix:dokumentace}} na stránce o vývoji aplikací -- \href{https://www.ng.bluemix.net/docs/BuildingWeb.jsp}{Building a web application\cite{bluemix:buildingWeb}}.
+
+\subsubsection{Modelové situace}
+Vybraný produkt BlueMix je pouze platforma jako služba, což výrazně omezuje možnosti využití. Některé možné varianty jsme uvedl níže.
+
+\paragraph{Webová prezentace/portfolio/e-shop}
+Tím, že je využíváno výhod cloudu a škálovatelnosti, lze v BlueMixu nasadit miniweb/portfolio o jedné stránce až po e-shop. Aktuálně je aplikace v cloudu ovšem omezena velikostí úložiště a dostupnou pamětí i výpočetním výkonem, tedy není vhodná pro velkou zátěž.
+
+\paragraph{Intranetové aplikace}
+Většina společností potřebuje pro svůj chod vnitropodnikový pomocný software. Ten se dá v BlueMixu realizovat, i když s jistými omezeními, jako je nemožnost propojení pomocí VPN s vnitropodnikovými částmi systému, které v cloudu neběží.
+
+\paragraph{Mobilní aplikace}
+Mobilní aplikace může BlueMix využívat jako frontend, kdy se nejedná o plnohodnotnou mobilní aplikaci, ale pouze o mobilní verzi webové aplikace. Díky velké škále databázových systémů v cloudu není problém jej využít i jako pozadí nativní aplikace. Ta by pouze využívala data z databází a nebo webových služeb nad platformou realizovaných.
+
+\paragraph{Vlastní modelová situace}
+V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestovani} bylo jako primární pro test zvoleno datové úložiště a webová aplikace běžící nad tímto úložištěm. Tím se dá souhrnně otestovat většina definovaných vlastností, které byly stanoveny jako klíčové.
+
+\subsubsection{Příprava testování}
+Pro přístup do BlueMixu je potřeba si zaregistrovat \href{https://www.ibm.com/account/profile}{IBM ID}. Při registraci nejsou požadovány žádné podrobnější informace o klientovi, pouze email a jméno. Po jeho založení lze požádat na webu \href{https://ace.ng.bluemix.net}{BlueMix\cite{bluemix:web}} o přístup do betatestu této nové cloudové služby. V případě, že je váš uváděný záměr se službou shledán přijatelným, je vám umožněn přístup a lze začít okamžitě využívat poskytovaných služeb.
+
+\subsubsection{Praktické nasazení a testování}
+V \href{https://ace.ng.bluemix.net/#/resources}{administraci} je možné vybírat z běhových prostředí, nad kterými chceme aplikaci vytvořit. K nim lze následně přiřadit podpůrné služby (databáze, cache, git, a další).
+
+Po vytvoření aplikace se na přiřazené webové adrese objeví základní informace a předpřipravený projekt. Pro jeho editaci je potřeba si nainstalovat \href{https://www.ng.bluemix.net/docs/BuildingWeb.jsp#install-cf}{\texttt{cf}}. Poté stáhnout dostupný projekt a nad ním začít vytvářet aplikaci. Po jejím dokončení zbývá poslední fáze, a to odeslání na server. To se děje právě pomocí aplikace \texttt{cf}.
+\begin{enumerate}
+	\item Připojení na BlueMix:\\
+		\texttt{cf api https://api.ng.bluemix.net},
+	\item přihlášení a nastavení prostředí:\\
+		\texttt{cf login -u IBM\_ID}\\
+		\texttt{cf target -o IBM\_ID -s dev},
+	\item samotný push na server:\\
+		\texttt{cf push PROJEKT -p SOUBOR\_PROJEKTU}.
+\end{enumerate}
+
+Aplikace je následně dostupná na adrese: \texttt{http://PROJEKT.bluemix.net}.
+
+\subsubsection{Souhrn testování}
+\begin{description}
+	\item [Čas k nasazení:] na dnes běžném výpočetním výkonu a nadprůměrnou internetovou linkou se čas potřebný k začátku vývoje pohyboval kolem půl hodiny (není započítán čas pro instalaci IDE, jelikož žádné není nativně dodávané a je třeba využívat vlastní). To není vůbec špatný čas. Nejdelší čas v aktuálním stavu může zabrat vyhodnocení (a případné zamítnutí) požadavku na vstup do betatestu služby. V mém případě ovšem IBM reagovalo v řádu minut. Díky tomu, že IBM poskytuje online nástroj pro vývoj \href{https://hub.jazz.net}{JazzHub}, není v podstatě IDE ani k samotnému vývoji potřeba, ovšem spíše bych ho doporučil, jelikož jejich webový editor není moc povedený. Ostatní možnosti v rámci JazzHubu nejsou vůbec špatné.
+	\item [Dostupnosti služeb:] IBM pro své kritické části cloudových služeb poskytuje, dle jejich SLA, 99,9\% dostupnost služeb. Tím se řadí v podstatě k tomu nejlepšímu, co lze na trhu dostat.
+	\item [Možnost zpřístupnění intranetu:] testovaný nový produkt je pouze platforma jako služba, tedy nenabízí přímý přístup k infrastruktuře. Jediné možné spojení s intranetovou infrastrukturou je napojení na firemní databázi nebo webové služby. Obojí by ovšem v takovém případě muselo být dostupné skrz síť Internet a nikoli privátní kanál do cloudu. Tedy v tomto případě se nemá dále cenu tímto zabývat a spíše se dá konstatovat, že PaaS toto využití neumožňuje.
+	\item [Přístup k filesystému:] opět BlueMix neumožňuje. Jediný způsob využití filesystému je v rámci nahrávání projektu na server, kdy je možné filesystém využít. Mnohem lepší variantou, jak ukládat data na této službě, jsou databáze. BlueMix má několik typů databází (relační, cache, noSQL, JSON DB), a tak není problém ukládat v podstatě všechna data přímo do databází. Z výčtu můžeme jmenovat MySQL, PostgreSQL, MongoDB nebo DB2.
+	\item [Intranetové aplikace:] postavené nad BlueMixem nejsou problém, jelikož platforma poskytuje službu \href{http://www.ng.bluemix.net/docs/Services/CloudIntegration/CloudIntegration.html}{Cloud Integration}, která slouží pro ověřování pomocí VCAP\_SERVICES. Celé řešení autorizace a autentizace uživatelů je dostupné pro \href{http://www.cloudfoundry.org}{Cloud Foundry} na githubu: \href{https://github.com/cloudfoundry/uaa}{CloudFoundry User Account and Authentication (UAA) Server}.
+	\item [HW nároky:] Pro vývoj na testovaném Visual Studiu Express 2013 for Web mi dostačoval 7 let starý notebook s dvoujádrovým procesorem, 3 GB paměti a rychlým SSD diskem. Pro vývoj na platformě Java jsem využíval \href{http://www.jetbrains.com/idea/}{IntelliJ Idea} od společnosti \href{http://www.jetbrains.com/}{JetBrains}. Aktuálně se jedná o jednoznačně nejlepší IDE pro vývoj nejen v jazyce Java. Projekt jsem kompiloval prostřednictvím předpřipravené šablony z BlueMix technologií \href{http://ant.apache.org/}{Apache ANT}. Jelikož se jednalo o relativně malý projekt, jeho kompilace netrvala nijak dlouho. S přibývající složitostí by ovšem čas potřebný pro kompilaci na starším stroji mohl rapidně narůstat.
+	\item [Hloubka znalostí:] Jelikož jsem před testováním IBM BlueMix měl možnost otestovat Microsoft Azure a již mohl srovnávat, přišla mi práce s BlueMixem neohrabanější. Administrace je na výbornou. Vývoj je celkem jednoznačně specifikován použitým jazykem a technologií a od toho se odvíjí složitost. Pro začínajícího uživatele mi ovšem nepřišlo moc intuitivní nahrávání sestaveného projektu na server. Několikrát jsem zapomněl zadat příkaz, nebo zapomněl zařadit do projektu soubor/chybně uvedl cestu k vzdálenému projektu a deploy skončil na nic nevypovídající chybové hlášce. V horším případě se deploy povedl, ale aplikace z nějakého důvodu nenaběhla. Bohužel v administraci není zatím nijak vyřešené logování a uživatel tak nemá přehledný dohled nad tím, co se na cloudu děje.
+
+Cloud BlueMix bych zatím hodnotil spíše pro pokročilého uživatele. Aktuální výhodou i nevýhodou řešení BlueMixu může být i cena. Aktuálně probíhající testování není nijak zpoplatněno a neobjevil jsem ani časové omezení. Navíc nikde není zatím dostupná zmínka o následné cenové nabídce. Nasazení aplikací tak ve finále po zveřejnění cen za provoz může být pro službu smrtící. V aktuální fázi bych tedy službu rozhodně nedoporučil pro produkční nasazení, i když do budoucna vypadá velice slibně.
+\end{description}
+
+\subsection{Microsoft}
+Z portfolia nabízených služeb má význam se v této části zabývat pouze službou Azure. Ostatní služby jsou předpřipravené a nemají moc velký potenciál k vlastnímu vývoji a analýze. Proto se zaměřím právě na Azure. Microsoft v rámci jejich cloudového řešení Azure nabízí zdarma měsíční zkušební lhůtu, tedy zkoumání jsem prováděl právě na této variantě.
+
+Plnohodnotné služby jsou samozřejmě zpoplatněny, a to v rámci pronajatých serverů, výkonu, podpory a dalších kritérií. Vzhledem k velké variabilitě nemá smysl se v této práci cenou zabývat. Pro zjištění ceny je možné využít přehledný a intuitivní \href{http://www.windowsazure.com/en-us/pricing/calculator/?scenario=full}{webový kalkulátor}.
+
+\subsubsection{Používané technologie}
+Služby Azure běží nad virtualizovanými servery technologií Hyper-V.
+
+\paragraph{Virtuální servery}
+Mezi podporované virtualizované servery zařadil Microsoft samozřejmě vlastní operační systém Windows, následně operační systém Linux, SQL Server 2012, SharePoint 2013, Oracle Database, Oracle WebLogic Server a ActiveDirectory.
+
+\paragraph{Datové služby}
+Dle \href{http://www.windowsazure.com/en-us/documentation/}{dokumentace k Windows Azure}\cite{azure:dokumentace} je možné aktuálně vyvíjet nad těmito technologiemi:
+\begin{description}
+	\item [.NET] platforma umožňuje využít libovolný programovací jazyk pro napsání kódu. Zdrojový kód se následně přeloží do (na platformě .NET spustitelného) mezijazyka. Platforma .NET je primárně určena pouze pro operační systém Windows, ovšem z velké části se povedlo kusy platformy portovat pro Linuxové systémy včetně Mac OS X pod jménem MonoDevelop. Aktuální verze .NET je 4.5.
+	\item [Node.js] je softwarový systém navržený pro psaní vysoce škálovatelných internetových aplikací, především webových serverů. Programy pro Node.js jsou psané v jazyce JavaScript, hojně využívající model událostí a asynchronní I/O operace pro minimalizaci režie procesoru a maximalizaci výkonu.\cite{wiki:node.js}
+	\item [Java] jako platforma je multiplatformní software pro vývoj, testování a spouštění aplikací. Funguje v podstatě přesně obráceně než .NET, jelikož používá jediný programovací jazyk Java a dokáže zdrojový kód přeložit do bajt kódu a ten následně spouštět na všech podporovaných systémech.
+	\item [iOS/Android/Windows Phone] jsou operační systémy určené pro mobilní zařízení, je tedy možné v rámci Windows Azure vyvíjet i pro ně.
+	\item [PHP] je skriptovací jazyk pro tvorbu dynamických webových aplikací.
+	\item [Python] je dynamický objektově orientovaný skriptovací jazyk.
+	\item [Ruby] je interpretovaný skriptovací programovací jazyk. Díky své jednoduché syntaxi je poměrně snadný k naučení, přesto však dostatečně výkonný, aby dokázal konkurovat známějším jazykům, jako je Python a Perl. Je plně objektově orientovaný – vše v Ruby je objekt.\cite{wiki:ruby}
+\end{description}
+
+\subsubsection{Vývoj}
+Pro vývoj na platformě Azure se využívá pokročilého vývojového prostředí (IDE) Microsoft Visual Studio, nebo libovolných jiných. Funkcionalita služeb cloudu je zpřístupněna skrz sadu vývojářských nástrojů (SDK), které jsou pro jednotlivé programovací jazyky poskytovány. 
+
+\subsubsection{Modelové situace}
+Díky veliké škále poskytovaných programovacích jazyků a doplňkových služeb je Azure vhodná platforma téměř pro jakékoliv nasazení a použití.
+
+\paragraph{Webová prezentace/portfolio/e-shop}
+Tím, že je využíváno výhod cloudu a škálovatelnosti, lze v Azure nasadit jak miniweb/portfolio o jedné stránce, tak obří e-shop s denní návštěvností o tisících návštěvách. Ani v jednom případě to pro cloudovou službu nebude problém.
+
+\paragraph{Intranetové aplikace}
+Většina společností potřebuje pro svůj chod vnitropodnikový pomocný software. I ten se dá realizovat pomocí Azure. Ať už se jedná o webový frontend, nebo pouze databázový model, ke kterému se připojují vzdálení klienti. Mezi takový software můžeme zařadit znalostní báze, nástroje pro ukládání firemních dokumentů, aplikace pro komunikaci se zákazníky, nástroje pro automatické testování software, nebo účetní program.
+
+Příklad takového účetního programu je \href{https://www.idoklad.cz}{iDoklad} společnosti \href{http://www.money.cz/}{Cígler Software}, který vyhrál \href{http://startup.lupa.cz/clanky/pate-kolo-souteze-pro-vyvojare-windows-azure-vyhrala-aplikace-idoklad/}{soutěž pro vývojáře Windows Azure\cite{lupa:iDoklad}}.
+
+\paragraph{Mobilní aplikace}
+Mobilní aplikace může cloud Azure využívat jako frontend, kdy se nejedná o plnohodnotnou mobilní aplikaci, ale pouze o mobilní verzi webových stránek. Samozřejmě ale může cloud využívat i nativní aplikace se synchronizací do vzdáleného úložiště, kdy data potřebuje využívat více uživatelů najednou.
+
+\paragraph{Rendering farm}
+Cloud Azure je díky všestrannému využití možné použít například i jako farmu pro renderování grafických objektů nebo videí. Společnost AMC Bridge vyvinula doplněk k softwaru SolidWorks pro renderování grafických prvků na cloudových procesorových jádrech.\cite{amcbridge:cloudRender}
+
+\paragraph{Vlastní modelová situace}
+V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestovani} bylo jako primární pro test zvoleno datové úložiště a webová aplikace běžící nad tímto úložištěm. Tím se dá souhrnně otestovat většina definovaných vlastností, které byly stanoveny jako klíčové.
+
+\subsubsection{Příprava testování}
+Pro získání Microsoft Azure musíte podstoupit nutnou \href{https://account.windowsazure.com}{registraci\cite{azure:web}}. A to včetně ověření emailu, telefonního čísla a platební karty, ze které vám bude stržena a znovu připsána drobná částka pro ověření platnosti a funkce.
+Registraci do služby Azure není možné uskutečnit v prohlížeči Chrome, jelikož se web nenačte korektně a chybí mu prvky pro vyplnění údajů.
+
+Po registraci je možné \href{http://www.windowsazure.com/en-us/downloads/}{stáhnout developerské prostředí\cite{azure:download}} Microsoft Visual Studio 2013 Express (to je dostupné zdarma i bez registrace do Azure) a s ním i SDK pro vývoj aplikací na platformě Azure. V nabídce je i mnoho dalších dostupných řešení.
+
+Po stažení a spuštění malého souboru instalátoru se začnou stahovat a připravovat instalační soubory. Na mém PC a lince 40mbit/s instalace trvala přibližně čtyřicet minut včetně instalace Visual Studia, SDK, aktualizací a propojení s mým účtem. Do hodiny od začátku registrace, pokud máte rychlou internetovou linku na stažení programů (přes 1 GB dat) a nevýkonný notebook, je již možné začít vyvíjet nad cloudovými službami.
+
+Výhodu Azure vidím v přidané hodnotě \href{http://www.windowsazure.com/en-us/gallery/store/}{obchodu Store\cite{azure:store}}, který nabízí mnoho kompletních předpřipravených komponent. Není tak problém využít připraveného ověřování uživatelů, API pro OCR na rozpoznávání textu a dalších zajímavých služeb.
+
+\subsubsection{Praktické nasazení a testování}
+Po dokončení instalace se zobrazí \href{http://www.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-get-started/}{webová stránka s ukázkou vývoje\cite{azure:howto}} v ASP.NET pro Azure, což může skvěle posloužit jako odrazový můstek.
+
+Správa serverů a nastavení probíhá v administraci na webu \href{https://manage.windowsazure.com}{Windows Azure\cite{azure:manage}}. V této administraci je naprosto vše pohromadě a není problém tak cokoliv rychle a přehledně nastavit.
+
+Po vytvoření aplikace stačí ve Visual Studiu kliknout na \texttt{Tools--Connect to Windows Azure\ldots} a přihlásit se. Následně pouze publikovat hotovou práci. Ukázková práce je k nalezení na adrese \href{http://mtrakal-dp.azurewebsites.net}{http://mtrakal-dp.azurewebsites.net}.
+
+Díky poskytovaným virtuálním serverům, jak na platformě Windows, tak i dalších, není problém si postavit nad Azure celou infrastrukturu včetně sítě. Samozřejmostí je v takovém případě i připojení z venku na veřejné služby, nebo pomocí VPN do vnitřní virtuální sítě a využívat privátní služby neposkytované ven do Internetu.
+
+\subsubsection{Souhrn testování}
+\begin{description}
+	\item [Čas k nasazení:] na dnes běžném výpočetním výkonu a nadprůměrnou internetovou linkou se čas potřebný k začátku vývoje pohyboval kolem jedné hodiny. To není vůbec špatný čas. Jediný způsob, jak by šel čas snížit, by byl snad pouze online vývojový nástroj.
+	\item [Dostupnosti služeb:] Microsoft garantuje dostupnost služeb na vysoké úrovni. V jejich \href{http://www.windowsazure.com/en-us/support/legal/sla/}{SLA podmínkách\cite{azure:sla}} vymezují dostupnost veškerých služeb jako 99,9\%. U většiny nabízených služeb, které jsem zkoušel, šlo vybrat, v jakém regionu (datacentru) mají být služby spouštěny, tedy vhodně přizpůsobené regionálním legislativám a i v rámci dostupnosti vhodné řešení. Na výběr bylo z východní Asie, severních USA, severní Evropy, západních a východních USA a západní Evropy.
+	\item [Dostupnosti dat z Internetu:] v rámci testování jsem měl dostupnost služeb z Internetu velice solidní. V nejlevnější variantě a zkušební verzi dosahovala infrastruktura rychlostí kolem 200 mbit/s v obou směrech. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3324231390}{http://www.speedtest.net/my-result/3324231390}. V rámci infrastruktury intranetu, při vytvořené virtuální síti, byly jednotlivé servery propojeny rychlostí 10 gbit/s (této rychlosti servery mezi sebou nedosahovaly, pokud byly umístěny v různých lokalitách/datacentrech, kde přenosová rychlost klesala k rychlosti spojení do Internetu).
+	\item [Možnost zpřístupnění intranetu:] Díky poskytované virtuální síti s možností připojit jak celé lokality, tak jednotlivé klienty do sítě pomocí služby VPN, není problém se zpřístupněním intranetových částí. Služba poskytuje Point---to---Site i Site---to---Site spojení. V rámci testování jsem se připojoval pomocí VPN z vlastního počítače do virtuální sítě, kde jsem jako koncentrátor využil virtuální server s Windows Server 2012 R2 Datacenter. Díky druhé VPN lince Site---to---Site nebyl problém zpřístupnit ve virtuální infrastruktuře ani služby ze vzdálené sítě, která nabízela Apache server s webovou službou. Ta byla následně dostupná jak na virtuálním serveru, tak i přes VPN na klientském počítači.
+	\item [Přístup k filesystému:] přímý přístup k filesystému je umožněn pouze na virtuálních serverech, kde je dostupný přímo filesystém, na kterém server běží. Je možné k němu přistupovat přes SMB/NetBIOS, FTP, SSH i lokálně. Ostatní přístupy jsou umožněny do databází \href{http://www.windowsazure.com/en-us/services/sql-database/}{Azure SQL} (případně je možné spustit virtuální server s Oracle SQL a jinými), pomocí geologicky nebo lokálně redundantním \href{http://www.windowsazure.com/en-us/services/storage/}{úložištěm pro BLOB data}, nebo nestrukturovaného datového úložiště \href{http://www.windowsazure.com/en-us/services/hdinsight/}{HDInsight} provozovaného nad \href{http://hadoop.apache.org/}{Apache Hadoop}.
+	\item [Intranetové aplikace:] Windows Azure podporuje i \href{http://cs.wikipedia.org/w/index.php?title=Active_Directory&oldid=11171033}{Active Directory}\footnote{Active Directory je implementace adresářových služeb LDAP firmou Microsoft pro použití v prostředí systému Microsoft Windows. Active Directory umožňuje administrátorům nastavovat politiku, instalovat programy na mnoho počítačů nebo aplikovat kritické aktualizace v celé organizační struktuře. Active Directory ukládá své informace a nastavení v centrální organizované databázi.\cite{wiki:activeDirectory}}, pomocí kterého je možné nastavit intranetovou politiku a nejen přístupová oprávnění. Mimo to Azure obsahuje i Windows Azure \href{http://msdn.microsoft.com/library/windowsazure/hh147631.aspx}{Access Control Service} (ACS), který umožňuje vytvářet přístupové seznamy a implementovat autentizaci a autorizaci uživatele. ACS je kompatibilní s hlavními poskytovateli OAuth i OpenID a připouští ověření na úrovni účtů od Microsoftu, Google, Yahoo! a Facebooku.\cite{azure:acs}
+
+	Další informace o implementaci je možné získat v dokumentu \href{http://www.windowsazure.com/en-us/documentation/articles/web-sites-business-application-solution-overview/}{Create a Line---of---Business Application on Windows Azure Web Sites}\cite{azure:secureApps}.
+	\item [HW nároky:] Pro vývoj na testovaném Visual Studiu Express 2013 for Web mi dostačoval 7 let starý notebook s dvoujádrovým procesorem, 3 GB paměti a rychlým SSD diskem. Aplikace nevykazovala nijak zvlášť výrazné zpoždění odezvy při běžné práci. Samozřejmě kompilace projektů trvala řádově delší dobu.
+
+Samotný běh aplikací spouštěných v cloudu i na nejslabší dostupné konfiguraci nebyl nijak zvlášť pomalý.
+	\item [Hloubka znalostí:] V průběhu testování a nasazování jsem nabyl dojmu, že systém je na obsluhu velice přívětivý a jednoduchý. Ovládání a správu základních prostředků by nejspíše zvládal středoškolsky vzdělaný člověk s nadprůměrnou angličtinou. Správu virtuálních serverů pokročilý uživatel. Programování pro Azure probíhá převážně v režimu client---server. Tato látka byla pouze okrajově probírána až v navazujícím studiu na FEI UPa, tedy bakalářsky vzdělaný člověk v oboru IT by takový vývoj měl být schopný se zaškolením zvládnout.
+\end{description}
+
+\subsection{VMware}
+Z produktů společnosti VMware jsem nakonec zvolil produkt \href{http://vcloud.vmware.com/}{vCloud Hybrid Service}, který se jeví jako všestranný a neměl by tudíž být problém na něm otestovat všechna stanovená kritéria.
+
+Bohužel po zkoumání i dalších produktů VMware jsem došel ke zjištění, že ani jeden cloudový produkt, hostovaný přímo na serverech VMware, není dostupný ve zkušební verzi. Z tohoto důvodu bohužel nemohu službu otestovat a po domluvě s vedoucím práce jsem zvolil pro testování produkt jiné společnosti. Po finálním výběru jsem zvolil produkt společnosti Amazon a to z důvodu, že nabízí základní verzi produktů zdarma na 6--12 měsíců.
+
+\subsection{Amazon}
+Amazon nabízí pro využití cloudu jednu souhrnnou službu \href{http://aws.amazon.com/}{Amazon AWS\cite{amazon:aws}} (Amazon Web Services), která je samozřejmě zpoplatněna. Služba zahrnuje výpočetní výkon, úložiště, databáze a další nadstandardní služby. Amazon nabízí velice přívětivé podmínky pro využití zkušební verze na dostatečně dlouhou dobu. Z tohoto důvodu jsem se rozhodl otestovat právě jejich cloudové řešení. Navíc se jedná o největší cloudovou službu na světě, a tak si myslím, že by ve srovnání neměla chybět.
+
+Kompletní ceník služeb je možné nalézt na stránce \href{http://aws.amazon.com/ec2/pricing/}{Pricing\cite{amazon:ec2Pricing}}. Ceny se pohybují od \$0.020 za nejmenší řešení po částky kolem \$7 za hodinu výpočetního výkonu. Stejně jako Microsoft u Azure má i Amazon pro AWS velice podrobný \href{http://calculator.s3.amazonaws.com/index.html}{kalkulátor cen\cite{amazon:calculator}}.
+
+A že ani velcí hráči nejsou neomylní, může potvrdit Tomáš Heran ze společnosti GoodData, se kterým byl namluven rozhovor pro \href{http://www.java.cz/article/czpodcast-56-cloud-aws}{java.cz\cite{java:aws}}. V rozhovoru popisuje výpadek Amazonu a postupné "`nahazování"' služeb. Dále popisuje jak jejich společnost využívá služeb AWS, cenovou politiku a nevýhody služby.
+
+\subsubsection{Používané technologie}
+Oproti Microsoftu a IBM má Amazon technickou stránku serverů celkem pěkně zdokumentovanou. Z \href{http://aws.amazon.com/ec2/instance-types/}{technických dokumentů\cite{amazon:ec2Instances}} se dá zjistit, že servery pohání procesory řady Intel Xeon a úložiště je složeno převážně již z SSD disků. Grafický cluster pak pohání NVIDIA Tesla GPU pro zajištění vysokého paralelního výpočetního výkonu. Pro grafický cluster je poskytováno grafické API v podobě OpenGL a DirectX, pro přímé programování jsou dostupné technologie CUDA a OpenCL.
+
+Infrastrukturu cloudu dle dostupných informací na serveru \href{http://www.zdnet.com/blog/open-source/amazon-ec2-cloud-is-made-up-of-almost-half-a-million-linux-servers/10620}{zdnet.com\cite{zdnet:amazonLinux}} pohání Red Hat Enterprise Linux (RHEL). Pro virtualizaci systémů se využívá technologie XEN.
+
+\paragraph{Virtuální servery}
+Mezi dostupnými virtuálními servery poskytovanými v rámci AWS lze v \href{http://aws.amazon.com/ec2/details/}{dokumentaci EC2\cite{amazon:ec2Details}} nalézt: CentOS, Debian, SUSE Linux Enterprise, Amazon Linux, Oracle Enterprise Linux, Ubuntu, Red Hat Enterprise Linux a Windows Server.
+
+\paragraph{Datové služby}
+Na aplikační vrstvě AWS nabízí programování nad těmito technologiemi:
+\begin{description}
+	\item [Lamp:] Jedná se o balík Linuxové distribuce, webového serveru Apache, databáze MySQL nebo nově MariaDB a doplněného o skriptovací jazyk PHP/Python/Perl dle konfigurace.
+	\item [Tomcat] je open source aplikační server založen na jazyce Java. Umožňuje běh aplikací napsaných v Javě, JSP (Java Server Pages), javových servletech a Enterprise JavaBeans.
+	\item [Ruby on Rails] je framework pro vývoj webových aplikací napojených na databázi, používající návrhový vzor Model---view---controller. Vytvořil jej dánský programátor David Heinemeier Hansson při práci na projektu Basecamp.\cite{wiki:rails}
+	\item [Django] je open source webový aplikační framework napsaný v Pythonu, který se volně drží architektury Model---view---controller. Je dalším z řady webových frameworků, jako je např. Ruby on Rails. Oproti Ruby on Rails však nabízí zajímavou možnost automatické tvorby administrace projektu, která je generována dynamicky podle datového modelu.\cite{wiki:django}
+	\item [Node.js] je softwarový systém navržený pro psaní vysoce škálovatelných internetových aplikací, především webových serverů. Programy pro Node.js jsou psané v jazyce JavaScript, hojně využívající model událostí a asynchronní I/O operace pro minimalizaci režie procesoru a maximalizaci výkonu.\cite{wiki:node.js}
+\end{description}
+
+Na vrstvě pro ukládání dat AWS nabízí též celou řadu možností:
+\begin{description}
+	\item [MongoDB] je multiplatformní, dokumentově orientovaný, databázový systém. Dá se zařadit mezi NoSQL databáze.
+	\item [Couchbase Server] jde opět o dokumentově orientovanou NoSQL open source databázi.
+	\item [SAP HANA One] je vysoce výkoný analytický nástroj pracující nad daty v paměti (IMDB), sloupcově orientovanými daty a relačním databázovým systémem.
+	\item [Riak] je úložiště napsané v Erlangu, které umí key---value přístup, map---reduce v Erlangu a Javascriptu. Komunikace probíhá pomocí JSONu přes REST. Je v lecčems hodně podobný CouchDb. Cílem je skvělá horizontální škálovatelnost, jednoduchost a snadná přístupnost dat.\cite{knesl:riak}
+	\item [Microsoft SQL Server] je relační databázový a analytický systém pro e-obchody, byznys a řešení datových skladů, vyvinutý společností Microsoft. Pomáhá snižovat celkové náklady na vlastnictví a zvyšovat efektivitu vaší organizace prostřednictvím správy podnikových dat a práce s obchodními informacemi (business intelligence).\cite{wiki:mssql}
+\end{description}
+
+\paragraph{Ostatní}
+Kromě aplikační a databázové vrstvy nabízí AWS i již připravené aplikace, které lze na pár kliknutí nasadit a okamžitě začít využívat. Jedná se o publikační nástroje a služby řešící business logiku (BI).
+\begin{description}
+	\item [Wordpress] je svobodný open source redakční publikační systém napsaný v PHP a MySQL. Je vyvíjen pod licencí GNU GPL a je silně podporován společností Automattic, jejíž vývojáři se WordPressu věnují.\cite{wiki:wordpress}
+	\item [Drupal] je softwarový systém pro správu obsahu, který původně napsal Dries Buytaert. Umožňuje tvorbu internetových časopisů, blogů, internetových obchodů a jiných komplexních systémů.\cite{wiki:drupal}
+	\item [Joomla!] je bezplatný open source CMS pro účely publikování informací na internetu a intranetu. Je napsána v jazyce PHP a využívá databázi MySQL. Joomla! podporuje caching, indexaci stránek, RSS, tisknutelné verze stránek, zobrazování novinek, blogy, diskusní fóra, hlasování, kalendář, vyhledávání v rámci webserveru, lokalizace a vícejazyčné verze.\cite{wiki:joomla}
+	\item [MediaWiki] je název software (wiki systému), na kterém běží Wikipedie a další projekty nadace Wikimedia. MediaWiki se někdy proto označuje jako engine (motor) Wikipedie. MediaWiki je svobodný software, šířený pod licencí GNU GPL.\cite{wiki:mediawiki}
+	\item [Alfresco] je vedoucí Open Source alternativa ECM (enterprise contetnt management) systémů, určený pro Microsoft Windows a Unix---like operační systém. Je navržen pro uživatele kladoucí důraz na vysokou dostupnost, modulárnost a rozšiřitelnost systému.\cite{wiki:alfresco}
+	\item [Jaspersoft Reporting \& Analytics for AWS] je open source reportovací nástroj s variabilním výstupem. Umožňuje výstup reportu například na obrazovku, tiskárnu, do PDF, HTML stránky, XML dokumentu, tabulkového procesoru, textových souborů a dalších formátů.
+	\item [MicroStrategy] jedná se o nástroj pro komplexní BI. Pomocí MicroStrategy BI platformy zákazníci získávají možnosti tvorby přehledných grafů, tabulek (reporting), využívání interaktivních panelů (dashboardů), využívání pokročilých analýz, prediktivních analýz obchodních příležitostí a mnohé další\cite{oksystem:microstrategy}.
+	\item [SAP Business Objects] je opět specializovaný korporátní nástroj pro BI vyvíjený společností SAP.
+\end{description}
+
+\subsubsection{Vývoj}
+Jelikož Amazon poskytuje velkou šíři nabízených služeb, neupřednostňuje ani nedoporučuje jedno vývojové IDE ani postup vývoje software. Volbu nechává na každém uživateli. Tím odpadá jakékoliv stahování velkých balíků, které je třeba instalovat a nastavovat. Pro vývoj tedy stačí zvolit oblíbené IDE, které využíváte i na jinou práci, pokud umožňuje vyvíjet v poskytované technologii.
+
+\subsubsection{Modelové situace}
+V rámci téměř neomezených možností nasazení služeb nad AWS není problém implementovat jakoukoliv službu.
+
+\paragraph{Webová prezentace/portfolio/e-shop}
+Tím, že je využíváno výhod cloudu a škálovatelnosti, lze i v AWS nasadit miniweb/portfolio o jedné stránce i obří systémy. Tím, že AWS disponuje největším cloudovým prostředím, nebude pro jejich službu nejspíš žádný web nerealizovatelný. Aktuálně u nich hostují velikáni v poskytování služeb jako Netflix, Autodesk a mnoho dalších.
+
+\paragraph{Intranetové aplikace}
+Většina společností potřebuje pro svůj chod vnitropodnikový software.
+
+I společnosti jako NASA využívají cloudu právě od Amazonu. Pokud AWS poskytuje dostatečný výkon pro NASA a splňuje jejich bezpečnostní kritéria, mám dojem, že jakékoliv jiné nasazení bude oproti tomu pouze drobné využití jejich kapacit.
+
+\paragraph{Rendering farm}
+Oproti ostatním společnostem má AWS přímo farmu grafických karet pro vykreslování grafiky. Tím může dosáhnout nejvyššího výkonu za relativně krátkou dobu a s nižšími náklady, než nechávat grafické prvky počítat na výpočetních jádrech procesorů.
+
+Jak využít právě Rendering farm nad AWS je zdokumentováno na video návodu na \href{http://www.judpratt.com/tutorials/ec2-renderfarm/}{judpratt.com\cite{judpratt:ec2renderfarm}}
+
+\paragraph{Vlastní modelová situace}
+V rámci testovacího scénáře popsaného v kapitole \nameref{p:metodikaTestovani} bylo jako primární pro test zvoleno datové úložiště a webová aplikace běžící nad tímto úložištěm. Tím se dá souhrnně otestovat většina definovaných vlastností, které byly stanoveny jako klíčové.
+
+\subsubsection{Příprava testování}
+Po provedení registrace do služby \href{https://aws.amazon.com/free/}{AWS Free}, kde je požadováno vyplnění platebních údajů včetně karty a ověření telefonního čísla pomocí vyslovení PIN kódu anglickému automatu, můžete začít využívat služeb zdarma.
+
+\subsubsection{Praktické nasazení a testování}
+V rámci testování EC2 (Elastic Compute Cloud) jsem zkoušel virtuální server s nainstalovaným systémem Windows Server 2012. Jedná se o nejnižší variantu, která je poskytována zdarma. Systémová instance byla typu \textit{t1.micro} a obsahovala 615 MB paměti RAM, jedno jádro procesoru Intel Xeon E5-2650 a gigabitovou přípojku do intranetu. Reálné rychlosti spojení z Internetu se pohybují kolem 50 mbit/s a do Internetu kolem sta megabit. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}
+
+Chod systému je o poznání pomalejší než na obdobné konfiguraci v cloudu Azure od Microsoftu.
+
+Kromě testu EC2 jsem nad cloudem ještě nasadil virtuální stroj s webovým serverem a databází na \href{http://ec2-54-186-102-209.us-west-2.compute.amazonaws.com/}{adrese cloudu}, která je ve tvaru:
+\begin{itemize}
+	\item \texttt{er2-IP-ADRESA.LOKACE-DATACENTRA.compute.amazonaws.com},
+\end{itemize}
+což není moc přívětivé. Proto jsem pro ni nad vlastní doménou založil CNAME záznam v podobě: \href{http://dp-aws.mtrakal.cz}{dp-aws.mtrakal.cz}, kde se můžete po dobu (snad) jednoho roku podívat na výsledek.
+
+\subsubsection{Souhrn testování}
+V porovnání s ostatními poskytovateli služeb je jasně vidět, že má Amazon obří náskok. Ať už v poskytovaném výkonu, kvalitní specifikaci, nebo podrobném monitorování služeb. Monitorování je krásně vidět od stavu serverů na \href{http://status.aws.amazon.com/}{status.aws.amazon.com}, až po monitoring jednotlivých služeb, výkonu úložiště, nebo vytížení vlastních virtuálních instancí strojů.
+
+\begin{description}
+	\item [Čas k nasazení:] na dnes běžném výpočetním výkonu a nadprůměrnou internetovou linkou se čas potřebný k začátku vývoje pohyboval kolem třiceti minut včetně registrace. Do času jsem nezapočítal čas pro instalaci IDE, jelikož jsem využíval již nainstalované prostředí.
+	\item [Dostupnosti služeb:] AWS garantuje dostupnost služeb na vysoké úrovni. V jejich \href{http://aws.amazon.com/ec2/sla/}{SLA podmínkách\cite{amazon:sla}} vymezují dostupnost veškerých služeb jako 99,95\%. To je ještě o něco málo více, než nabízejí ostatní služby. U každé služby (mimo služeb v rámci Free Tier) je dle dokumentace možné zvolit datacentrum dle potřeby a dále zvolit segment v datacentru (tzv. Availability Zones). Tím je zaručeno, že ačkoliv je využíváno jednoho datacentra, budou data v jiných fyzických částech datacentra a nehrozí tak kompletní výpadek služeb v případě poruchy jedné oblasti. Datacentra má Amazon \href{http://aws.amazon.com/about-aws/globalinfrastructure/regional-product-services/}{dle dokumentace\cite{amazon:locations}} v těchto lokalitách: N. Virginia, Oregon, N. California, Ireland, Singapore, Tokyo, Sydney, São Paulo, Beijing a dalších.
+	\item [Dostupnosti dat z Internetu:] v rámci testování byla poskytovaná rychlost přístupu do sítě Internet dostačující. Přesto bohužel virtuální server vykazoval zpomalení. V nejlevnější variantě a zkušební verzi dosahovala infrastruktura rychlostí kolem 50--100 mbit/s v obou směrech. Výsledek měření je dostupný na adrese \href{http://www.speedtest.net/my-result/3375057895}{http://www.speedtest.net/my-result/3375057895}. V rámci infrastruktury intranetu, při vytvořené virtuální síti, byly jednotlivé servery propojeny rychlostí 1 gbit/s (této rychlosti servery mezi sebou nedosahovaly, pokud byly umístěny v různých lokalitách/datacentrech, kde přenosová rychlost klesala k rychlosti spojení do Internetu, což je stejné jako u Azure, v rámci Availability Zones však rychlost byla maximální).
+	\item [Možnost zpřístupnění intranetu:] Amazon AWS nabízí službu Virtual Private Cloud (VPC), což je oddělení privátního cloudu a spojení skrz VPN s vnitropodnikovým datacentrem. Tím můžeme propojit cloudovou službu s jakoukoliv intranetovou aplikací.
+	\item [Přístup k filesystému:] Přímý přístup k filesystému je opět možný pouze v rámci IaaS z virtuálního stroje. I tak se nejedná o přímý přístup, jelikož se přistupuje k namapovaným jednotkám z \href{http://aws.amazon.com/big-data/}{BigData} (i virtuální disky jsou ukládány jako BLOB v databázi). Další možností zpřístupnění souborů je úložiště \href{http://aws.amazon.com/s3/}{S3}, které ukládá data jako dvojici key---value (+ metadata). Při nahrávání do úložiště obdržíte unikátní klíč a skrz něj můžete přistupovat k jednotlivým souborům v úložišti.
+	\item [HW nároky:] Tím, že nám AWS nediktuje vývojové nástroje je pouze na uživateli, jak náročné prostředí pro vývoj zvolí. Od toho se bude odvíjet i náročnost na HW programátora. Pro samotný vývoj dostačuje ale i naprosto běžný notebook a průměrně rychlá internetová linka pro upload a nasazení.
+	\item [Hloubka znalostí:] Vzhledem ke komplexnosti a podrobnosti nabízených služeb je celkem obtížné už jen zvolit vhodnou kombinaci služeb, aby správně vyhovovaly potřebám. Administrace je výrazně složitější a obsáhlejší než u obou předchozích testovaných, tedy už zde musí být někdo s vyššími znalostmi oboru. Programování je na stejné úrovni jako pro jakoukoliv jinou platformu a záleží pouze na vývojáři a službách, které plánuje využívat. V každém případě bych tuto službu považoval za nejpokročilejší a vyžadoval k jejímu nasazení i mnohem více zaškoleného uživatele. Pro práci se službou bych navrhoval vystudování technického oboru alespoň bakalářského stupně.
+\end{description}
+
+\subsection{Srovnání vlastností a parametrů}
+Jelikož práce a testování bylo z velké části subjektivní a ovlivněno i předchozími zkušenostmi s jednotlivými technologiemi, začnu porovnání produktů právě z mého pohledu a následně se budu věnovat jednotlivým oblastem testování.
+
+\subsubsection{Subjektivní hodnocení}
+Pokud mám služby porovnat subjektivně a z nasbíraných zkušeností, musím jako nejintuitivnější a nejvíce příjemnou službu hodnotit Azure od Microsoftu. Se službou se mi pracovalo přirozeně, neobsahovala nadstandardní nastavení, které by mne zbytečně mátlo a bez větších problémů jsem nad ní byl schopný pracovat. Uvítal bych podrobnější informace o stavu systému.
+
+Následně se mi dobře pracovalo a Amazon AWS, který je opravdu rozsáhlý, se spoustou nastavení, které ho dělá lehce nepřehledný. Pokud bych ho využíval déle než pouze v rámci diplomové práce a zvykl bych si na drobné nejasnosti v konfiguraci službu bych využíval nejspíše velice rád. Z testovaných služeb podává nejpodrobnější informace o stavu systému i cloudu samotného, lze vybírat z nejvíce připravených řešení a služby jdou asi nejlépe optimalizovat na požadované zatížení.
+
+Z mého pohledu se mi nejhůře z testovaných pracovalo s IBM BlueMix. Ovšem musím vzít v potaz, že se jedná o absolutně novou začínající službu. Ta má i přes jednoduchost služby ohromný potenciál a do budoucna má určitě co nabídnout. Bohužel prozatím je webová administrace velice strohá a postrádá i základní logování, které by mohlo pomoci při vývoji, nebo jsem ho alespoň neobjevil.
+
+\subsubsection{Výkon}
+Z pohledu výkonu služeb bohužel nemám produkty jak srovnat, jelikož ve všech případech jsem měl přístup jen k té nejzákladnější konfiguraci. V ní je uživatel rád, že běží tak, jak vůbec běží. Přesto nejlepší pocit jsem měl z Azure a jejich Windows Serveru, který měl perfektní odezvu i přes slabý hardware, na kterém běžel a oproti AWS byl schopný mnohem rychleji reagovat.
+
+Systém nad AWS vykazoval zpomalení systému kvůli velice pomalému přístupu na disk, kdy přenosová rychlost klesala i pod 1 MB/s. To ovšem přičítám sdíleným prostředkům procesoru a i diskovému úložišti a v reálném provozu na lepší konfiguraci by k tomuto nedocházelo.
+
+\subsubsection{Cena}
+Pokud srovnávám cenovou politiku, vychází Amazon a Microsoft velice podobně. Obě služby začínají na ceně od \$0.02 za hodinu provozu.
+
+\subsubsection{Diskové úložiště/databáze}
+V této oblasti je jednoznačným vítězem Amazon s jejich S3 a BigData, která se dají navíc připojovat i jako oddíly k virtuálním strojům. V tom Amazon nemá konkurenci a pokud chcete využívat cloud pro uskladnění dat, ať už strukturovaných, nebo skladování obřích obrazů disků a dalších, doporučil bych právě služby Amazonu.
+
+\subsubsection{Dostupnost služeb}
+Jelikož jsem během celé práce nezpozoroval ani na jedné z testovaných služeb výpadek, nemohu podat vlastní statistiky. Pokud ovšem budu vycházet z SLA, která by měla být pro poskytovatele závazná, opět nejlépe vychází Amazon, který pro každé datacentrum garantuje 99,95\% dostupnost služeb, což je nejvyšší číslo, které se mezi testovanými objevilo.
+
+\subsubsection{Čas k nasazení}
+Čas k nasazení služby, alespoň tedy čas měřitelný, ne ten, který je potřeba k samotnému vývoji aplikací běžících nad službou, je měřitelný dobře. V této kategorii si nejlépe stojí BlueMix od IBM, jelikož nepotřebuje u registrace téměř žádné údaje a hned po registraci vás nechá pracovat, aniž by bylo potřeba cokoliv dále nastavovat. Oproti tomu služby od Microsoftu je nutné nejdříve po registraci připravit a nainstalovat IDE, ve kterém je doporučeno vyvíjet, aby byl bezproblémový deploy na servery.
+
+Ovšem čas maximálně hodina, která byla ke zprovoznění potřebná, není pro další vývoj nijak omezující. Tedy kategorii nepřikládám velkou váhu. Navíc tuto činnost většina uživatelů provede pouze jednou.
+
+\subsubsection{Hloubka znalostí}
+Údaj pro srovnání služby na složitost správy a konfigurace považuji za celkem důležitý. Pokud budu mít kvalitní službu a nebudu mít ve firmě vývojáře, kteří nad službou budou schopni vyvíjet a nakonfigurovat ji, nebude pro firmu mít žádný význam. Společnost stejně bude muset přistoupit k jiné službě, nebo investovat další nemalé prostředky na zaškolení, případně nabrat nové vývojáře, což je ve finále nejdražší, jelikož musí projít zaškolením do vnitropodnikových zásad a přístupu k vývoji.
+
+Z mého pohledu v této kategorii nejlépe vychází Microsoft Azure, který je jednoduchý na správu a rychle jsem se v něm zorientoval a mohl začít vyvíjet. To je ovšem opět silně individuální, jelikož jsem měl předchozí několikaletou zkušenost s vývojem na podobné platformě, ačkoliv pouze lokálních aplikací. Pokud bych v rámci studia na FEI UPCE byl směřován k jiným vývojovým nástrojům a technologiím, dal bych určitě přednost zase jiné službě, která by mi více vyhovovala.
+
+\subsubsection{Ostatní}
+Před pár dny vyšel na serveru \href{http://root.cz}{root.cz} článek \href{http://www.root.cz/clanky/uloziste-v-cloudu-porovnani-amazon-a-azure/}{Úložiště v cloudu: porovnání Amazon a Azure\cite{root:porovnaniAzureAWS}} o porovnání úložiště Amazon AWS a Microsoft Azure z pohledu oddělení redakčního vývoje serveru \href{http: //ihned.cz}{IHNED.cz}
+
+\newpage
+\section{Závěr}
+Při výběru práce jsem si pokládal otázku: "`Co bych od diplomové práce chtěl a co bych v ní chtěl dokázat?"' Před výběrem tématu jsem absolutně neměl představu, co bych chtěl dělat. Toto téma jsem nalezl v databázi diplomových prací a na obě otázky, které jsem si pokládal, jsem byl schopný si odpovědět a odůvodnit si je. "`Chci zjistit a prozkoumat, co to vlastně cloud je, jelikož mám pouze matnou představu. A chtěl bych dokázat podat a přiblížit toto téma širší veřejnosti a případně nastínit i možnosti uplatnění."' První otázku jsem v rámci práce, myslím dostatečně, zodpověděl, a minimálně z mého pohledu, tématiku pochopil. Pokud tato práce pomůže i někomu dalšímu v přiblížení tématu, z mého pohledu splnila svůj účel, ať už výsledek obhajoby dopadne jakkoliv.
+
+Práce nemůže být brána jako ucelený přehled nabízených služeb, jelikož byla zaměřena pouze na část služeb poskytovaných cloudovými společnostmi, přesto dává jistý nadhled na možné využití. Dává i několik příkladů, jak lze cloud přímo využít.
+
+Z vypracování práce jsem si odnesl nesčetné cenné informace, ke kterým bych se jinak nedostal, jelikož bych se tímto tématem asi jen těžko v blízké budoucnosti zabýval. Považuji za velikou škodu, že se k tématu, student FEI UPCE v průběhu studia nemá šanci dostat ani okrajově, jelikož se o něm nikdo z vyučujících nezmiňuje. Vidím v cloudu neskutečný potenciál pro další vývoj a i využívání stávajících služeb.
+
+Pokud bych měl uvést slova na závěr, musela by znít: "`Proč vlastně cloud již dávno nevyužívám pro osobní a i komerční účely?"' To se touto prací mění! Ve finále nevidím jediný pádný důvod, proč ne.
